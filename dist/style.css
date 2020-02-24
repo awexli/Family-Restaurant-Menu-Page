@@ -1,71 +1,197 @@
+@charset "UTF-8";
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+	font-family: "Cabin", Arial, Geneva, sans-serif;
+	background-image: url(img/clouds.png);
+	margin: 0px;
+	padding: 0px;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Niconne', cursive;
+  font-weight: normal;
+  color: #C80060;
+  margin-top: 0;
+}
 .wrapper {
-	display: grid;
-	grid-gap: 10px;
-	font-family: Arial, sans-serif;
+	margin: 0 auto;
 }
-.wrapper > * {
-	padding: 1em;
-	border-radius: 1em;
+article img {
+  border-radius: 10px;
+  width: 100%;
+  max-width: 250px;
 }
-header {
-	background-color: blue;
-	color: white;
+.bkgdimg {
+  height: 12px;
+    background: url(img/scallop.png) repeat-x ;
 }
-article {
-	background-color: green;
-	color: white;
+nav ul {
+  list-style-type: none;
+  background-color: #e6bf98; 
+  padding: .75em;
+  margin: 0;
+  border-bottom: 3px solid #cc8850;
+  overflow: auto;
 }
-aside {
-  background-color: yellow;
+/* splits nav into 2 columns
+http://stackoverflow.com/questions/13104818/simple-2-column-navigation-with-css-and-a-single-list */
+nav li:nth-child(even) {
+  width: 50%;
+  float: right;
+  padding: 0.5em;
 }
-article aside {
-	background-color: white;
-	color: black;
-	padding: 0.5em;
-	border-radius: 0.5em;
+nav li:nth-child(odd) {
+  width: 50%;
+  float: left;
+    padding: 0.5em;
 }
-.nested {
-  display: grid;
-  grid-template-columns: auto;
-  grid-gap: 1em;
+nav a {
+  color: #c80060;
+  text-decoration: none;
+  display: block;
+  padding-left:3.333333%;
 }
-@media (min-width: 650px) { 
-	header {
-		grid-column: 1 / 2;
-		grid-row: 2 / 3;
-	}
-	article {
-		grid-column: 1 / 2;
-		grid-row: 1 / 2;
-	}
-	.sidebar {
-		grid-column: 2 / 3;
-		grid-row: 1 / 3;
+nav a:hover {
+  color:#00c4c7;
+}
+
+.content {
+  background-color: #fff6e0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 2em;
+}
+.floatleft {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+.floatright {
+  float: right;
+  margin: 0 0 1em 1em;
+}
+[class*='sidebar'] {
+  border: 1px solid #00c4c7;
+  border-radius: 10px;
+  margin: 3em 0;
+}
+[class*='sidebar'] h3 {
+  margin: 0;
+  color: white;
+  background-color: #00c4c7;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-left: 0.5em;
+}
+[class*='sidebar'] img {
+  border-radius: 0px 0px 10px 10px;
+  width: 100%;
+  max-width: 250px;
+  display: block; /* without this, there is a gap between the image and border -- space for descenders in text, for inline elements */
+} 
+.sidebar-secondary {
+  border-color: #c80060;
+}
+.sidebar-secondary h3 {
+  background-color: #c80060;
+}
+blockquote {
+  padding: 0em;
+  margin: 0;
+}
+blockquote p, 
+blockquote cite {
+  padding: 0 1em;
+}
+blockquote cite {
+  text-transform: uppercase;
+  font-style: normal;
+  padding-bottom: 1em;
+  display: block;
+}
+footer {
+  background-color: #00CDD1;
+  color: white;
+  clear: both;
+  margin: 0 0.5em 3em 0.5em;
+}
+footer p {
+  text-align: center;
+}
+footer img {
+  width: 52px;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+}
+/* grid system */
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 550px) { 
+  .wrapper {
+      width: 97%;
+      max-width: 767px;
   }
-  .nested {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: 
-    "aside1 . aside3";
+
+ nav li,
+  nav li:nth-child(even),
+  nav li:nth-child(odd) {
+    display: inline-block;
+    width: auto;
+    float: none;
+    padding: 0;
   }
-  .nested aside:first-child {
-    grid-area: aside1;
+  nav a {
+    padding: 0em 1em;
+
   }
-  .nested aside:last-child {
-    grid-area: aside3;
+  .content {
+    display: grid;
+    grid-gap: 1em;
   }
+  .aside {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: 1fr 1fr;
+  }
+
 }
-@media (min-width: 1000px) { 
-	header {
-		grid-column: 2 / 3;
-		grid-row: 1 / 2;
-	}
-	article {
-		grid-column: 2 / 3;
-		grid-row: 2 / 3;
-	}
-	.sidebar {
-		grid-column: 1 / 2;
-		grid-row: 1 / 3;
-	}
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 850px) { 
+  .wrapper {
+      width: 97%;
+      max-width: 1200px;
+      float: none;
+  }
+  h2 {
+    font-size: 3em;
+    border-bottom: 2px dotted #c80060;
+  }
+  h3 {
+    font-size: 2em;
+  }
+  div.row {
+    padding: 0;
+  }
+  nav li,
+  nav li:nth-child(even),
+  nav li:nth-child(odd) {
+    display: inline-block;
+    width: auto;
+    padding: 0;
+  }
+  .content {
+       grid-template-columns: 3fr 1fr;
+       grid-gap: 3em;
+    }
+  .aside {
+    display: block;
+  }
+
 
 }
