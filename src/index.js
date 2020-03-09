@@ -1,10 +1,10 @@
+import navbar from './header';
 
-function component() {
-    const element = document.createElement('div');
+const fragment = new DocumentFragment();
+const contents = [navbar()];
 
-    element.innerText = "Helleo"
-
-    return element;
+for (let item of contents) {
+    fragment.appendChild(item);
 }
 
-//document.getElementById("container").appendChild(component());
+document.querySelector(".wrapper").appendChild(fragment);

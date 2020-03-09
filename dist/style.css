@@ -44,7 +44,7 @@ html, body {
   box-shadow: 2px 2px 5px #aaaaaa;
 }
 .main-pic .main-img {
-  width: 250px;
+  width: 275px;
 }
 .repeat {
   display: flex;
@@ -91,4 +91,16 @@ html, body {
   display: flex;
   justify-content: space-evenly;
   margin-top: 1em;
+}
+
+@media only screen and (min-width: 375px) { 
+  .main-pic .main-img {
+    width: 340px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .main-pic .main-img {
+    width: 550px;
+  }
 }
