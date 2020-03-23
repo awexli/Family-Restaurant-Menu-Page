@@ -2,18 +2,50 @@ const main = () => {
     const mainDiv = document.createElement("div");
     mainDiv.className = "main";
 
-    const mainPicDiv = document.createElement("div");
-    mainPicDiv.className = "main-pic";
+    const foodCategory = () => {
+        const categoryArr = [
+            "House Special",
+            "Chow Mein & Fun",
+            "Fried Rice",
+            "Congee",
+            "Hot Pot",
+            "Lettuce Wraps",
+            "Vegetables",
+            "Seafood",
+            "Crab & Lobster",
+            "Chicken & Duck & Frog",
+            "Pork",
+            "Mu Shu",
+            "Appetizers",
+            "Soup",
+            "Beef & Lamb"
+        ]
 
-    const imgContentDiv = document.createElement("div");
-    imgContentDiv.className = "image-content";
+        const table = document.createElement("table");
+        const categoryTableRow = document.createElement("tr");
+        const categoryTableCell = document.createElement("td");
+        const rowFragments = new DocumentFragment();
+        
+        categoryTableCell.innerText = categoryArr[0];
+        categoryTableCell.className = "open-menu";
 
-    const mainImg = document.createElement("img");
-    mainImg.className = "main-img";
-    mainImg.src = "./img/crsl.jpg";
+        categoryArr.forEach(cat => {
+            const rowClone = categoryTableRow.cloneNode(true);
+            const cellClone = categoryTableCell.cloneNode(true);
+            cellClone.innerText = cat;
+            rowClone.appendChild(cellClone);
+            rowFragments.appendChild(rowClone);
+        })
 
-    imgContentDiv.appendChild(mainImg);
-    mainPicDiv.appendChild(imgContentDiv);
+        table.appendChild(rowFragments);
+
+        const optionsDiv = document.createElement("div");
+        optionsDiv.className = "options";
+        optionsDiv.appendChild(table);
+
+        return optionsDiv;
+    }
+    
 
     const googleMapDiv = document.createElement("div");
     googleMapDiv.className = "google-map";
@@ -24,8 +56,8 @@ const main = () => {
 
     googleMapDiv.appendChild(googleFrame);
 
-    mainDiv.appendChild(mainPicDiv);
-    mainDiv.appendChild(googleMapDiv);
+    mainDiv.appendChild(foodCategory());
+    //mainDiv.appendChild(googleMapDiv);
 
     const mainContentFragment = new DocumentFragment();
     mainContentFragment.appendChild(mainDiv);
