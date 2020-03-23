@@ -28,7 +28,7 @@ html, body {
 .main {
   min-height: 100%;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-template-columns: 100%;
   padding: 1em;
   grid-gap: 1em;

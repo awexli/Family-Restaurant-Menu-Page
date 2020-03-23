@@ -5,7 +5,7 @@ const navbar = () => {
     subText.innerText = "Hakka Cuisine";
 
     const innerFrag = new DocumentFragment();
-    innerFrag.appendChild(name, subText);
+    innerFrag.appendChild(name);
     innerFrag.appendChild(subText);
 
     const navContent = document.createElement("div");
@@ -16,10 +16,10 @@ const navbar = () => {
     nav.className = "nav-bar";
     nav.appendChild(navContent);
 
-    const fragment = new DocumentFragment();
-    fragment.appendChild(nav);
+    const navFragment = new DocumentFragment();
+    navFragment.appendChild(nav);
 
-    return fragment;
+    return navFragment;
 }
 
 export default navbar;
