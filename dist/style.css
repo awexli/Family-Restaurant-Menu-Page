@@ -113,18 +113,51 @@ table tr :hover {
   text-align: center;
   overflow: scroll;
   padding-top: 1em;
+  overflow-x: hidden;
 }
 .overlay .overlay-content table {
   border-collapse: collapse;
+  margin: 0 auto;
 }
 .overlay .overlay-content table td {
   font-size: small;
   border: red solid 1px;
   padding: 0.3em 0.3em;
 }
+@media only screen and (min-width: 768px) {
+  .overlay .overlay-content table td {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .overlay .overlay-content table td {
+    font-size: 24px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .overlay .overlay-content table td {
+    font-size: larger;
+  }
+}
 .overlay .overlay-content table .chinese {
   width: 8em;
   font-size: 15px;
+}
+@media only screen and (min-width: 768px) {
+  .overlay .overlay-content table .chinese {
+    width: 10em;
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .overlay .overlay-content table .chinese {
+    font-size: 24px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .overlay .overlay-content table .chinese {
+    font-size: larger;
+  }
 }
 
 .open-menu {

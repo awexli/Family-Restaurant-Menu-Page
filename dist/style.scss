@@ -164,16 +164,45 @@ table {
     text-align: center;
     overflow: scroll;
     padding-top: 1em;
+    overflow-x: hidden;
+
     table {
       border-collapse: collapse;
+      margin: 0 auto;
       td {
         font-size: small;
         border: red solid 1px;
         padding: 0.3em 0.3em;
+
+        @include respond-to(table) {
+          font-size: 16px;
+        }
+
+        @include respond-to(desk) {
+          font-size: 24px;
+        }
+
+        @include respond-to(larger) {
+          font-size: larger;
+        }
+
       }
       .chinese {
         width: 8em;
         font-size: 15px;
+
+        @include respond-to(table) {
+          width: 10em;
+          font-size: 16px;
+        }
+
+        @include respond-to(desk) {
+          font-size: 24px;
+        }
+
+        @include respond-to(larger) {
+          font-size: larger;
+        }
       }
     }
   }
