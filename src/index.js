@@ -6,7 +6,7 @@ import category from './category'
 const overlay = document.getElementById("overlay-nav");
 const menuImg = document.querySelector(".menu");
 const fragment = new DocumentFragment();
-const contents = [navbar(), main(), footer()];
+const contents = [navbar(), main.mainFragment(), footer.footerFragment()];
 
 for (let item of contents) {
     fragment.appendChild(item);
@@ -16,11 +16,13 @@ document.querySelector(".wrapper").appendChild(fragment);
 
 document.addEventListener("click", e => {
     let className = e.target.className;
-    
+    console.log(e.target)
     switch(e.target.innerText) {
         case "House Special":
             overlay.style.height = "100%"; // change this to when click on cell
             category.houseSpecial();
+            footer.footerTag().style = "visibility: hidden";
+            main.mainTag().style = "visibility: hidden";
             break;
         case  "Soup":
             menuImg.src = "./img/soup.png"
@@ -61,6 +63,8 @@ document.addEventListener("click", e => {
         case  "Chow Mein & Fun":
             overlay.style.height = "100%";
             category.chowMeinFun();
+            footer.footerTag().style = "visibility: hidden";
+            main.mainTag().style = "visibility: hidden";
             break;
         case  "Fried Rice":
             menuImg.src = "./img/fried_rice.png"
@@ -78,5 +82,7 @@ document.addEventListener("click", e => {
         className == "overlay-content" ||
         className == "back") {
         overlay.style.height = "0%"
+        footer.footerTag().style = "visibility: visible";
+        main.mainTag().style = "visibility: visible";
     }
 })

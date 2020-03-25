@@ -90,8 +90,6 @@ html, body {
   }
 }
 
-
-
 table {
   tr {
     font-size: x-large;
@@ -133,14 +131,14 @@ table {
   background-image: url(./img/ricepaper2.png);
   background-repeat: repeat;
   overflow-y: hidden;
-  transition: 0.5s;
   color: black;
 
   .back {
     text-align: center; 
-    padding-top: 1em;
     background-color: rgb(211,178,124);
     height: 100%;
+    padding-top: 1em;
+    border: solid red 1px;
   }
 
   .close-menu {

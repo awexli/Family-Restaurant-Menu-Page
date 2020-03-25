@@ -81,14 +81,14 @@ table tr {
   background-image: url(./img/ricepaper2.png);
   background-repeat: repeat;
   overflow-y: hidden;
-  transition: 0.5s;
   color: black;
 }
 .overlay .back {
   text-align: center;
-  padding-top: 1em;
   background-color: #d3b27c;
   height: 100%;
+  padding-top: 1em;
+  border: solid red 1px;
 }
 .overlay .close-menu {
   position: absolute;

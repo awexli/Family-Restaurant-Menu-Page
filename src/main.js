@@ -1,4 +1,4 @@
-const main = () => {
+const mainFragment = () => {
     const mainDiv = document.createElement("div");
     mainDiv.className = "main";
 
@@ -63,4 +63,8 @@ const main = () => {
     return mainContentFragment;
 }
 
-export default main;
+const mainTag = () => {
+    return document.querySelector(".main");
+}
+
+export default { mainFragment, mainTag };

@@ -334,7 +334,7 @@ const categories = (() => {
         for (let i = 0; i < chinDishes.length; i++) {
             chow[`r${i+1}`].chin = chinDishes[i];
         }
-        console.table(chow)
+        createTable(chow);
     }
 
     const createTable = (category) => {

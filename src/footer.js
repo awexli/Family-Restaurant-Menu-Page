@@ -1,4 +1,4 @@
-const footer = () => {
+const footerFragment = () => {
     const footerDiv = document.createElement("div");
     footerDiv.className = "footer";
 
@@ -32,4 +32,8 @@ const footer = () => {
     return footerFrag;
 }
 
-export default footer;
+const footerTag = () => {
+    return document.querySelector(".footer");
+}
+
+export default { footerFragment, footerTag };
