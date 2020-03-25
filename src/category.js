@@ -6,8 +6,6 @@ const categories = (() => {
     const rowFragment = new DocumentFragment();
     const cellFragment = new DocumentFragment();
 
-    
-
     const houseSpecial = () => {
         const special = {
             r1: {
@@ -206,6 +204,139 @@ const categories = (() => {
         createTable(special)
     }
 
+    const chowMeinFun = () => {
+        let chinese =
+        `家鄉炒米
+        星州炒米
+        泰式炒米
+        韭皇干炒牛/雞河
+        涼瓜雞乾炒河粉
+        星馬炒貴刁
+        豉椒牛/雞濕炒河
+        海鮮XO醬濕炒河
+        蒜茸牛油蝦炒粗麵
+        沙爹牛粒濕炒河粉
+        雞/牛/叉燒炒粗麵
+        招牌海鮮炒粗麵
+        九層塔海鮮炆伊麵
+        咖喱牛粒炆伊麵
+        韭皇干燒伊麵
+        瑤柱金玉菇炆伊麵
+        豉油皇炒細麵`;
+
+        const chinDishes = cleanTemplateLiteral(chinese);
+        
+        const chow = {
+            r1: {
+                num: "K1",
+                chin: "客家鹽焗雞",
+                eng: "Salt & Baked Chicken",
+                price: "(半 Half) 14.95 (Whole) 28.00"
+            },
+            r2: {
+                num: "K2",
+                chin: "招牌華香雞（半）",
+                eng: "House Special Steamed Chicken (Half)",
+                price: "13.95"
+            },
+            r3: {
+                num: "K3",
+                chin: "豬肚撈雞（半）",
+                eng: "Pork Belly with Chicken (Half)",
+                price: "17.95"
+            },
+            r4: {
+                num: "K4",
+                chin: "惠州梅菜扣肉",
+                eng: "Chinese Bacon w/ Presevered Green",
+                price: "14.95"
+            },
+            r5: {
+                num: "K5",
+                chin: "客家煎釀滑豆腐",
+                eng: "House Special Pan Fried Stuffed Tofu",
+                price: "11.95"
+            },
+            r6: {
+                num: "K6",
+                chin: "客家煎釀三寶",
+                eng: "Pan Fried Three Stuffed Treasures",
+                price: "13.95"
+            },
+            r7: {
+                num: "K7",
+                chin: "客家黃酒薑炒雞",
+                eng: "Stir Fry Chicken in Wine Sauce",
+                price: "16.95"
+            },
+            r8: {
+                num: "K8",
+                chin: "胡椒支竹豬肚雞煲",
+                eng: "Chicken, Pork Belly & Bean Curd with Pepper in Pot",
+                price: "15.95"
+            },
+            r9: {
+                num: "K9",
+                chin: "客家炒大腸",
+                eng: "Hakka Style Stir Fry Intestine",
+                price: "12.95"
+            },
+            r10: {
+                num: "K10",
+                chin: "燒汁雜菌炒肥牛",
+                eng: "Beef & Mixed Mushroom in Teriyaki Sauce",
+                price: "13.95"
+            },
+            r11: {
+                num: "K11",
+                chin: "美極磨菇牛柳粒",
+                eng: "Steak Cube & Mushroom in Maggie Sauce",
+                price: "15.95"
+            },
+            r12: {
+                num: "K12",
+                chin: "家鄉小炒皇",
+                eng: "House Special Stir Fry Mixed",
+                price: "13.95"
+            },
+            r13: {
+                num: "K13",
+                chin: "椒鹽豬爽肉",
+                eng: "Salt & Pepper Pork Neck",
+                price: "11.95"
+            },
+            r14: {
+                num: "K14",
+                chin: "金沙鹹蛋黃炒蟹",
+                eng: "Stir Fry Crab with Salted Egg",
+                price: "Seasonal"
+            },
+            r15: {
+                num: "K15",
+                chin: "九層塔炒蜆",
+                eng: "House Special Basil Clams",
+                price: "15.95"
+            },
+            r16: {
+                num: "K16",
+                chin: "避風塘炒蜆",
+                eng: "Hong Kong Style Spicy Clams",
+                price: "15.95"
+            },
+            r17: {
+                num: "K17",
+                chin: "豉油皇老虎大蝦",
+                eng: "Tiger Prawns with Soy Sauce (8)",
+                price: "19.95"
+            }
+        }
+        const chowmein = []
+        for (let i = 0; i < chinDishes.length; i++) {
+            chow[`r${i+1}`].chin = chinDishes[i];
+        }
+        console.table(chow)
+    }
+
     const createTable = (category) => {
 
         if (overlayTable.hasChildNodes) {
@@ -232,7 +363,22 @@ const categories = (() => {
         overlayContent.appendChild(overlayTable);
     }
 
-    return {houseSpecial}
+    const cleanTemplateLiteral = (literal) => {
+        const arr = [];
+
+        literal = literal.split("\n");
+
+        for (let elem of literal) {
+            arr.push(elem.trim())
+        }
+
+        return arr;
+    }
+
+    return { 
+        houseSpecial, 
+        chowMeinFun
+    }
 })();
 
 export default categories;

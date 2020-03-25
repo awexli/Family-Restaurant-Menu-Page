@@ -9,7 +9,8 @@ html, body {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  background-color: #e9e6e3;
+  background-image: url(./img/ricepaper2.png);
+  background-repeat: repeat;
   font: bold;
 }
 
@@ -46,9 +47,6 @@ table tr {
   font-size: x-large;
   text-align: center;
 }
-table tr :hover {
-  background-color: red;
-}
 
 .footer {
   color: #e9e6e3;
@@ -80,10 +78,17 @@ table tr :hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: linear-gradient(to bottom right, #FFB62B, #FFB063);
+  background-image: url(./img/ricepaper2.png);
+  background-repeat: repeat;
   overflow-y: hidden;
   transition: 0.5s;
   color: black;
+}
+.overlay .back {
+  text-align: center;
+  padding-top: 1em;
+  background-color: #d3b27c;
+  height: 100%;
 }
 .overlay .close-menu {
   position: absolute;
@@ -119,14 +124,17 @@ table tr :hover {
   border-collapse: collapse;
   margin: 0 auto;
 }
+.overlay .overlay-content table tr:hover {
+  background-color: #d3b27c;
+}
 .overlay .overlay-content table td {
   font-size: small;
-  border: red solid 1px;
+  border: #d3b27c solid 1px;
   padding: 0.3em 0.3em;
 }
 @media only screen and (min-width: 768px) {
   .overlay .overlay-content table td {
-    font-size: 16px;
+    font-size: 26px;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -136,27 +144,27 @@ table tr :hover {
 }
 @media only screen and (min-width: 1400px) {
   .overlay .overlay-content table td {
-    font-size: larger;
+    font-size: 28px;
   }
 }
 .overlay .overlay-content table .chinese {
   width: 8em;
-  font-size: 15px;
+  font-size: 18px;
 }
 @media only screen and (min-width: 768px) {
   .overlay .overlay-content table .chinese {
     width: 10em;
-    font-size: 16px;
+    font-size: 30px;
   }
 }
 @media only screen and (min-width: 1024px) {
   .overlay .overlay-content table .chinese {
-    font-size: 24px;
+    font-size: 30px;
   }
 }
 @media only screen and (min-width: 1400px) {
   .overlay .overlay-content table .chinese {
-    font-size: larger;
+    font-size: 36px;
   }
 }
 

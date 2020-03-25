@@ -19,7 +19,7 @@ document.addEventListener("click", e => {
     
     switch(e.target.innerText) {
         case "House Special":
-            overlay.style.height = "100%";
+            overlay.style.height = "100%"; // change this to when click on cell
             category.houseSpecial();
             break;
         case  "Soup":
@@ -59,8 +59,8 @@ document.addEventListener("click", e => {
             overlay.style.height = "100%";
             break;
         case  "Chow Mein & Fun":
-            menuImg.src = "./img/chowmein_fun.png"
             overlay.style.height = "100%";
+            category.chowMeinFun();
             break;
         case  "Fried Rice":
             menuImg.src = "./img/fried_rice.png"
@@ -75,8 +75,8 @@ document.addEventListener("click", e => {
     }
 
     if (className == "overlay" || 
-        className == "overlay-content" || 
-        className == "close-menu") {
+        className == "overlay-content" ||
+        className == "back") {
         overlay.style.height = "0%"
     }
 })

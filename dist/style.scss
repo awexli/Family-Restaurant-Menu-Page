@@ -55,7 +55,8 @@ html, body {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  background-color: rgb(233, 230, 227);
+  background-image: url(./img/ricepaper2.png);
+  background-repeat: repeat;
   font: bold;
 }
 
@@ -95,10 +96,6 @@ table {
   tr {
     font-size: x-large;
     text-align: center;
-  
-    :hover {
-      background-color: red;
-    }
   }
 }
 
@@ -133,10 +130,18 @@ table {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: linear-gradient(to bottom right, #FFB62B,#FFB063);
+  background-image: url(./img/ricepaper2.png);
+  background-repeat: repeat;
   overflow-y: hidden;
   transition: 0.5s;
   color: black;
+
+  .back {
+    text-align: center; 
+    padding-top: 1em;
+    background-color: rgb(211,178,124);
+    height: 100%;
+  }
 
   .close-menu {
     position: absolute;
@@ -169,13 +174,18 @@ table {
     table {
       border-collapse: collapse;
       margin: 0 auto;
+
+      tr:hover {
+        background-color: rgb(211,178,124);
+      }
+
       td {
         font-size: small;
-        border: red solid 1px;
+        border: rgb(211,178,124) solid 1px;
         padding: 0.3em 0.3em;
 
         @include respond-to(table) {
-          font-size: 16px;
+          font-size: 26px;
         }
 
         @include respond-to(desk) {
@@ -183,25 +193,25 @@ table {
         }
 
         @include respond-to(larger) {
-          font-size: larger;
+          font-size: 28px;
         }
 
       }
       .chinese {
         width: 8em;
-        font-size: 15px;
+        font-size: 18px;
 
         @include respond-to(table) {
           width: 10em;
-          font-size: 16px;
+          font-size: 30px;
         }
 
         @include respond-to(desk) {
-          font-size: 24px;
+          font-size: 30px;
         }
 
         @include respond-to(larger) {
-          font-size: larger;
+          font-size: 36px;
         }
       }
     }
