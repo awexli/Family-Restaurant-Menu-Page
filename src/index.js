@@ -1,6 +1,7 @@
 import navbar from './header';
 import main from './main';
 import footer from './footer';
+import category from './category'
 
 const overlay = document.getElementById("overlay-nav");
 const menuImg = document.querySelector(".menu");
@@ -14,13 +15,12 @@ for (let item of contents) {
 document.querySelector(".wrapper").appendChild(fragment);
 
 document.addEventListener("click", e => {
-    console.log(e.target)
     let className = e.target.className;
     
     switch(e.target.innerText) {
         case "House Special":
-            menuImg.src = "./img/house_special.png"
             overlay.style.height = "100%";
+            category.houseSpecial();
             break;
         case  "Soup":
             menuImg.src = "./img/soup.png"

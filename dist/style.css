@@ -5,6 +5,7 @@
 }
 
 html, body {
+  font-family: "Noto Sans TC", sans-serif;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -39,10 +40,6 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-table, th, td {
-  border: solid red 1px;
 }
 
 table tr {
@@ -83,10 +80,10 @@ table tr :hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: black;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-image: linear-gradient(to bottom right, #FFB62B, #FFB063);
   overflow-y: hidden;
   transition: 0.5s;
+  color: black;
 }
 .overlay .close-menu {
   position: absolute;
@@ -112,48 +109,22 @@ table tr :hover {
 }
 .overlay .overlay-content {
   position: relative;
-  top: 15%;
-  height: 100%;
+  height: 90%;
   text-align: center;
   overflow: scroll;
+  padding-top: 1em;
 }
-@media only screen and (min-width: 768px) {
-  .overlay .overlay-content {
-    top: 8%;
-  }
+.overlay .overlay-content table {
+  border-collapse: collapse;
 }
-.overlay .overlay-content img {
-  width: 300px;
+.overlay .overlay-content table td {
+  font-size: small;
+  border: red solid 1px;
+  padding: 0.3em 0.3em;
 }
-@media only screen and (min-width: 360px) {
-  .overlay .overlay-content img {
-    width: 350px;
-  }
-}
-@media only screen and (min-width: 411px) {
-  .overlay .overlay-content img {
-    width: 400px;
-  }
-}
-@media only screen and (min-width: 611px) {
-  .overlay .overlay-content img {
-    width: 600px;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .overlay .overlay-content img {
-    width: 750px;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .overlay .overlay-content img {
-    width: 1000px;
-  }
-}
-@media only screen and (min-width: 1400px) {
-  .overlay .overlay-content img {
-    width: 1300px;
-  }
+.overlay .overlay-content table .chinese {
+  width: 8em;
+  font-size: 15px;
 }
 
 .open-menu {
