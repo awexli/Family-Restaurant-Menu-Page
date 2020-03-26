@@ -110,7 +110,7 @@ const categories = (() => {
       "S"
     );
     //console.table(houseObject)
-    createTable(houseObject, "House Special");
+    createTable(houseObject, "House Special (特色菜)");
   };
 
   const chowMeinFun = () => {
@@ -179,7 +179,7 @@ const categories = (() => {
       "K"
     );
     //console.table(chowMeinFunObject)
-    createTable(chowMeinFunObject, "Chow Mein & Mu Shu");
+    createTable(chowMeinFunObject, "Chow Mein & Fun (粉麵類)");
   };
 
   const populateObject = (n, chinese, english, prices, letter) => {

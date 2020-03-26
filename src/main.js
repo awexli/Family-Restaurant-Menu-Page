@@ -4,19 +4,22 @@ const mainFragment = () => {
 
   const foodCategory = () => {
     const categoryArr = [
-      "House Special",
-      "Chow Mein & Fun",
+      "House Special (特色菜)",
+      "Chow Mein & Fun (粉麵類)",
       "Fried Rice",
       "Congee",
       "Hot Pot",
-      "Lettuce Wraps & Vegetables",
+      "Lettuce Wraps",
+      "Vegetables",
       "Seafood",
       "Crab & Lobster",
       "Chicken & Duck & Frog",
-      "Pork & Mu Shu",
+      "Pork",
+      "Mu Shu",
       "Appetizers",
       "Soup",
       "Beef & Lamb",
+      "Rice Plates & Soup ($9.50)",
     ];
 
     const table = document.createElement("table");
@@ -31,7 +34,7 @@ const mainFragment = () => {
       const rowClone = categoryTableRow.cloneNode(true);
       const cellClone = categoryTableCell.cloneNode(true);
       cellClone.innerText = cat;
-      cellClone.className = "btn btn-primary";
+      cellClone.className = "btn";
       cellClone.setAttribute("data-toggle", "modal");
       cellClone.setAttribute("data-target", "#modalLong");
       rowClone.appendChild(cellClone);

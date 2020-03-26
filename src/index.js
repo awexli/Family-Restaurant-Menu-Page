@@ -13,11 +13,9 @@ for (let item of contents) {
 document.querySelector(".wrapper").appendChild(fragment);
 
 document.addEventListener("click", (e) => {
-  if (e.target.innerText == "House Special") {
-    category.houseSpecial();
-  }
-  switch (e.target.innerText) {
-    case "House Special":
+  const buttonName = e.target.innerText;
+  switch (buttonName) {
+    case "House Special (特色菜)":
       category.houseSpecial();
       break;
     case "Soup":
@@ -38,7 +36,7 @@ document.addEventListener("click", (e) => {
       break;
     case "Lettuce Wraps & Vegetables":
       break;
-    case "Chow Mein & Fun":
+    case "Chow Mein & Fun (粉麵類)":
       category.chowMeinFun();
       break;
     case "Fried Rice":

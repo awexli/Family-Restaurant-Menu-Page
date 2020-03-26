@@ -5,6 +5,9 @@ $break-table: 768px;
 $break-desk: 1024px;
 $break-larger: 1400px;
 
+$default-red: #a02c2e;
+$default-gold: #cc9900;
+
 @mixin respond-to($media) {
   @if $media == smaller {
     @media only screen and (min-width: $break-smaller) {
@@ -56,7 +59,7 @@ body {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  background-image: url(./img/ricepaper2.png);
+  background: url(./img/ricepaper2.png);
   background-repeat: repeat;
   font: bold;
 }
@@ -66,11 +69,15 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 .nav-bar {
-  padding: 1em;
-  color: rgb(233, 230, 227);
-  background-color: #9c854d;
+  margin: 1em 0 0 0;
   .nav-content {
-    font-size: 18px;
+    text-align: center;
+    img {
+      width: 290px;
+      @include respond-to(table) {
+        width: auto;
+      }
+    }
   }
 }
 .main {
@@ -79,39 +86,62 @@ body {
   flex-direction: column;
   padding: 1em;
   .options {
-    /* background-color: crimson; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    @include respond-to(table) {
+      table {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 4em;
+      }
+    }
   }
 }
 table {
   tr {
-    font-size: x-large;
-    text-align: center;
+    :hover {
+      background-color: transparent;
+      border: $default-red solid 1px;
+      color: $default-red;
+    }
   }
 }
 .footer {
-  color: rgb(233, 230, 227);
-  background-color: #9c854d;
+  background-color: $default-red;
+  color: whitesmoke;
   padding: 1em;
   .info {
     display: grid;
-    grid-gap: 1em;
-    @include respond-to(desk) {
+    grid-gap: 0.5em;
+    @include respond-to(table) {
       display: flex;
       justify-content: space-evenly;
+      text-align: center;
     }
   }
-  .social {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 1em;
+  a {
+    color: whitesmoke;
+  }
+}
+.btn {
+  width: 100%;
+  font-size: 18px;
+  color: black;
+  margin: 0.5em 0;
+  border: black solid 1px;
+  @include respond-to(desk) {
+    font-size: 25px;
+    font-weight: bolder;
+  }
+  @media only screen and (min-height: 1366px) {
+    font-size: 25px;
   }
 }
 .modal-content {
-  background-image: url(./img/ricepaper2.png);
+  background: url(./img/ricepaper2.png);
   background-repeat: repeat;
   @include respond-to(table) {
     width: 650px;
@@ -133,7 +163,7 @@ table {
 
     .cat-table {
       td {
-        border: rgb(211, 178, 124) solid 1px;
+        border: $default-gold solid 1px;
         padding: 1em 0.2em;
         @include respond-to(table) {
           padding: 1em;
@@ -149,8 +179,14 @@ table {
         width: 100%;
       }
       :hover {
-        background-color: rgb(211, 178, 124);
+        background-color: $default-red;
+        color: whitesmoke;
       }
     }
+  }
+  [data-dismiss] {
+    background-color: $default-red;
+    color: whitesmoke;
+    border: none;
   }
 }
