@@ -5,6 +5,7 @@ import category from './category'
 
 const overlay = document.getElementById("overlay-nav");
 const menuImg = document.querySelector(".menu");
+const wrapper = document.querySelector(".wrapper");
 const fragment = new DocumentFragment();
 const contents = [navbar(), main.mainFragment(), footer.footerFragment()];
 
@@ -13,7 +14,7 @@ for (let item of contents) {
 }
 
 document.querySelector(".wrapper").appendChild(fragment);
-
+let tempWrapper = wrapper;
 document.addEventListener("click", e => {
     let className = e.target.className;
     console.log(e.target)
@@ -21,9 +22,10 @@ document.addEventListener("click", e => {
         case "House Special":
             overlay.style.height = "100%"; // change this to when click on cell
             category.houseSpecial();
-            footer.footerTag().style = "visibility: hidden";
-            main.mainTag().style = "visibility: hidden";
-            document.body.style.position = "fixed";
+            //footer.footerTag().style = "visibility: hidden";
+            //main.mainTag().style = "visibility: hidden";
+            //document.body.style.position = "fixed";
+            wrapper.remove();
             // move to top of overlay page
             break;
         case  "Soup":
@@ -65,9 +67,11 @@ document.addEventListener("click", e => {
         case  "Chow Mein & Fun":
             overlay.style.height = "100%";
             category.chowMeinFun();
-            footer.footerTag().style = "visibility: hidden";
-            main.mainTag().style = "visibility: hidden";
-            document.body.style.position = "fixed";
+            //footer.footerTag().style = "visibility: hidden";
+            //main.mainTag().style = "visibility: hidden";
+            //document.body.style.position = "fixed";
+            wrapper.remove();
+            wrapper.style.height = "0%"
             break;
         case  "Fried Rice":
             menuImg.src = "./img/fried_rice.png"
@@ -85,9 +89,10 @@ document.addEventListener("click", e => {
         className == "overlay-content" ||
         className == "back") {
         overlay.style.height = "0%"
-        footer.footerTag().style = "visibility: visible";
-        main.mainTag().style = "visibility: visible";
-        document.body.style.position = "";
-        document.body.style.top = "";
+        //footer.footerTag().style = "visibility: visible";
+        //main.mainTag().style = "visibility: visible";
+        //document.body.style.position = "";
+        //document.body.style.top = "";
+        document.body.appendChild(tempWrapper);
     }
 })
