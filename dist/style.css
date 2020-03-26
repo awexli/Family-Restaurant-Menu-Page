@@ -87,7 +87,6 @@ table tr {
   text-align: center;
   background-color: #d3b27c;
   height: 100%;
-  padding-top: 1em;
   border: solid red 1px;
 }
 .overlay .close-menu {
@@ -114,7 +113,7 @@ table tr {
 }
 .overlay .overlay-content {
   position: relative;
-  height: 90%;
+  height: 92%;
   text-align: center;
   overflow: scroll;
   padding-top: 1em;

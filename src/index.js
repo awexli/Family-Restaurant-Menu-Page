@@ -23,6 +23,8 @@ document.addEventListener("click", e => {
             category.houseSpecial();
             footer.footerTag().style = "visibility: hidden";
             main.mainTag().style = "visibility: hidden";
+            document.body.style.position = "fixed";
+            // move to top of overlay page
             break;
         case  "Soup":
             menuImg.src = "./img/soup.png"
@@ -65,6 +67,7 @@ document.addEventListener("click", e => {
             category.chowMeinFun();
             footer.footerTag().style = "visibility: hidden";
             main.mainTag().style = "visibility: hidden";
+            document.body.style.position = "fixed";
             break;
         case  "Fried Rice":
             menuImg.src = "./img/fried_rice.png"
@@ -84,5 +87,7 @@ document.addEventListener("click", e => {
         overlay.style.height = "0%"
         footer.footerTag().style = "visibility: visible";
         main.mainTag().style = "visibility: visible";
+        document.body.style.position = "";
+        document.body.style.top = "";
     }
 })
