@@ -41,17 +41,18 @@ $break-larger: 1400px;
       @content;
     }
   }
-
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
   padding: 0;
   margin: 0;
 }
-
-html, body {
-  font-family: 'Noto Sans TC', sans-serif;
+html,
+body {
+  font-family: "Noto Sans TC", sans-serif;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -59,7 +60,6 @@ html, body {
   background-repeat: repeat;
   font: bold;
 }
-
 .wrapper {
   min-height: 100%;
   display: grid;
@@ -68,19 +68,16 @@ html, body {
 .nav-bar {
   padding: 1em;
   color: rgb(233, 230, 227);
-  background-color: #9C854D;
-
+  background-color: #9c854d;
   .nav-content {
     font-size: 18px;
   }
 }
-
 .main {
   height: auto;
   display: flex;
   flex-direction: column;
   padding: 1em;
-
   .options {
     /* background-color: crimson; */
     display: flex;
@@ -89,127 +86,71 @@ html, body {
     align-items: center;
   }
 }
-
 table {
   tr {
     font-size: x-large;
     text-align: center;
   }
 }
-
 .footer {
   color: rgb(233, 230, 227);
-  background-color: #9C854D;
+  background-color: #9c854d;
   padding: 1em;
-
   .info {
     display: grid;
     grid-gap: 1em;
-    
     @include respond-to(desk) {
       display: flex;
       justify-content: space-evenly;
     }
   }
-
   .social {
     display: flex;
     justify-content: space-evenly;
     margin-top: 1em;
   }
 }
-
-.overlay {
-  height: 0%;
-  width: 100%;
+.modal-content {
   background-image: url(./img/ricepaper2.png);
   background-repeat: repeat;
-  overflow-y: hidden;
-  color: black;
-  transition: 0.2s;
-
-  .back {
-    text-align: center; 
-    background-color: rgb(211,178,124);
-    height: 100%;
-    border: solid red 1px;
+  @include respond-to(table) {
+    width: 650px;
+    right: 75px;
   }
-
-  .close-menu {
-    position: absolute;
-    right: 0;
-    font-size: 60px;
-    padding: 8px;
-    text-decoration: none;
-    color: whitesmoke;
-    display: block;
-    transition: 0.3s;
-
-    @include respond-to(table) {
-      right: 50px;
-      font-size: 60px;
-      padding: 1px;
-    }
-    @include respond-to(larger) {
-      right: 100px;
-    }
+  @include respond-to(desk) {
+    width: 906px;
+    right: 205px;
   }
+  @include respond-to(larger) {
+    width: 1200px;
+    right: 355px;
+  }
+  .modal-title {
+    font-size: 30px;
+  }
+  .modal-body {
+    padding: 0;
 
-  .overlay-content {
-    position: relative;
-    height: 92%;
-    text-align: center;
-    overflow: scroll;
-    padding-top: 1em;
-    overflow-x: hidden;
-
-    table {
-      border-collapse: collapse;
-      margin: 0 auto;
-
-      tr:hover {
-        background-color: rgb(211,178,124);
-      }
-
+    .cat-table {
       td {
-        font-size: small;
-        border: rgb(211,178,124) solid 1px;
-        padding: 0.3em 0.3em;
-
+        border: rgb(211, 178, 124) solid 1px;
+        padding: 1em 0.2em;
         @include respond-to(table) {
-          font-size: 26px;
+          padding: 1em;
         }
-
-        @include respond-to(desk) {
-          font-size: 24px;
-        }
-
-        @include respond-to(larger) {
-          font-size: 28px;
-        }
-
       }
-      .chinese {
-        width: 8em;
-        font-size: 18px;
-
+      tr {
+        font-size: 20px;
         @include respond-to(table) {
-          width: 10em;
           font-size: 30px;
         }
-
-        @include respond-to(desk) {
-          font-size: 30px;
-        }
-
-        @include respond-to(larger) {
-          font-size: 36px;
-        }
+      }
+      .description {
+        width: 100%;
+      }
+      :hover {
+        background-color: rgb(211, 178, 124);
       }
     }
   }
-}
-
-.open-menu {
-  cursor: pointer;
 }

@@ -1,212 +1,120 @@
 const categories = (() => {
-    const overlayContent = document.querySelector(".overlay-content");
-    const overlayTable = document.createElement("table");
-    overlayTable.className = "cat-table";
+  const overlayContent = document.querySelector(".modal-body");
+  const modalTitle = document.querySelector(".modal-title");
+  const overlayTable = document.createElement("table");
+  overlayTable.className = "cat-table";
 
-    const rowFragment = new DocumentFragment();
-    const cellFragment = new DocumentFragment();
+  const rowFragment = new DocumentFragment();
+  const cellFragment = new DocumentFragment();
 
-    const houseSpecial = () => {
-        const special = {
-            r1: {
-                num: "S1",
-                chin: "客家鹽焗雞",
-                eng: "Salt & Baked Chicken",
-                price: "(半 Half) 14.95 (Whole) 28.00"
-            },
-            r2: {
-                num: "S2",
-                chin: "招牌華香雞（半）",
-                eng: "House Special Steamed Chicken (Half)",
-                price: "13.95"
-            },
-            r3: {
-                num: "S3",
-                chin: "豬肚撈雞（半）",
-                eng: "Pork Belly with Chicken (Half)",
-                price: "17.95"
-            },
-            r4: {
-                num: "S4",
-                chin: "惠州梅菜扣肉",
-                eng: "Chinese Bacon w/ Presevered Green",
-                price: "14.95"
-            },
-            r5: {
-                num: "S5",
-                chin: "客家煎釀滑豆腐",
-                eng: "House Special Pan Fried Stuffed Tofu",
-                price: "11.95"
-            },
-            r6: {
-                num: "S6",
-                chin: "客家煎釀三寶",
-                eng: "Pan Fried Three Stuffed Treasures",
-                price: "13.95"
-            },
-            r7: {
-                num: "S7",
-                chin: "客家黃酒薑炒雞",
-                eng: "Stir Fry Chicken in Wine Sauce",
-                price: "16.95"
-            },
-            r8: {
-                num: "S8",
-                chin: "胡椒支竹豬肚雞煲",
-                eng: "Chicken, Pork Belly & Bean Curd with Pepper in Pot",
-                price: "15.95"
-            },
-            r9: {
-                num: "S9",
-                chin: "客家炒大腸",
-                eng: "Hakka Style Stir Fry Intestine",
-                price: "12.95"
-            },
-            r10: {
-                num: "S10",
-                chin: "燒汁雜菌炒肥牛",
-                eng: "Beef & Mixed Mushroom in Teriyaki Sauce",
-                price: "13.95"
-            },
-            r11: {
-                num: "S11",
-                chin: "美極磨菇牛柳粒",
-                eng: "Steak Cube & Mushroom in Maggie Sauce",
-                price: "15.95"
-            },
-            r12: {
-                num: "S12",
-                chin: "家鄉小炒皇",
-                eng: "House Special Stir Fry Mixed",
-                price: "13.95"
-            },
-            r13: {
-                num: "S13",
-                chin: "椒鹽豬爽肉",
-                eng: "Salt & Pepper Pork Neck",
-                price: "11.95"
-            },
-            r14: {
-                num: "S14",
-                chin: "金沙鹹蛋黃炒蟹",
-                eng: "Stir Fry Crab with Salted Egg",
-                price: "Seasonal"
-            },
-            r15: {
-                num: "S15",
-                chin: "九層塔炒蜆",
-                eng: "House Special Basil Clams",
-                price: "15.95"
-            },
-            r16: {
-                num: "S16",
-                chin: "避風塘炒蜆",
-                eng: "Hong Kong Style Spicy Clams",
-                price: "15.95"
-            },
-            r17: {
-                num: "S17",
-                chin: "豉油皇老虎大蝦",
-                eng: "Tiger Prawns with Soy Sauce (8)",
-                price: "19.95"
-            },
-            r18: {
-                num: "S18",
-                chin: "西汁煎老虎大蝦",
-                eng: "Tiger Prawns in Teriyaki Sauce (8)",
-                price: "19.95"
-            },
-            r19: {
-                num: "S19",
-                chin: "家鄉雙味蒸塘虱",
-                eng: "Cat Fish in Two Kind of Sauce (Whole)",
-                price: "27.95"
-            },
-            r20: {
-                num: "S20",
-                chin: "川味朵椒蒸魚頭腩",
-                eng: "Steamed Fish Head with Spicy Pepper",
-                price: "13.95"
-            },
-            r21: {
-                num: "S21",
-                chin: "豉椒炒雙魷魚",
-                eng: "Spicy Squid with Black Pepper Sauce",
-                price: "(Half) 14.95 (Whole) 28.00"
-            },
-            r22: {
-                num: "S22",
-                chin: "薑蔥砂鍋魚頭",
-                eng: "Fish Head with Ginger and Scallion in Pot",
-                price: "13.95"
-            },
-            r23: {
-                num: "S23",
-                chin: "家鄉菜脯粒煎蠔餅",
-                eng: "Pan Friend Oyster with Preserved Green",
-                price: "13.95"
-            },
-            r24: {
-                num: "S24",
-                chin: "黑松露海鮮玉子豆腐",
-                eng: "Black Truffle Seafood & Japanese Tofu",
-                price: "13.95"
-            },
-            r25: {
-                num: "S25",
-                chin: "豉汁蒜子爆虎皮尖椒",
-                eng: "Pan Seared Green Chilli Pepper in Black Pepper Sauce",
-                price: "11.95"
-            },
-            r26: {
-                num: "S26",
-                chin: "豉汁涼瓜雞球",
-                eng: "Chicken & Bitter Melon in Black Pepper Sauce",
-                price: "11.95"
-            },
-            r27: {
-                num: "S27",
-                chin: "玉子豆腐拌金玉菇",
-                eng: "Japanese Tofu with Baby Mushroom",
-                price: "12.95"
-            },
-            r28: {
-                num: "S28",
-                chin: "椒鹽田雞鹹魚粒",
-                eng: "Salt & Pepper Frog with Diced Salted Fish",
-                price: "16.95"
-            },
-            r29: {
-                num: "S29",
-                chin: "紅燒乳鴿",
-                eng: "Roasted Squab",
-                price: "12.95"
-            },
-            r30: {
-                num: "S30",
-                chin: "客家特色（炆）綠鴨",
-                eng: "Hakka Style Braised Duck (半 Half)",
-                price: "16.95"
-            },
-            r31: {
-                num: "S31",
-                chin: "荷葉糯米鴨",
-                eng: "Stuffed Duck in Lotus Leaf (Order in Advance)",
-                price: "45.00"
-            },
-            r32: {
-                num: "S32",
-                chin: "脆皮糯米雞",
-                eng: "Stuffed Chicken with Sticky Rice (Order in Advance)",
-                price: "39.00"
-            }
-        }
-        createTable(special)
-    }
+  const houseSpecial = () => {
+    const houseChinese = `客家鹽焗雞
+        招牌華香雞（半）
+        豬肚撈雞（半）
+        惠州梅菜扣肉
+        客家煎釀滑豆腐
+        客家黃酒薑炒雞
+        胡椒支竹豬肚雞煲
+        客家炒大腸
+        燒汁雜菌炒肥牛
+        美極磨菇牛柳粒
+        家鄉小炒皇
+        椒鹽豬爽肉
+        金沙鹹蛋黃炒蟹
+        九層塔炒蜆
+        避風塘炒蜆
+        豉油皇老虎大蝦
+        西汁煎老虎大蝦
+        家鄉雙味蒸塘虱
+        川味朵椒蒸魚頭腩
+        豉椒炒雙魷魚
+        薑蔥砂鍋魚頭
+        家鄉菜脯粒煎蠔餅
+        黑松露海鮮玉子豆腐
+        豉汁涼瓜雞球
+        玉子豆腐拌金玉菇
+        椒鹽田雞鹹魚粒
+        紅燒乳鴿
+        客家特色（炆）綠鴨
+        荷葉糯米鴨
+        脆皮糯米雞`;
+    const houseEnglish = `Salt & Baked Chicken
+        House Special Steamed Chicken (Half)
+        Pork Stomach with Chicken (Half)
+        Chinese Bacon w/ Presevered Green
+        House Special Pan Fried Stuffed Tofu
+        Stir Fry Chicken w/ Ginger in Wine Sauce
+        Chicken, Pork Stomach & Bean Curd w/ Pepper in Pot
+        Hakka Style Stir Fry Intestine
+        Beef & Mixed Mushroom in Teriyaki Sauce
+        Steak Cube & Mushroom in Maggie Sauce
+        House Special Stir Fry Mixed
+        Salt & Pepper Pork Neck
+        Stir Fry Crab with Salted Egg
+        House Special Basil Clams
+        Hong Kong Style Spicy Clams
+        Tiger Prawns with Soy Sauce (8)
+        Tiger Prawns in Teriyaki Sauce (8)
+        Cat Fish in Two Kind of Sauce (Whole)
+        Steamed Fish Head with Spicy Pepper
+        Spicy Squid with Black Pepper Sauce
+        Fish Head with Ginger and Scallion in Pot
+        Pan Friend Oyster with Preserved Green
+        Black Truffle Seafood & Japanese Tofu
+        Chicken & Bitter Melon in Black Pepper Sauce
+        Japanese Tofu with Baby Mushroom
+        Salt & Pepper Frog with Diced Salted Fish
+        Roasted Squab
+        Hakka Style Braised Duck (半 Half)
+        Stuffed Duck in Lotus Leaf (Order in Advance)
+        Stuffed Chicken with Sticky Rice (Order in Advance)`;
+    const housePrice = `(半 Half) 14.95 (Whole) 28.00
+        13.95
+        17.95
+        14.95
+        12.95
+        16.95
+        15.95
+        12.95
+        13.95
+        15.95
+        13.95
+        11.95
+        Seasonal
+        16.95
+        16.95
+        20.95
+        20.95
+        28.95
+        13.95
+        12.95
+        13.95
+        13.95
+        13.95
+        11.95
+        12.95
+        16.95
+        12.95
+        16.95
+        48.00
+        39.00`;
 
-    const chowMeinFun = () => {
-        let chinese =
-        `家鄉炒米
+    const houseChineseDishes = cleanTemplateLiteral(houseChinese);
+    const houseEnglishDishes = cleanTemplateLiteral(houseEnglish);
+    const housePrices = cleanTemplateLiteral(housePrice);
+    const houseObject = populateObject(
+      houseChineseDishes.length,
+      houseChineseDishes,
+      houseEnglishDishes,
+      housePrices,
+      "S"
+    );
+    //console.table(houseObject)
+    createTable(houseObject, "House Special");
+  };
+
+  const chowMeinFun = () => {
+    const chinese = `家鄉炒米
         星州炒米
         泰式炒米
         韭皇干炒牛/雞河
@@ -224,161 +132,117 @@ const categories = (() => {
         瑤柱金玉菇炆伊麵
         豉油皇炒細麵`;
 
-        const chinDishes = cleanTemplateLiteral(chinese);
-        
-        const chow = {
-            r1: {
-                num: "K1",
-                chin: "客家鹽焗雞",
-                eng: "Salt & Baked Chicken",
-                price: "(半 Half) 14.95 (Whole) 28.00"
-            },
-            r2: {
-                num: "K2",
-                chin: "招牌華香雞（半）",
-                eng: "House Special Steamed Chicken (Half)",
-                price: "13.95"
-            },
-            r3: {
-                num: "K3",
-                chin: "豬肚撈雞（半）",
-                eng: "Pork Belly with Chicken (Half)",
-                price: "17.95"
-            },
-            r4: {
-                num: "K4",
-                chin: "惠州梅菜扣肉",
-                eng: "Chinese Bacon w/ Presevered Green",
-                price: "14.95"
-            },
-            r5: {
-                num: "K5",
-                chin: "客家煎釀滑豆腐",
-                eng: "House Special Pan Fried Stuffed Tofu",
-                price: "11.95"
-            },
-            r6: {
-                num: "K6",
-                chin: "客家煎釀三寶",
-                eng: "Pan Fried Three Stuffed Treasures",
-                price: "13.95"
-            },
-            r7: {
-                num: "K7",
-                chin: "客家黃酒薑炒雞",
-                eng: "Stir Fry Chicken in Wine Sauce",
-                price: "16.95"
-            },
-            r8: {
-                num: "K8",
-                chin: "胡椒支竹豬肚雞煲",
-                eng: "Chicken, Pork Belly & Bean Curd with Pepper in Pot",
-                price: "15.95"
-            },
-            r9: {
-                num: "K9",
-                chin: "客家炒大腸",
-                eng: "Hakka Style Stir Fry Intestine",
-                price: "12.95"
-            },
-            r10: {
-                num: "K10",
-                chin: "燒汁雜菌炒肥牛",
-                eng: "Beef & Mixed Mushroom in Teriyaki Sauce",
-                price: "13.95"
-            },
-            r11: {
-                num: "K11",
-                chin: "美極磨菇牛柳粒",
-                eng: "Steak Cube & Mushroom in Maggie Sauce",
-                price: "15.95"
-            },
-            r12: {
-                num: "K12",
-                chin: "家鄉小炒皇",
-                eng: "House Special Stir Fry Mixed",
-                price: "13.95"
-            },
-            r13: {
-                num: "K13",
-                chin: "椒鹽豬爽肉",
-                eng: "Salt & Pepper Pork Neck",
-                price: "11.95"
-            },
-            r14: {
-                num: "K14",
-                chin: "金沙鹹蛋黃炒蟹",
-                eng: "Stir Fry Crab with Salted Egg",
-                price: "Seasonal"
-            },
-            r15: {
-                num: "K15",
-                chin: "九層塔炒蜆",
-                eng: "House Special Basil Clams",
-                price: "15.95"
-            },
-            r16: {
-                num: "K16",
-                chin: "避風塘炒蜆",
-                eng: "Hong Kong Style Spicy Clams",
-                price: "15.95"
-            },
-            r17: {
-                num: "K17",
-                chin: "豉油皇老虎大蝦",
-                eng: "Tiger Prawns with Soy Sauce (8)",
-                price: "19.95"
-            }
-        }
-        const chowmein = []
-        for (let i = 0; i < chinDishes.length; i++) {
-            chow[`r${i+1}`].chin = chinDishes[i];
-        }
-        createTable(chow);
+    const english = `House Special Fried Rice Noodle
+        Singapore Style Fried Rice Noodle
+        Thai Style Fried Rice Noodle
+        Beef/Chicken Dry Chow Fun with Yellow Chive
+        Chicken & Bitter Melon Dry Chow Fun
+        Malaysia Style Curry Chow Fun
+        Beef or Chicken Chow Fun in Black Bean Sauce
+        Seafood Chow Fun in X.O. Sauce
+        Garlic & Butter Shrimp Chow Mein
+        Beef Cube Chow Fun with Satay Sauce
+        Chicken/Beef/BBQ Pork Chow Mein
+        House Special Seafood Chow Mein
+        House Special Basil Seafood E-Fu Noodle
+        Curry Beef Cube E-Fu Noodle
+        Yellow Chive E-Fu Noodle
+        Dried Scallop & Mushroom E-Fu Noodle
+        Soy Sauce Fried Thin Chow Mein`;
+
+    const price = `11.95
+        11.95
+        11.95
+        11.95
+        11.95
+        11.95
+        12.95
+        13.95
+        12.95
+        12.95
+        10.95
+        12.95
+        11.95
+        11.95
+        10.95
+        12.95
+        10.95`;
+
+    const chinDishes = cleanTemplateLiteral(chinese);
+    const englishDishes = cleanTemplateLiteral(english);
+    const chowMeinFunPrices = cleanTemplateLiteral(price);
+    const chowMeinFunObject = populateObject(
+      chinDishes.length,
+      chinDishes,
+      englishDishes,
+      chowMeinFunPrices,
+      "K"
+    );
+    //console.table(chowMeinFunObject)
+    createTable(chowMeinFunObject, "Chow Mein & Mu Shu");
+  };
+
+  const populateObject = (n, chinese, english, prices, letter) => {
+    const newObject = {};
+    for (let i = 0; i < n; i++) {
+      newObject[`r${i + 1}`] = {
+        num: `${letter}${i + 1}`,
+        chin: chinese[i],
+        eng: english[i],
+        price: prices[i],
+      };
     }
 
-    const createTable = (category) => {
+    return newObject;
+  };
 
-        if (overlayTable.hasChildNodes) {
-            while (overlayTable.firstChild) {
-                overlayTable.removeChild(overlayTable.lastChild)
-            }
+  const createTable = (category, title) => {
+    if (overlayTable.hasChildNodes) {
+      while (overlayTable.firstChild) {
+        overlayTable.removeChild(overlayTable.lastChild);
+      }
+    }
+    let chineseInnerText = "";
+    for (let row in category) {
+      const rowData = category[row];
+      for (let cell in rowData) {
+        const cells = document.createElement("td");
+        cells.innerText = rowData[cell];
+        if (cell == "chin") {
+          chineseInnerText = cells.innerText;
+        } else if (cell == "eng") {
+          cells.className = "description";
+          cells.innerText = `${chineseInnerText} \n\n ${cells.innerText}`;
+          cellFragment.appendChild(cells);
+        } else {
+          cellFragment.appendChild(cells);
         }
+      }
+      const tableRow = document.createElement("tr");
+      tableRow.appendChild(cellFragment);
+      rowFragment.appendChild(tableRow);
+    }
+    overlayTable.appendChild(rowFragment);
+    overlayContent.appendChild(overlayTable);
+    modalTitle.innerText = title;
+  };
 
-        for (let row in category) {
-            const rowData = category[row];
-            for (let cell in rowData) {
-                const cells = document.createElement("td");
-                cells.innerText = rowData[cell];
-                if (cell == "chin") {
-                    cells.className = "chinese";
-                }
-                cellFragment.appendChild(cells);
-            }
-            const tableRow = document.createElement("tr");
-            tableRow.appendChild(cellFragment);
-            rowFragment.appendChild(tableRow);
-        }
-        overlayTable.appendChild(rowFragment);
-        overlayContent.appendChild(overlayTable);
+  const cleanTemplateLiteral = (literal) => {
+    const arr = [];
+
+    literal = literal.split("\n");
+
+    for (let elem of literal) {
+      arr.push(elem.trim());
     }
 
-    const cleanTemplateLiteral = (literal) => {
-        const arr = [];
+    return arr;
+  };
 
-        literal = literal.split("\n");
-
-        for (let elem of literal) {
-            arr.push(elem.trim())
-        }
-
-        return arr;
-    }
-
-    return { 
-        houseSpecial, 
-        chowMeinFun
-    }
+  return {
+    houseSpecial,
+    chowMeinFun,
+  };
 })();
 
 export default categories;

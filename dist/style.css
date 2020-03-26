@@ -1,10 +1,13 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
   padding: 0;
   margin: 0;
 }
 
-html, body {
+html,
+body {
   font-family: "Noto Sans TC", sans-serif;
   box-sizing: border-box;
   width: 100%;
@@ -23,7 +26,7 @@ html, body {
 .nav-bar {
   padding: 1em;
   color: #e9e6e3;
-  background-color: #9C854D;
+  background-color: #9c854d;
 }
 .nav-bar .nav-content {
   font-size: 18px;
@@ -50,7 +53,7 @@ table tr {
 
 .footer {
   color: #e9e6e3;
-  background-color: #9C854D;
+  background-color: #9c854d;
   padding: 1em;
 }
 .footer .info {
@@ -69,101 +72,56 @@ table tr {
   margin-top: 1em;
 }
 
-.overlay {
-  height: 0%;
-  width: 100%;
+.modal-content {
   background-image: url(./img/ricepaper2.png);
   background-repeat: repeat;
-  overflow-y: hidden;
-  color: black;
-  transition: 0.2s;
-}
-.overlay .back {
-  text-align: center;
-  background-color: #d3b27c;
-  height: 100%;
-  border: solid red 1px;
-}
-.overlay .close-menu {
-  position: absolute;
-  right: 0;
-  font-size: 60px;
-  padding: 8px;
-  text-decoration: none;
-  color: whitesmoke;
-  display: block;
-  transition: 0.3s;
 }
 @media only screen and (min-width: 768px) {
-  .overlay .close-menu {
-    right: 50px;
-    font-size: 60px;
-    padding: 1px;
+  .modal-content {
+    width: 650px;
+    right: 75px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .modal-content {
+    width: 906px;
+    right: 205px;
   }
 }
 @media only screen and (min-width: 1400px) {
-  .overlay .close-menu {
-    right: 100px;
+  .modal-content {
+    width: 1200px;
+    right: 355px;
   }
 }
-.overlay .overlay-content {
-  position: relative;
-  height: 92%;
-  text-align: center;
-  overflow: scroll;
-  padding-top: 1em;
-  overflow-x: hidden;
+.modal-content .modal-title {
+  font-size: 30px;
 }
-.overlay .overlay-content table {
-  border-collapse: collapse;
-  margin: 0 auto;
+.modal-content .modal-body {
+  padding: 0;
 }
-.overlay .overlay-content table tr:hover {
-  background-color: #d3b27c;
-}
-.overlay .overlay-content table td {
-  font-size: small;
+.modal-content .modal-body .cat-table td {
   border: #d3b27c solid 1px;
-  padding: 0.3em 0.3em;
+  padding: 1em 0.2em;
 }
 @media only screen and (min-width: 768px) {
-  .overlay .overlay-content table td {
-    font-size: 26px;
+  .modal-content .modal-body .cat-table td {
+    padding: 1em;
   }
 }
-@media only screen and (min-width: 1024px) {
-  .overlay .overlay-content table td {
-    font-size: 24px;
-  }
-}
-@media only screen and (min-width: 1400px) {
-  .overlay .overlay-content table td {
-    font-size: 28px;
-  }
-}
-.overlay .overlay-content table .chinese {
-  width: 8em;
-  font-size: 18px;
+.modal-content .modal-body .cat-table tr {
+  font-size: 20px;
 }
 @media only screen and (min-width: 768px) {
-  .overlay .overlay-content table .chinese {
-    width: 10em;
+  .modal-content .modal-body .cat-table tr {
     font-size: 30px;
   }
 }
-@media only screen and (min-width: 1024px) {
-  .overlay .overlay-content table .chinese {
-    font-size: 30px;
-  }
+.modal-content .modal-body .cat-table .description {
+  width: 100%;
 }
-@media only screen and (min-width: 1400px) {
-  .overlay .overlay-content table .chinese {
-    font-size: 36px;
-  }
-}
-
-.open-menu {
-  cursor: pointer;
+.modal-content .modal-body .cat-table :hover {
+  background-color: #d3b27c;
 }
 
 /*# sourceMappingURL=style.css.map */
