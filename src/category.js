@@ -1,12 +1,6 @@
+import util from "./category-utility";
+
 const categories = (() => {
-  const overlayContent = document.querySelector(".modal-body");
-  const modalTitle = document.querySelector(".modal-title");
-  const overlayTable = document.createElement("table");
-  overlayTable.className = "cat-table";
-
-  const rowFragment = new DocumentFragment();
-  const cellFragment = new DocumentFragment();
-
   const houseSpecial = () => {
     const houseChinese = `客家鹽焗雞
         招牌華香雞（半）
@@ -99,10 +93,10 @@ const categories = (() => {
         48.00
         39.00`;
 
-    const houseChineseDishes = cleanTemplateLiteral(houseChinese);
-    const houseEnglishDishes = cleanTemplateLiteral(houseEnglish);
-    const housePrices = cleanTemplateLiteral(housePrice);
-    const houseObject = populateObject(
+    const houseChineseDishes = util.cleanLiteral(houseChinese);
+    const houseEnglishDishes = util.cleanLiteral(houseEnglish);
+    const housePrices = util.cleanLiteral(housePrice);
+    const houseObject = util.populateObject(
       houseChineseDishes.length,
       houseChineseDishes,
       houseEnglishDishes,
@@ -110,7 +104,7 @@ const categories = (() => {
       "S"
     );
     //console.table(houseObject)
-    createTable(houseObject, "House Special (特色菜)");
+    util.populateTable(houseObject, "House Special (特色菜)");
   };
 
   const chowMeinFun = () => {
@@ -168,10 +162,10 @@ const categories = (() => {
         12.95
         10.95`;
 
-    const chinDishes = cleanTemplateLiteral(chinese);
-    const englishDishes = cleanTemplateLiteral(english);
-    const chowMeinFunPrices = cleanTemplateLiteral(price);
-    const chowMeinFunObject = populateObject(
+    const chinDishes = util.cleanLiteral(chinese);
+    const englishDishes = util.cleanLiteral(english);
+    const chowMeinFunPrices = util.cleanLiteral(price);
+    const chowMeinFunObject = util.populateObject(
       chinDishes.length,
       chinDishes,
       englishDishes,
@@ -179,64 +173,7 @@ const categories = (() => {
       "K"
     );
     //console.table(chowMeinFunObject)
-    createTable(chowMeinFunObject, "Chow Mein & Fun (粉麵類)");
-  };
-
-  const populateObject = (n, chinese, english, prices, letter) => {
-    const newObject = {};
-    for (let i = 0; i < n; i++) {
-      newObject[`r${i + 1}`] = {
-        num: `${letter}${i + 1}`,
-        chin: chinese[i],
-        eng: english[i],
-        price: prices[i],
-      };
-    }
-
-    return newObject;
-  };
-
-  const createTable = (category, title) => {
-    if (overlayTable.hasChildNodes) {
-      while (overlayTable.firstChild) {
-        overlayTable.removeChild(overlayTable.lastChild);
-      }
-    }
-    let chineseInnerText = "";
-    for (let row in category) {
-      const rowData = category[row];
-      for (let cell in rowData) {
-        const cells = document.createElement("td");
-        cells.innerText = rowData[cell];
-        if (cell == "chin") {
-          chineseInnerText = cells.innerText;
-        } else if (cell == "eng") {
-          cells.className = "description";
-          cells.innerText = `${chineseInnerText} \n\n ${cells.innerText}`;
-          cellFragment.appendChild(cells);
-        } else {
-          cellFragment.appendChild(cells);
-        }
-      }
-      const tableRow = document.createElement("tr");
-      tableRow.appendChild(cellFragment);
-      rowFragment.appendChild(tableRow);
-    }
-    overlayTable.appendChild(rowFragment);
-    overlayContent.appendChild(overlayTable);
-    modalTitle.innerText = title;
-  };
-
-  const cleanTemplateLiteral = (literal) => {
-    const arr = [];
-
-    literal = literal.split("\n");
-
-    for (let elem of literal) {
-      arr.push(elem.trim());
-    }
-
-    return arr;
+    util.populateTable(chowMeinFunObject, "Chow Mein & Fun (粉麵類)");
   };
 
   return {
