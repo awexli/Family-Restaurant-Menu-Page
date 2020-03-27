@@ -22,19 +22,23 @@ document.addEventListener("click", (e) => {
       break;
     case "Beef & Lamb":
       break;
-    case "Appetizers":
+    case "Appetizers (餐前小食)":
+      category.appetizers();
       break;
     case "Chicken & Duck & Frog":
       break;
-    case "Pork & Mu Shu":
+    case "Mu Shu (木須類)":
+      category.mushu();
       break;
     case "Seafood":
       break;
     case "Crab & Lobster":
       break;
-    case "Hot Pot":
+    case "Clay Pot (煲仔類)":
+      category.clayPot();
       break;
-    case "Lettuce Wraps & Vegetables":
+    case "Lettuce Wraps (生菜包)":
+      category.lettuceWrap();
       break;
     case "Chow Mein & Fun (粉麵類)":
       category.chowMeinFun();
@@ -42,7 +46,8 @@ document.addEventListener("click", (e) => {
     case "Fried Rice (炒飯類)":
       category.friedRice();
       break;
-    case "Congee":
+    case "Congee (粥類)":
+      category.congee();
       break;
     default:
       break;

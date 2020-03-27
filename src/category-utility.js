@@ -12,6 +12,7 @@ const categoryUtilityModule = (() => {
    * @param {String} title
    */
   const populateTable = (category, title) => {
+    // clear previous table
     if (modalTable.hasChildNodes) {
       while (modalTable.firstChild) {
         modalTable.removeChild(modalTable.lastChild);
@@ -23,21 +24,23 @@ const categoryUtilityModule = (() => {
     for (let row in category) {
       const rowData = category[row];
       for (let column in rowData) {
-        const cells = document.createElement("td");
-        cells.innerText = rowData[column];
+        const currentCell = document.createElement("td");
+        currentCell.innerText = rowData[column];
         switch (column) {
           case "chin":
             // store chinese text to be combined into one column
-            chineseInnerText = cells.innerText;
+            chineseInnerText = currentCell.innerText;
             break;
           case "eng":
             // combine chinese and english text into one column
-            cells.innerText = `${chineseInnerText} \n\n ${cells.innerText}`;
-            cells.className = "description";
-            cellFragment.appendChild(cells);
+            const englishInnerText = currentCell.innerText;
+            currentCell.innerText = `${chineseInnerText} \n\n ${englishInnerText}`;
+            currentCell.className = "description";
+            // possibly remove line 40 & 41 to allow fallthrough
+            cellFragment.appendChild(currentCell);
             break;
           default:
-            cellFragment.appendChild(cells);
+            cellFragment.appendChild(currentCell);
             break;
         }
       }
@@ -52,20 +55,20 @@ const categoryUtilityModule = (() => {
 
   /**
    * Returns new object for a category
-   * @param {number} n - length of category
-   * @param {array} chinese - array holding chinese strings
-   * @param {array} english - array holding english strings
-   * @param {array} prices  - array holding price strings
-   * @param {string} letter - letter of category
+   * @param {Number} n - length of category
+   * @param {Array.<String>} data - array holding category information
+   * @param {String} letter - letter of category
    */
-  const populateObject = (n, chinese, english, prices, letter) => {
+  const populateObject = (n, data, letter) => {
     const newObject = {};
+    let currentDish;
     for (let i = 0; i < n; i++) {
+      currentDish = data[i].split(",")
       newObject[`r${i + 1}`] = {
         num: `${letter}${i + 1}`,
-        chin: chinese[i],
-        eng: english[i],
-        price: prices[i],
+        chin: currentDish[0],
+        eng: currentDish[1],
+        price: currentDish[2],
       };
     }
 
@@ -73,13 +76,14 @@ const categoryUtilityModule = (() => {
   };
 
   /**
-   * Returns a new array with no whitespace
+   * Returns a new array of strings with no whitespace
    * @param {string} literal - template literal
    */
   const cleanTemplateLiteral = (literal) => {
     const arr = [];
-    const tempLiteral = literal.split("\n");
-    for (let elem of tempLiteral) {
+    const literalArray = literal.split("\n");
+
+    for (let elem of literalArray) {
       arr.push(elem.trim());
     }
 

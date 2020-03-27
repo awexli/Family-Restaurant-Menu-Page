@@ -122,8 +122,8 @@ table tr :hover {
 }
 @media only screen and (min-width: 1400px) {
   .modal-content {
-    width: 1200px;
-    right: 355px;
+    width: 1000px;
+    right: 265px;
   }
 }
 .modal-content .modal-title {

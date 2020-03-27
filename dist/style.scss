@@ -152,8 +152,8 @@ table {
     right: 205px;
   }
   @include respond-to(larger) {
-    width: 1200px;
-    right: 355px;
+    width: 1000px;
+    right: 265px;
   }
   .modal-title {
     font-size: 30px;

@@ -1,4 +1,5 @@
 const mainFragment = () => {
+  const mainContentFragment = new DocumentFragment();
   const mainDiv = document.createElement("div");
   mainDiv.className = "main";
 
@@ -7,33 +8,31 @@ const mainFragment = () => {
       "House Special (特色菜)",
       "Chow Mein & Fun (粉麵類)",
       "Fried Rice (炒飯類)",
-      "Congee",
-      "Hot Pot",
-      "Lettuce Wraps",
+      "Congee (粥類)",
+      "Clay Pot (煲仔類)",
+      "Lettuce Wraps (生菜包)",
       "Vegetables",
       "Seafood",
       "Crab & Lobster",
       "Chicken & Duck & Frog",
       "Pork",
-      "Mu Shu",
-      "Appetizers",
+      "Mu Shu (木須類)",
+      "Appetizers (餐前小食)",
       "Soup",
       "Beef & Lamb",
-      "Rice Plates & Soup ($9.50)",
+      "Rice Plates & Soup ($9.50)"
     ];
 
+    const optionsDiv = document.createElement("div");
     const table = document.createElement("table");
     const categoryTableRow = document.createElement("tr");
     const categoryTableCell = document.createElement("td");
     const rowFragments = new DocumentFragment();
 
-    categoryTableCell.innerText = categoryArr[0];
-    categoryTableCell.className = "open-menu";
-
-    categoryArr.forEach((cat) => {
+    categoryArr.forEach( categoryName => {
       const rowClone = categoryTableRow.cloneNode(true);
       const cellClone = categoryTableCell.cloneNode(true);
-      cellClone.innerText = cat;
+      cellClone.innerText = categoryName;
       cellClone.className = "btn";
       cellClone.setAttribute("data-toggle", "modal");
       cellClone.setAttribute("data-target", "#modalLong");
@@ -42,28 +41,13 @@ const mainFragment = () => {
     });
 
     table.appendChild(rowFragments);
-
-    const optionsDiv = document.createElement("div");
-    optionsDiv.className = "options";
     optionsDiv.appendChild(table);
+    optionsDiv.className = "options";
 
     return optionsDiv;
   };
 
-  const googleMapDiv = document.createElement("div");
-  googleMapDiv.className = "google-map";
-
-  const googleFrame = document.createElement("iframe");
-  googleFrame.className = "map";
-  googleFrame.src =
-    "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5306.261142299606!2d-122.48895765621603!3d37.7402878074469!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xde21cc529fccf39d!2sZhong%20Shan%20Hakka%20Restaurant!5e0!3m2!1sen!2sus!4v1583040029690!5m2!1sen!2sus";
-
-  googleMapDiv.appendChild(googleFrame);
-
   mainDiv.appendChild(foodCategory());
-  //mainDiv.appendChild(googleMapDiv);
-
-  const mainContentFragment = new DocumentFragment();
   mainContentFragment.appendChild(mainDiv);
 
   return mainContentFragment;
