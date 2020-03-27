@@ -1,10 +1,10 @@
 import navbar from "./header";
-import main from "./main";
+import options from "./options";
 import footer from "./footer";
 import category from "./category";
 
 const fragment = new DocumentFragment();
-const contents = [navbar(), main.mainFragment(), footer.footerFragment()];
+const contents = [navbar(), options.mainFragment(), footer.footerFragment()];
 
 for (let item of contents) {
   fragment.appendChild(item);
@@ -39,7 +39,8 @@ document.addEventListener("click", (e) => {
     case "Chow Mein & Fun (粉麵類)":
       category.chowMeinFun();
       break;
-    case "Fried Rice":
+    case "Fried Rice (炒飯類)":
+      category.friedRice();
       break;
     case "Congee":
       break;

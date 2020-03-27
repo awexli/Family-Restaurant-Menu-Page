@@ -153,13 +153,19 @@ table tr :hover {
   width: 100%;
 }
 .modal-content .modal-body .cat-table :hover {
-  background-color: #a02c2e;
-  color: whitesmoke;
+  color: black;
+}
+@media only screen and (min-width: 768px) {
+  .modal-content .modal-body .cat-table :hover {
+    background-color: #a02c2e;
+    color: whitesmoke;
+  }
 }
 .modal-content [data-dismiss] {
   background-color: #a02c2e;
   color: whitesmoke;
   border: none;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -6,7 +6,7 @@ const mainFragment = () => {
     const categoryArr = [
       "House Special (特色菜)",
       "Chow Mein & Fun (粉麵類)",
-      "Fried Rice",
+      "Fried Rice (炒飯類)",
       "Congee",
       "Hot Pot",
       "Lettuce Wraps",

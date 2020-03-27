@@ -179,8 +179,11 @@ table {
         width: 100%;
       }
       :hover {
-        background-color: $default-red;
-        color: whitesmoke;
+        @include respond-to(table) {
+          background-color: $default-red;
+          color: whitesmoke;
+        }
+        color: black;
       }
     }
   }
@@ -188,5 +191,6 @@ table {
     background-color: $default-red;
     color: whitesmoke;
     border: none;
+    border-radius: 5px;
   }
 }

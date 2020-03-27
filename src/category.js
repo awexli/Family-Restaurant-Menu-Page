@@ -34,7 +34,7 @@ const categories = (() => {
         脆皮糯米雞`;
     const houseEnglish = `Salt & Baked Chicken
         House Special Steamed Chicken (Half)
-        Pork Stomach with Chicken (Half)
+        Pork Stomach w/ Chicken (Half)
         Chinese Bacon w/ Presevered Green
         House Special Pan Fried Stuffed Tofu
         Stir Fry Chicken w/ Ginger in Wine Sauce
@@ -44,24 +44,24 @@ const categories = (() => {
         Steak Cube & Mushroom in Maggie Sauce
         House Special Stir Fry Mixed
         Salt & Pepper Pork Neck
-        Stir Fry Crab with Salted Egg
+        Stir Fry Crab w/ Salted Egg
         House Special Basil Clams
         Hong Kong Style Spicy Clams
-        Tiger Prawns with Soy Sauce (8)
+        Tiger Prawns w/ Soy Sauce (8)
         Tiger Prawns in Teriyaki Sauce (8)
         Cat Fish in Two Kind of Sauce (Whole)
-        Steamed Fish Head with Spicy Pepper
-        Spicy Squid with Black Pepper Sauce
-        Fish Head with Ginger and Scallion in Pot
-        Pan Friend Oyster with Preserved Green
+        Steamed Fish Head w/ Spicy Pepper
+        Spicy Squid w/ Black Pepper Sauce
+        Fish Head w/ Ginger and Scallion in Pot
+        Pan Friend Oyster w/ Preserved Green
         Black Truffle Seafood & Japanese Tofu
         Chicken & Bitter Melon in Black Pepper Sauce
-        Japanese Tofu with Baby Mushroom
-        Salt & Pepper Frog with Diced Salted Fish
+        Japanese Tofu w/ Baby Mushroom
+        Salt & Pepper Frog w/ Diced Salted Fish
         Roasted Squab
         Hakka Style Braised Duck (半 Half)
         Stuffed Duck in Lotus Leaf (Order in Advance)
-        Stuffed Chicken with Sticky Rice (Order in Advance)`;
+        Stuffed Chicken w/ Sticky Rice (Order in Advance)`;
     const housePrice = `(半 Half) 14.95 (Whole) 28.00
         13.95
         17.95
@@ -129,13 +129,13 @@ const categories = (() => {
     const english = `House Special Fried Rice Noodle
         Singapore Style Fried Rice Noodle
         Thai Style Fried Rice Noodle
-        Beef/Chicken Dry Chow Fun with Yellow Chive
+        Beef/Chicken Dry Chow Fun w/ Yellow Chive
         Chicken & Bitter Melon Dry Chow Fun
         Malaysia Style Curry Chow Fun
         Beef or Chicken Chow Fun in Black Bean Sauce
         Seafood Chow Fun in X.O. Sauce
         Garlic & Butter Shrimp Chow Mein
-        Beef Cube Chow Fun with Satay Sauce
+        Beef Cube Chow Fun w/ Satay Sauce
         Chicken/Beef/BBQ Pork Chow Mein
         House Special Seafood Chow Mein
         House Special Basil Seafood E-Fu Noodle
@@ -176,9 +176,61 @@ const categories = (() => {
     util.populateTable(chowMeinFunObject, "Chow Mein & Fun (粉麵類)");
   };
 
+  const friedRice = () => {
+    const chinese = `荷葉生炒糯米飯
+    黑松露海鮮粒炒飯
+    X0醬金雙蛋炒飯
+    瑤柱蛋白炒飯炒
+    楊州炒飯
+    雞/牛/又燒炒飯
+    鹹魚雞粒炒飯
+    鹹酸菜雞粒炒飯
+    菠蘿海鮮粒炒飯
+    福建炒飯
+    X0醬牛粒豆豉炒飯`;
+
+    const english = `Sticky Rice in Lotus Leaf
+    Black Truffle Seafood Fried Rice
+    Double Eggs Fried Rice w/ X.O. Sauce
+    Dried Scallop w/ Egg White Fried Rice
+    Yang Chow Fried Rice
+    Chicken/Beef/BBQ Pork Fried Rice
+    Chicken & Salted Fish Fried Rice
+    Preserved Green & Egg Fried Rice
+    Pinapple Shrimp Fried Rice
+    Fukien Fried Rice
+    Beef Cube w/ Black Bean Fried Rice in X.O. Sauce`;
+
+    const price = `14.00
+    13.95
+    13.95
+    13.95
+    12.95
+    10.95
+    12.95
+    10.95
+    11.95
+    12.95
+    11.95`;
+
+    const chinDishes = util.cleanLiteral(chinese);
+    const englishDishes = util.cleanLiteral(english);
+    const friedRicePrices = util.cleanLiteral(price);
+    const friedRiceObject = util.populateObject(
+      chinDishes.length,
+      chinDishes,
+      englishDishes,
+      friedRicePrices,
+      "L"
+    );
+    //console.table(chowMeinFunObject)
+    util.populateTable(friedRiceObject, "Fried Rice (炒飯類)");
+  }
+
   return {
     houseSpecial,
     chowMeinFun,
+    friedRice
   };
 })();
 
