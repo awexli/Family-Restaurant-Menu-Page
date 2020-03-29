@@ -12,13 +12,14 @@ const categoryUtilityModule = (() => {
    * @param {String} title
    */
   const populateTable = (category, title) => {
+    
     // clear previous table
     if (modalTable.hasChildNodes) {
       while (modalTable.firstChild) {
         modalTable.removeChild(modalTable.lastChild);
       }
     }
-
+    
     let chineseInnerText = "";
 
     for (let row in category) {
@@ -49,6 +50,7 @@ const categoryUtilityModule = (() => {
       rowFragment.appendChild(tableRow);
     }
     modalTable.appendChild(rowFragment);
+    // apply menu to modal
     overlayContent.appendChild(modalTable);
     modalTitle.innerText = title;
   };
@@ -59,17 +61,28 @@ const categoryUtilityModule = (() => {
    * @param {Array.<String>} data - array holding category information
    * @param {String} letter - letter of category
    */
-  const populateObject = (n, data, letter) => {
+  const populateObject = (n, data, letter = "", isDefault = true) => {
     const newObject = {};
     let currentDish;
-    for (let i = 0; i < n; i++) {
-      currentDish = data[i].split(",")
-      newObject[`r${i + 1}`] = {
-        num: `${letter}${i + 1}`,
-        chin: currentDish[0],
-        eng: currentDish[1],
-        price: currentDish[2],
-      };
+    if (isDefault) {
+      for (let i = 0; i < n; i++) {
+        currentDish = data[i].split(",")
+        newObject[`r${i + 1}`] = {
+          num: `${letter}${i + 1}`,
+          chin: currentDish[0],
+          eng: currentDish[1],
+          price: currentDish[2],
+        };
+      }
+    } else {
+      for (let i = 0; i < n; i++) {
+        currentDish = data[i].split(",")
+        newObject[`r${i + 1}`] = {
+          chin: currentDish[0],
+          eng: currentDish[1],
+          price: currentDish[2],
+        };
+      }
     }
 
     return newObject;

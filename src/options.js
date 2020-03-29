@@ -6,21 +6,21 @@ const mainFragment = () => {
   const foodCategory = () => {
     const categoryArr = [
       "House Special (特色菜)",
+      "Appetizers (餐前小食)",
+      "Soup (湯羹類)",
+      "Seafood (海鮮類)",
+      "Chicken & Duck & Frog (雞鴨田雞類)",
+      "Beef & Lamb (牛羊類)",
+      "Pork (豬肉類)",
+      "Clay Pot (煲仔類)",
+      "Mu Shu (木須類)",
+      "Lettuce Wraps (生菜包)",
+      "Vegetables (健康素菜類)",
       "Chow Mein & Fun (粉麵類)",
       "Fried Rice (炒飯類)",
       "Congee (粥類)",
-      "Clay Pot (煲仔類)",
-      "Lettuce Wraps (生菜包)",
-      "Vegetables",
-      "Seafood",
       "Crab & Lobster",
-      "Chicken & Duck & Frog",
-      "Pork",
-      "Mu Shu (木須類)",
-      "Appetizers (餐前小食)",
-      "Soup",
-      "Beef & Lamb",
-      "Rice Plates & Soup ($9.50)"
+      "Rice Plates & Soup (午餐碟飯送例湯)"
     ];
 
     const optionsDiv = document.createElement("div");
