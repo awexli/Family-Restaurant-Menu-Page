@@ -37,9 +37,6 @@ const categoryUtilityModule = (() => {
             const englishInnerText = currentCell.innerText;
             currentCell.innerText = `${chineseInnerText} \n\n ${englishInnerText}`;
             currentCell.className = "description";
-            // possibly remove line 40 & 41 to allow fallthrough
-            cellFragment.appendChild(currentCell);
-            break;
           default:
             cellFragment.appendChild(currentCell);
             break;
@@ -78,9 +75,9 @@ const categoryUtilityModule = (() => {
       for (let i = 0; i < n; i++) {
         currentDish = data[i].split(",")
         newObject[`r${i + 1}`] = {
+          num: `${letter}${i + 1}`,
           chin: currentDish[0],
           eng: currentDish[1],
-          price: currentDish[2],
         };
       }
     }

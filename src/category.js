@@ -35,7 +35,7 @@ const categories = (() => {
 
     const houseData = util.cleanLiteral(houseCSV);
     const houseObject = util.populateObject(houseData.length, houseData, "S");
-    util.populateTable(houseObject, "House Special (特色菜)");
+    util.populateTable(houseObject, "House Special\n(特色菜)");
   };
 
   const appetizers = () => {
@@ -53,7 +53,7 @@ const categories = (() => {
       appetizersData,
       "A"
     );
-    util.populateTable(appetizersObject, "Appetizers (餐前小食)");
+    util.populateTable(appetizersObject, "Appetizers\n(餐前小食)");
   };
 
   const soup = () => {
@@ -107,11 +107,11 @@ const categories = (() => {
     豉汁涼瓜炒田雞,Frog & Bitter Melon w/ Black Bean Sauce,16.95
     宮保雞,Kong Pow Chicken,11.95
     檸檬雞,Lemon Chicken,11.95
-    左宗雞 Chicken,11.95
+    左宗雞,General Chicken,11.95
     咕嚕雞,Sweet & Sour Chicken,11.95
     豉汁四季豆雞,String Bean Chicken w/ Black Bean Sauce,11.95
     雜菜冬菇雞,Chicken w/ Mixed Vegetable & Mushroom,11.95
-    幹烹雞翼 Chicken Wing (8),11.95`;
+    幹烹雞翼, Chicken Wing (8),11.95`;
     const chickenDuckFrogData = util.cleanLiteral(chickenDuckFrogCSV);
     const chickenDuckFrogObject = util.populateObject(
       chickenDuckFrogData.length,
@@ -120,7 +120,7 @@ const categories = (() => {
     );
     util.populateTable(
       chickenDuckFrogObject,
-      "Chicken & Duck & Frog (雞鴨田雞類)"
+      "Chicken & Duck & Frog\n(雞鴨田雞類)"
     );
   };
 
@@ -202,7 +202,7 @@ const categories = (() => {
     木須蝦, Mu Shu Shrimp,12.95`;
     const mushuData = util.cleanLiteral(mushuCSV);
     const mushupObject = util.populateObject(mushuData.length, mushuData, "H");
-    util.populateTable(mushupObject, "Mu Shu (木須類) (6 Pancakes)");
+    util.populateTable(mushupObject, "Mu Shu (木須類)\n(6 Pancakes)");
   };
 
   const lettuceWrap = () => {
@@ -218,7 +218,7 @@ const categories = (() => {
     );
     util.populateTable(
       lettuceWrapObject,
-      "Lettuce Wraps (生菜包) (6 Lettuces)"
+      "Lettuce Wraps (生菜包)\n(6 Lettuces)"
     );
   };
 
@@ -244,7 +244,7 @@ const categories = (() => {
       vegetablesData,
       "J"
     );
-    util.populateTable(vegetablesObject, "Vegetables (健康素菜類)");
+    util.populateTable(vegetablesObject, "Vegetables\n(健康素菜類)");
   };
 
   const chowMeinFun = () => {
@@ -272,7 +272,7 @@ const categories = (() => {
       chowMeinData,
       "K"
     );
-    util.populateTable(chowMeinObject, "Chow Mein & Fun (粉麵類)");
+    util.populateTable(chowMeinObject, "Chow Mein & Fun\n(粉麵類)");
   };
 
   const friedRice = () => {
@@ -294,7 +294,7 @@ const categories = (() => {
       friedRiceData,
       "L"
     );
-    util.populateTable(friedRiceObject, "Fried Rice (炒飯類)");
+    util.populateTable(friedRiceObject, "Fried Rice\n(炒飯類)");
   };
 
   const congee = () => {
@@ -348,9 +348,91 @@ const categories = (() => {
       "",
       false
     );
-    util.populateTable(ricePlatesObject, "Rice Plates & Soup (午餐碟飯送例湯) \n\n (9.50 Each)");
+    util.populateTable(ricePlatesObject, "Rice Plates & Soup\n(午餐碟飯送例湯) \n\n (9.50 Each)");
   };
 
+  const crab = () => {
+    const crabCSV = `咸蛋黃,Salted Egg Yolk
+    避風塘,Fried w/ Garlic & Hot Pepper
+    椒鹽,Salt & Pepper
+    牛油胡椒,Butter & Pepper
+    蒜茸粉絲,Garlic & Vermicelli
+    大千粉絲,Spicy Garlic & Vermicelli
+    甘香涼瓜,Bitter Melon
+    鹹菜,Preserved Salted Vegetable
+    薑蔥,Ginger & Scallion
+    沙茶粉絲,Satay & Vermicelli`;
+    const crabData = util.cleanLiteral(crabCSV);
+    const crabObject = util.populateObject(
+      crabData.length,
+      crabData,
+      "",
+      false
+    );
+    util.populateTable(crabObject, "Crab 蟹 (Market Price)\n\nPlease Choose One of the Following Cooking Methods\n(蟹有下列烹調方法可供選擇)");
+  };
+  
+  const lobster = () => {
+    const lobsterCSV = `蒜茸粉絲,Garlic & Vermicelli
+    XO醬,X.O. Sauce
+    薑蔥,Ginger & Scallion
+    豉油皇,Soy Sauce
+    咸蛋黃,Salted Egg Yolk`;
+    const lobsterData = util.cleanLiteral(lobsterCSV);
+    const lobsterObject = util.populateObject(
+      lobsterData.length,
+      lobsterData,
+      "",
+      false
+    );
+    util.populateTable(lobsterObject, "Lobster (龍蝦) (Market Price)\n\nPlease Choose One of the Following Cooking Methods\n(龍蝦有下列烹調方法可供選擇)");
+  };
+
+  const takeaway = () => {
+    const takeawayCSV = `蒙古雞肉/牛肉,Mongolian Chicken or Beef
+    沙茶花枝雞片,Satay Squid & Chicken
+    左宗棠雞,General's Chicken
+    宫保雞,Kung Pao Chicken
+    豉汁四季豆雞球,Chicken & String Bean in Black Bean Sauce
+    干炒雞/牛河粉,Chicken or Beef Dry Chow Fun
+    XO醬四季豆炒豬肚,Sauteed Pork Stomach & String Bean w/ X.O. Sauce
+    椒鹽豆仔肉排,Salt & Pepper Spareribs w/ String Beans
+    京都肉排,Peking Spareribs
+    咕嚕肉/雞,Sweet and Sour Pork/Chicken
+    喬頭生炒骨,Shallot Spareribs
+    臘腸冬菜/梅菜蒸肉餅,Steamed Minced Pork w/Chinese Sausage
+    肉崧麻婆豆腐,Ma Pao Tofu w/ Minced Pork
+    椒鹽四季豆豬爽肉,Salt & Pepper Pork Neck & String Beans
+    XO醬芹心炒魚片,Fish Fillet & Celery in X.0. Sauce
+    紅燒豆腐斑腩煲,Braised Fish Fillet w/ Fried Tofu
+    沙茶雞粒茄子煲,Satay Chicken & Eggplant in Pot
+    五更長旺煲,Pork Intestines & Tofu in Chili Sauce
+    鹹魚雞粒豆腐煲,Chicken & Salted Fish & Tofu in Pot
+    欖菜肉崧四季豆,Minced Pork & String Bean w/ Olive
+    上湯鹹豬骨浸芥菜,Mustard Green in Salted Pork Bone in Broth
+    雜菌雲耳炒碧綠,Sauteed Vegetable - Mixed Mushroom & Fungus
+    炸菜肉片,Pork & Preserved Vegetable
+    蒜茸四季豆,Sauteed String Beans
+    冬菇紅燒豆腐,Braised Fried Tofu & Mushroom
+    紅燒肉崧茄子,Braised Minced Pork & Eggplant
+    上湯皮蛋浸芥菜,Mustard Green & Preserved Eggs in Supreme Broth
+    蒜茸豉汁爆虎皮尖椒,Pan Seared Green Chilli Pepper in Garlic and Black Pepper Sauce
+    家鄉菜脯煎蛋,Pan Fried Egg w/ Preserved Green
+    雙色蒸滑蛋,Steamed Two Kind of Egg
+    脆塘海鮮滑豆腐,Steamed Seafood & Tofu
+    豉油皇炒細麵,Soy Sauce Fried Thin Noodle
+    家鄉炒米,House Special Pan Fried Rice Noodle
+    泰式炒米,Thai Style Fried Rice Noodle XO
+    醬金雙蛋炒飯,Double Eggs Fried Rice in XO Sauce`;
+    const takeawayData = util.cleanLiteral(takeawayCSV);
+    const takeawayObject = util.populateObject(
+      takeawayData.length,
+      takeawayData,
+      "",
+      false
+    );
+    util.populateTable(takeawayObject, "All-Day Takeaway (全日外賣) (29.95)\n\nChoose Any 3 Items (任選以下三款小菜)");
+  };
   return {
     houseSpecial,
     appetizers,
@@ -366,7 +448,10 @@ const categories = (() => {
     chowMeinFun,
     friedRice,
     congee,
-    ricePlates
+    ricePlates,
+    crab,
+    lobster,
+    takeaway
   };
 })();
 

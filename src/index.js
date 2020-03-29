@@ -39,7 +39,11 @@ document.addEventListener("click", (e) => {
     case "Seafood (海鮮類)":
       category.seafood();
       break;
-    case "Crab & Lobster":
+    case "Crab (蟹)":
+      category.crab();
+      break;
+    case "Lobster (龍蝦)":
+      category.lobster();
       break;
     case "Clay Pot (煲仔類)":
       category.clayPot();
@@ -61,6 +65,9 @@ document.addEventListener("click", (e) => {
       break;
     case "Rice Plates & Soup (午餐碟飯送例湯)":
       category.ricePlates();
+      break;
+    case "All-Day Takeaway (全日外賣)":
+      category.takeaway();
       break;
     default:
       break;
