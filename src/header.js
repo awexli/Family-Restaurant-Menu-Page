@@ -1,6 +1,7 @@
 const navbar = () => {
   const logo = document.createElement("img");
   logo.src = "./img/logo.png";
+  logo.alt = "Zhong Shan Logo"
   const navContent = document.createElement("div");
   navContent.className = "nav-content";
   navContent.appendChild(logo);

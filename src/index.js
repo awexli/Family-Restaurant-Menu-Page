@@ -1,4 +1,4 @@
-import navbar from "./header";
+import navbar from "./header.js";
 import options from "./options";
 import footer from "./footer";
 import category from "./category";
