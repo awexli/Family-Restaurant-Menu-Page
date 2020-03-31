@@ -20,8 +20,11 @@
   "homepage": "https://github.com/awexli/restaurant-page#readme",
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.4.2",
+    "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.0.3",
     "prettier": "2.0.2",
+    "style-loader": "^1.1.3",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.3",

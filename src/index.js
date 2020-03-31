@@ -2,6 +2,7 @@ import navbar from "./header.js";
 import options from "./options";
 import footer from "./footer";
 import category from "./category";
+import "../dist/style.css";
 
 const fragment = new DocumentFragment();
 const contents = [navbar(), options.mainFragment(), footer.footerFragment()];

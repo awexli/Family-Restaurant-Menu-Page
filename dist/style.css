@@ -25,15 +25,13 @@ body {
 
 .nav-bar {
   margin: 1em 0 0 0;
-}
-.nav-bar .nav-content {
   text-align: center;
 }
-.nav-bar .nav-content img {
+.nav-bar img {
   width: 290px;
 }
 @media only screen and (min-width: 768px) {
-  .nav-bar .nav-content img {
+  .nav-bar img {
     width: auto;
   }
 }

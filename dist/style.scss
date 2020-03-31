@@ -70,13 +70,11 @@ body {
 }
 .nav-bar {
   margin: 1em 0 0 0;
-  .nav-content {
-    text-align: center;
-    img {
-      width: 290px;
-      @include respond-to(table) {
-        width: auto;
-      }
+  text-align: center;
+  img {
+    width: 290px;
+    @include respond-to(table) {
+      width: auto;
     }
   }
 }
