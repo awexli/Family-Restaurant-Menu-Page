@@ -11,11 +11,11 @@ module.exports = {
      //new CleanWebpackPlugin(),
      new HtmlWebpackPlugin({
        title: 'Production',
-       template: './dist/index.html'
+       template: './src/template.html'
      }),
    ],
    output: {
-    filename: 'main.js',
+    filename: 'main.[contentHash].js',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
