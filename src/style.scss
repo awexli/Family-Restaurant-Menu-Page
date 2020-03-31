@@ -1,0 +1,196 @@
+@import "~bootstrap/scss/bootstrap";
+
+$break-smaller: 360px;
+$break-small: 411px;
+$break-medium: 611px;
+$break-table: 768px;
+$break-desk: 1024px;
+$break-larger: 1400px;
+
+$default-red: #a02c2e;
+$default-gold: #cc9900;
+
+@mixin respond-to($media) {
+  @if $media == smaller {
+    @media only screen and (min-width: $break-smaller) {
+      @content;
+    }
+  }
+
+  @if $media == small {
+    @media only screen and (min-width: $break-small) {
+      @content;
+    }
+  }
+
+  @if $media == medium {
+    @media only screen and (min-width: $break-medium) {
+      @content;
+    }
+  }
+
+  @if $media == table {
+    @media only screen and (min-width: $break-table) {
+      @content;
+    }
+  }
+
+  @if $media == desk {
+    @media only screen and (min-width: $break-desk) {
+      @content;
+    }
+  }
+
+  @if $media == larger {
+    @media only screen and (min-width: $break-larger) {
+      @content;
+    }
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background: url(assets/ricepaper.jpg);
+  background-repeat: repeat;
+  font: bold;
+}
+.wrapper {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.nav-bar {
+  margin: 1em 0 0 0;
+  text-align: center;
+  img {
+    width: 290px;
+    @include respond-to(table) {
+      width: auto;
+    }
+  }
+}
+.main {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  .options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    @include respond-to(table) {
+      table {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 4em;
+      }
+    }
+  }
+}
+table {
+  tr {
+    :hover {
+      background-color: transparent;
+      border: $default-red solid 1px;
+      color: $default-red;
+    }
+  }
+}
+.footer {
+  background-color: $default-red;
+  color: whitesmoke;
+  padding: 1em;
+  .info {
+    display: grid;
+    grid-gap: 0.5em;
+    @include respond-to(table) {
+      display: flex;
+      justify-content: space-evenly;
+      text-align: center;
+    }
+  }
+  a {
+    color: whitesmoke;
+  }
+}
+.btn {
+  width: 100%;
+  font-size: 18px;
+  color: black;
+  margin: 0.5em 0;
+  border: black solid 1px;
+  @include respond-to(desk) {
+    font-size: 25px;
+    font-weight: bolder;
+  }
+  @media only screen and (min-height: 1366px) {
+    font-size: 25px;
+  }
+}
+.modal-content {
+  background: url(assets/ricepaper.jpg);
+  background-repeat: repeat;
+  @include respond-to(table) {
+    width: 650px;
+    right: 75px;
+  }
+  @include respond-to(desk) {
+    width: 906px;
+    right: 205px;
+  }
+  @include respond-to(larger) {
+    width: 1000px;
+    right: 265px;
+  }
+  .modal-title {
+    font-size: 30px;
+  }
+  .modal-body {
+    padding: 0;
+
+    .cat-table {
+      td {
+        border: $default-gold solid 1px;
+        padding: 1em 0.2em;
+        @include respond-to(table) {
+          padding: 1em;
+        }
+      }
+      tr {
+        font-size: 20px;
+        @include respond-to(table) {
+          font-size: 30px;
+        }
+      }
+      .description {
+        width: 100%;
+      }
+      :hover {
+        @include respond-to(table) {
+          background-color: $default-red;
+          color: whitesmoke;
+        }
+        color: black;
+      }
+    }
+  }
+  [data-dismiss] {
+    background-color: $default-red;
+    color: whitesmoke;
+    border: none;
+    border-radius: 5px;
+  }
+}
