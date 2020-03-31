@@ -1,7 +1,8 @@
+import logoHakka from "./assets/logo.png";
 const navbar = () => {
   // Logo
   const logo = document.createElement("img");
-  logo.src = "./img/logo.png";
+  logo.src = logoHakka;
   logo.alt = "Zhong Shan Logo"
   
   const navContent = document.createElement("div");

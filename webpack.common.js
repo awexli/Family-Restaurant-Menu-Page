@@ -25,10 +25,18 @@ module.exports = {
         use: ["style-loader", "css-loader", "sass-loader"]
       },
       {
+        test: /\.html$/,
+        use: ["html-loader"]
+      },
+      {
         test: /\.(gif|svg|jpg|png)$/,
         use: [
           {
             loader: "file-loader",
+            options: {
+              name: "[name].[hash].[ext]",
+              outputPath: "imgs"
+            }
           }
         ]
       }
