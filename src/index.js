@@ -67,7 +67,7 @@ document.addEventListener("click", (e) => {
     case "Rice Plates & Soup (午餐碟飯送例湯)":
       category.ricePlates();
       break;
-    case "All-Day Takeaway (全日外賣)":
+    case "All-Day Takeout (全日外賣)":
       category.takeaway();
       break;
     default:
