@@ -19,6 +19,7 @@ const footerFragment = () => {
   addressLink.href =
     "https://www.google.com/maps/place/Zhong+Shan+Hakka+Restaurant/@37.7422557,-122.4903221,15z/data=!4m5!3m4!1s0x0:0xde21cc529fccf39d!8m2!3d37.7422557!4d-122.4903221";
   addressLink.target = "_blank";
+  addressLink.rel = "noreferrer noopener";
   sectionAddress.appendChild(addressLink);
   /** End Address */
 

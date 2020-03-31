@@ -6,7 +6,7 @@ const mainFragment = () => {
   const foodCategory = () => {
     const categoryArr = [
       "House Special (特色菜)",
-      "All-Day Takeaway (全日外賣)",
+      "All-Day Takeout (全日外賣)",
       "Appetizers (餐前小食)",
       "Soup (湯羹類)",
       "Seafood (海鮮類)",
