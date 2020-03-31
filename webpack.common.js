@@ -4,7 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-     app: './src/index.js',
+     main: './src/index.js',
+     vendor: './src/vendor.js'
    },
    plugins: [
      // new CleanWebpackPlugin(['dist/*']) for < v2 versions of CleanWebpackPlugin
@@ -15,7 +16,7 @@ module.exports = {
      }),
    ],
    output: {
-    filename: 'main.[contentHash].js',
+    filename: '[name].[contentHash].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {

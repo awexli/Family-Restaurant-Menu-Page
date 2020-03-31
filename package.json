@@ -25,6 +25,7 @@
     "file-loader": "^6.0.0",
     "html-loader": "^1.0.0",
     "html-webpack-plugin": "^4.0.3",
+    "jquery": "^3.4.1",
     "node-sass": "^4.13.1",
     "prettier": "2.0.2",
     "sass-loader": "^8.0.2",
