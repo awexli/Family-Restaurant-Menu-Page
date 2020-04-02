@@ -140,6 +140,7 @@ table {
     font-size: 25px;
   }
 }
+
 .modal-content {
   background: url(assets/ricepaper.jpg);
   background-repeat: repeat;
@@ -162,9 +163,10 @@ table {
     padding: 0;
 
     .cat-table {
+      min-width: 100%;
       td {
         border: $default-gold solid 1px;
-        padding: 1em 0.2em;
+        padding: 1em 1em;
         @include respond-to(table) {
           padding: 1em;
         }

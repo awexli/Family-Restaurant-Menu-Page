@@ -22,7 +22,7 @@ const mainFragment = () => {
       "Congee (粥類)",
       "Crab (蟹)",
       "Lobster (龍蝦)",
-      "Rice Plates & Soup (午餐碟飯送例湯)"
+      "Rice Plates & Soup (午餐碟飯送例湯)",
     ];
 
     const optionsDiv = document.createElement("div");
@@ -31,7 +31,7 @@ const mainFragment = () => {
     const categoryTableCell = document.createElement("td");
     const rowFragments = new DocumentFragment();
 
-    categoryArr.forEach( categoryName => {
+    categoryArr.forEach((categoryName) => {
       const rowClone = categoryTableRow.cloneNode(true);
       const cellClone = categoryTableCell.cloneNode(true);
       cellClone.innerText = categoryName;

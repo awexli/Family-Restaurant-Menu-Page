@@ -11,31 +11,44 @@ const categoryUtilityModule = (() => {
    * @param {{string: string}} category
    * @param {String} title
    */
-  const populateTable = (category, title) => {
-    
+  const populateTable = (categoryObj, title) => {
     // clear previous table
     if (modalTable.hasChildNodes) {
       while (modalTable.firstChild) {
         modalTable.removeChild(modalTable.lastChild);
       }
     }
-    
-    let chineseInnerText = "";
 
-    for (let row in category) {
-      const rowData = category[row];
+    for (let row in categoryObj) {
+      const rowData = categoryObj[row];
+      let chineseInnerText = "";
+      let englishInnerText = "";
       for (let column in rowData) {
         const currentCell = document.createElement("td");
-        currentCell.innerText = rowData[column];
+        const columnVal = rowData[column]
+        currentCell.innerText = columnVal;
         switch (column) {
           case "chin":
             // store chinese text to be combined into one column
             chineseInnerText = currentCell.innerText;
             break;
           case "eng":
-            // combine chinese and english text into one column
-            const englishInnerText = currentCell.innerText;
-            currentCell.innerText = `${chineseInnerText} \n\n ${englishInnerText}`;
+            // store english text to be combined into one column
+            englishInnerText = currentCell.innerText;
+            break;
+          case "price":
+            let priceInnerText = currentCell.innerText;
+            if (columnVal == undefined) {
+              currentCell.innerText = `${chineseInnerText} \n\n ${englishInnerText}`
+            } else {
+
+              if (priceInnerText != "Seasonal") {
+                priceInnerText = `$${priceInnerText}`;
+              }
+
+              currentCell.innerText = `${chineseInnerText} \n\n ${englishInnerText} \n\n ${priceInnerText}`
+            }
+
             currentCell.className = "description";
           default:
             cellFragment.appendChild(currentCell);
@@ -58,30 +71,18 @@ const categoryUtilityModule = (() => {
    * @param {Array.<String>} data - array holding category information
    * @param {String} letter - letter of category
    */
-  const populateObject = (n, data, letter = "", isDefault = true) => {
+  const populateObject = (n, data, letter = "") => {
     const newObject = {};
     let currentDish;
-    if (isDefault) {
-      for (let i = 0; i < n; i++) {
-        currentDish = data[i].split(",")
-        newObject[`r${i + 1}`] = {
-          num: `${letter}${i + 1}`,
-          chin: currentDish[0],
-          eng: currentDish[1],
-          price: currentDish[2],
-        };
-      }
-    } else {
-      for (let i = 0; i < n; i++) {
-        currentDish = data[i].split(",")
-        newObject[`r${i + 1}`] = {
-          num: `${letter}${i + 1}`,
-          chin: currentDish[0],
-          eng: currentDish[1],
-        };
-      }
+    for (let i = 0; i < n; i++) {
+      currentDish = data[i].split(",");
+      newObject[`r${i + 1}`] = {
+        num: `${letter}${i + 1}`,
+        chin: currentDish[0],
+        eng: currentDish[1],
+        price: currentDish[2],
+      };
     }
-
     return newObject;
   };
 

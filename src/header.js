@@ -3,8 +3,8 @@ const navbar = () => {
   // Logo
   const logo = document.createElement("img");
   logo.src = logoHakka;
-  logo.alt = "Zhong Shan Logo"
-  
+  logo.alt = "Zhong Shan Logo";
+
   const navContent = document.createElement("div");
   navContent.className = "nav-content";
   navContent.appendChild(logo);
