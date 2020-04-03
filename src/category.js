@@ -382,41 +382,41 @@ const categories = (() => {
   };
 
   const takeaway = () => {
-    const takeawayCSV = `蒙古雞肉/牛肉,Mongolian Chicken or Beef,29.95
-    沙茶花枝雞片,Satay Squid & Chicken,29.95
-    左宗棠雞,General's Chicken,29.95
-    宫保雞,Kung Pao Chicken,29.95
-    豉汁四季豆雞球,Chicken & String Bean in Black Bean Sauce,29.95
-    干炒雞/牛河粉,Chicken or Beef Dry Chow Fun,29.95
-    XO醬四季豆炒豬肚,Sauteed Pork Stomach & String Bean w/ X.O. Sauce,29.95
-    椒鹽豆仔肉排,Salt & Pepper Spareribs w/ String Beans,29.95
-    京都肉排,Peking Spareribs,29.95
-    咕嚕肉/雞,Sweet and Sour Pork/Chicken,29.95
-    喬頭生炒骨,Shallot Spareribs,29.95
-    臘腸冬菜/梅菜蒸肉餅,Steamed Minced Pork w/Chinese Sausage,29.95
-    肉崧麻婆豆腐,Ma Pao Tofu w/ Minced Pork,29.95
-    椒鹽四季豆豬爽肉,Salt & Pepper Pork Neck & String Beans,29.95
-    XO醬芹心炒魚片,Fish Fillet & Celery in X.0. Sauce,29.95
-    紅燒豆腐斑腩煲,Braised Fish Fillet w/ Fried Tofu,29.95
-    沙茶雞粒茄子煲,Satay Chicken & Eggplant in Pot,29.95
-    五更長旺煲,Pork Intestines & Tofu in Chili Sauce,29.95
-    鹹魚雞粒豆腐煲,Chicken & Salted Fish & Tofu in Pot,29.95
-    欖菜肉崧四季豆,Minced Pork & String Bean w/ Olive,29.95
-    上湯鹹豬骨浸芥菜,Mustard Green in Salted Pork Bone in Broth,29.95
-    雜菌雲耳炒碧綠,Sauteed Vegetable - Mixed Mushroom & Fungus,29.95
-    炸菜肉片,Pork & Preserved Vegetable,29.95
-    蒜茸四季豆,Sauteed String Beans,29.95
-    冬菇紅燒豆腐,Braised Fried Tofu & Mushroom,29.95
-    紅燒肉崧茄子,Braised Minced Pork & Eggplant,29.95
-    上湯皮蛋浸芥菜,Mustard Green & Preserved Eggs in Supreme Broth,29.95
-    蒜茸豉汁爆虎皮尖椒,Pan Seared Green Chilli Pepper in Garlic and Black Pepper Sauce,29.95
-    家鄉菜脯煎蛋,Pan Fried Egg w/ Preserved Green,29.95
-    雙色蒸滑蛋,Steamed Two Kind of Egg,29.95
-    脆塘海鮮滑豆腐,Steamed Seafood & Tofu,29.95
-    豉油皇炒細麵,Soy Sauce Fried Thin Noodle,29.95
-    家鄉炒米,House Special Pan Fried Rice Noodle,29.95
-    泰式炒米,Thai Style Fried Rice Noodle XO,29.95
-    醬金雙蛋炒飯,Double Eggs Fried Rice in XO Sauce,29.95`;
+    const takeawayCSV = `蒙古雞肉/牛肉,Mongolian Chicken or Beef
+    沙茶花枝雞片,Satay Squid & Chicken
+    左宗棠雞,General's Chicken
+    宫保雞,Kung Pao Chicken
+    豉汁四季豆雞球,Chicken & String Bean in Black Bean Sauce
+    干炒雞/牛河粉,Chicken or Beef Dry Chow Fun
+    XO醬四季豆炒豬肚,Sauteed Pork Stomach & String Bean w/ X.O. Sauce
+    椒鹽豆仔肉排,Salt & Pepper Spareribs w/ String Beans
+    京都肉排,Peking Spareribs
+    咕嚕肉/雞,Sweet and Sour Pork/Chicken
+    喬頭生炒骨,Shallot Spareribs
+    臘腸冬菜/梅菜蒸肉餅,Steamed Minced Pork w/Chinese Sausage
+    肉崧麻婆豆腐,Ma Pao Tofu w/ Minced Pork
+    椒鹽四季豆豬爽肉,Salt & Pepper Pork Neck & String Beans
+    XO醬芹心炒魚片,Fish Fillet & Celery in X.0. Sauce
+    紅燒豆腐斑腩煲,Braised Fish Fillet w/ Fried Tofu
+    沙茶雞粒茄子煲,Satay Chicken & Eggplant in Pot
+    五更長旺煲,Pork Intestines & Tofu in Chili Sauce
+    鹹魚雞粒豆腐煲,Chicken & Salted Fish & Tofu in Pot
+    欖菜肉崧四季豆,Minced Pork & String Bean w/ Olive
+    上湯鹹豬骨浸芥菜,Mustard Green in Salted Pork Bone in Broth
+    雜菌雲耳炒碧綠,Sauteed Vegetable - Mixed Mushroom & Fungus
+    炸菜肉片,Pork & Preserved Vegetable
+    蒜茸四季豆,Sauteed String Beans
+    冬菇紅燒豆腐,Braised Fried Tofu & Mushroom
+    紅燒肉崧茄子,Braised Minced Pork & Eggplant
+    上湯皮蛋浸芥菜,Mustard Green & Preserved Eggs in Supreme Broth
+    蒜茸豉汁爆虎皮尖椒,Pan Seared Green Chilli Pepper in Garlic and Black Pepper Sauce
+    家鄉菜脯煎蛋,Pan Fried Egg w/ Preserved Green
+    雙色蒸滑蛋,Steamed Two Kind of Egg
+    脆塘海鮮滑豆腐,Steamed Seafood & Tofu
+    豉油皇炒細麵,Soy Sauce Fried Thin Noodle
+    家鄉炒米,House Special Pan Fried Rice Noodle
+    泰式炒米,Thai Style Fried Rice Noodle XO
+    醬金雙蛋炒飯,Double Eggs Fried Rice in XO Sauce`;
     const takeawayData = util.cleanLiteral(takeawayCSV);
     const takeawayObject = util.populateObject(
       takeawayData.length,
