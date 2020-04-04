@@ -1,37 +1,48 @@
 import util from "../utilities/category-utility"
 
 const categoryModal = (() => {
+  
   const getMenu = (menuName) => {
-      const categoryObject = {
-        "House Special (特色菜)": houseSpecial(),
-        "All-Day Takeout (全日外賣)": takeaway(),
-        "Appetizers (餐前小食)": appetizers(),
-        "Soup (湯羹類)": soup(),
-        "Seafood (海鮮類)": seafood(),
-        "Chicken & Duck & Frog (雞鴨田雞類)": chickenDuckFrog(),
-        "Beef & Lamb (牛羊類)": beefLamb(),
-        "Pork (豬肉類)": pork(),
-        "Clay Pot (煲仔類)": clayPot(),
-        "Mu Shu (木須類)": mushu(),
-        "Lettuce Wraps (生菜包)": lettuceWrap(),
-        "Vegetables (健康素菜類)": vegetables(),
-        "Chow Mein & Fun (粉麵類)": chowMeinFun(),
-        "Fried Rice (炒飯類)": friedRice(),
-        "Congee (粥類)": congee(),
-        "Crab (蟹)": crab(),
-        "Lobster (龍蝦)": lobster(),
-        "Rice Plates & Soup (午餐碟飯送例湯)": ricePlates(),
-      };
+    const categoryObject = {
+      "House Special (特色菜)": houseSpecial(),
+      "All-Day Takeout (全日外賣)": takeaway(),
+      "Appetizers (餐前小食)": appetizers(),
+      "Soup (湯羹類)": soup(),
+      "Seafood (海鮮類)": seafood(),
+      "Chicken & Duck & Frog (雞鴨田雞類)": chickenDuckFrog(),
+      "Beef & Lamb (牛羊類)": beefLamb(),
+      "Pork (豬肉類)": pork(),
+      "Clay Pot (煲仔類)": clayPot(),
+      "Mu Shu (木須類)": mushu(),
+      "Lettuce Wraps (生菜包)": lettuceWrap(),
+      "Vegetables (健康素菜類)": vegetables(),
+      "Chow Mein & Fun (粉麵類)": chowMeinFun(),
+      "Fried Rice (炒飯類)": friedRice(),
+      "Congee (粥類)": congee(),
+      "Crab (蟹)": crab(),
+      "Lobster (龍蝦)": lobster(),
+      "Rice Plates & Soup (午餐碟飯送例湯)": ricePlates(),
+    };
+    const menuData = categoryObject[menuName]
 
-      for (let categoryName in categoryObject) {
-        if (categoryName == menuName) {
-          return  { 
-            name: menuName,
-            data: categoryObject[categoryName],
-          }
-        }
-      }
+    if (menuName == "Lobster (龍蝦)") {
+      menuName += " (Market Price)\n\nPlease decide on one of the following cooking methods\n(龍蝦有下列烹調方法可供選擇)";
+    }
+
+    if (menuName == "Crab (蟹)") {
+      menuName += " (Market Price)\n\nPlease decide on one of the following cooking methods\n(蟹有下列烹調方法可供選擇)"
+    }
+
+    if (menuName == "All-Day Takeout (全日外賣)") {
+      menuName += " (29.95)\n\nChoose Any 3 Items (任選以下三款小菜)"
+    }
+
+    return {
+      name: menuName,
+      data: menuData,
+    }
   }
+
   const houseSpecial = () => {
     const houseCSV = `客家鹽焗雞,Salt & Baked Chicken,14.95(半 Half) $28.00(Whole) 
     招牌華香雞（半）,House Special Steamed Chicken (Half),13.95
