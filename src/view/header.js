@@ -1,5 +1,6 @@
-import logoHakka from "./assets/logo.png";
-const navbar = () => {
+import logoHakka from "../assets/logo.png";
+
+const navbarFragment = () => {
   // Logo
   const logo = document.createElement("img");
   logo.src = logoHakka;
@@ -19,4 +20,4 @@ const navbar = () => {
   return navFragment;
 };
 
-export default navbar;
+export default { navbarFragment };

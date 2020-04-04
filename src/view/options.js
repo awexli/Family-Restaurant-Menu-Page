@@ -30,12 +30,12 @@ const mainFragment = () => {
     const categoryTableRow = document.createElement("tr");
     const categoryTableCell = document.createElement("td");
     const rowFragments = new DocumentFragment();
-
     categoryArr.forEach((categoryName) => {
       const rowClone = categoryTableRow.cloneNode(true);
       const cellClone = categoryTableCell.cloneNode(true);
       cellClone.innerText = categoryName;
-      cellClone.className = "btn";
+      cellClone.classList.add("btn");
+      cellClone.classList.add("option");
       cellClone.setAttribute("data-toggle", "modal");
       cellClone.setAttribute("data-target", "#modalLong");
       rowClone.appendChild(cellClone);

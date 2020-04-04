@@ -134,7 +134,6 @@ table {
   border: black solid 1px;
   @include respond-to(desk) {
     font-size: 25px;
-    font-weight: bolder;
   }
   @media only screen and (min-height: 1366px) {
     font-size: 25px;
