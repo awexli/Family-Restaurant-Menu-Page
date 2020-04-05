@@ -101,7 +101,7 @@ body {
     align-items: center;
     height: 100%;
     @include respond-to(table) {
-      table {
+      tbody {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 4em;

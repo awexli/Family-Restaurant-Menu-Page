@@ -10,7 +10,7 @@ for (let item of contents) {
   fragment.appendChild(item);
 }
 
-document.querySelector(".wrapper").appendChild(fragment);
+//document.querySelector(".wrapper").appendChild(fragment);
 
 const renderMenu = (menu) => {
   util.populateTable(menu.data, menu.name)
