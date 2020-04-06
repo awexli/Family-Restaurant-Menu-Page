@@ -67,12 +67,12 @@ $default-gold: #cc9900;
 }
 html,
 body {
+  font-family: 'Amiri', serif;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
   background: url(assets/ricepaper.png);
   background-repeat: repeat;
-  font: bold;
 }
 .wrapper {
   min-height: 100%;
@@ -94,6 +94,9 @@ body {
   display: flex;
   flex-direction: column;
   padding: 1em;
+  td {
+    margin: 8px auto;
+  }
   .options {
     display: flex;
     flex-direction: column;
@@ -104,19 +107,16 @@ body {
       tbody {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-column-gap: 4em;
+        grid-column-gap: 26px;
+        width: 100%;
       }
     }
   }
 }
-table {
-  tr {
-    :hover {
-      background-color: transparent;
-      border: $default-red solid 1px;
-      color: $default-red;
-    }
-  }
+.option:hover {
+  background-color: transparent;
+  border: $default-red solid 1px;
+  color: $default-red;
 }
 .footer {
   background-color: $default-red;
@@ -134,38 +134,50 @@ table {
   a {
     color: whitesmoke;
   }
+  
+}
+.address {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .yelp {
+    margin-top: 8px;
+  }
+  .yelp-img {
+    width: 91px;
+  }
 }
 .btn {
   width: 100%;
   font-size: 18px;
   color: black;
-  margin: 0.5em 0;
-  border: black solid 1px;
+  border: solid black 1px;
   @include respond-to(desk) {
-    font-size: 25px;
-  }
-  @media only screen and (min-height: 1366px) {
-    font-size: 25px;
+    font-size: 21px;
   }
 }
-
+.modal-dialog {
+  @include respond-to(table) {
+    width: 100%;
+    max-width: 568px;
+  }
+  @include respond-to(desk) {
+    max-width: 768px;
+  }
+  @include respond-to(larger) {
+    max-width: 850px;
+  }
+}
 .modal-content {
   background: url(assets/ricepaper.png);
   background-repeat: repeat;
-  @include respond-to(table) {
-    width: 650px;
-    right: 75px;
-  }
-  @include respond-to(desk) {
-    width: 906px;
-    right: 205px;
-  }
-  @include respond-to(larger) {
-    width: 1000px;
-    right: 265px;
-  }
   .modal-title {
-    font-size: 30px;
+    font-size: 28px;
   }
   .modal-body {
     padding: 0;
@@ -176,24 +188,38 @@ table {
         border: $default-gold solid 1px;
         padding: 1em 1em;
         @include respond-to(table) {
-          padding: 1em;
+          padding: 0.5em;
+        }
+        .english {
+          color: $default-red;
+          font-weight: bold;
+        }
+        .price {
+          font-size: 18px;
+          color: $default-gold;
+          font-weight: bold;
+        }
+        p {
+          margin: 0;
         }
       }
       tr {
         font-size: 20px;
         @include respond-to(table) {
-          font-size: 30px;
+          font-size: 22px;
+        }
+        @include respond-to(desk) {
+          font-size: 26px;
+        }
+        :first-child {
+          border-left: none;
+        }
+        :last-child {
+          border-right: none;
         }
       }
       .description {
         width: 100%;
-      }
-      :hover {
-        @include respond-to(table) {
-          background-color: $default-red;
-          color: whitesmoke;
-        }
-        color: black;
       }
     }
   }

@@ -1,7 +1,12 @@
 import util from "../utilities/category-utility";
 
+const menuBody = document.querySelector(".modal-body");
+const menuTitle = document.querySelector(".modal-title");
+
 const renderMenu = (menu) => {
-  util.populateTable(menu.data, menu.name)
+  const menuTable = util.populateTable(menu.data)
+  menuBody.appendChild(menuTable);
+  menuTitle.innerText = menu.name;
 };
 
 export default renderMenu;

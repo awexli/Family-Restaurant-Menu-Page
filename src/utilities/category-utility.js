@@ -1,17 +1,18 @@
 const categoryUtilityModule = (() => {
   const rowFragment = new DocumentFragment();
   const cellFragment = new DocumentFragment();
-  const overlayContent = document.querySelector(".modal-body");
-  const modalTitle = document.querySelector(".modal-title");
+  const cellCloneFragment = new DocumentFragment();
+  const currentCell = document.createElement("td");
+  const currentRow = document.createElement("tr");
   const modalTable = document.createElement("table");
+  const p = document.createElement("p");
   modalTable.className = "cat-table";
 
   /**
    * Populate a table element for the modal
    * @param {{string: string}} category
-   * @param {String} title
    */
-  const populateTable = (categoryObj, title) => {
+  const populateTable = (categoryObj) => {
     // clear previous table
     if (modalTable.hasChildNodes) {
       while (modalTable.firstChild) {
@@ -19,50 +20,73 @@ const categoryUtilityModule = (() => {
       }
     }
 
+    let currentCellClone;
+    let curentRowClone;
+    let pClone;
+    let priceInnerText;
     for (let row in categoryObj) {
-      const rowData = categoryObj[row];
-      let chineseInnerText = "";
-      let englishInnerText = "";
-      for (let column in rowData) {
-        const currentCell = document.createElement("td");
-        const columnVal = rowData[column]
-        currentCell.innerText = columnVal;
-        switch (column) {
-          case "chin":
-            // store chinese text to be combined into one column
-            chineseInnerText = currentCell.innerText;
-            break;
-          case "eng":
-            // store english text to be combined into one column
-            englishInnerText = currentCell.innerText;
-            break;
-          case "price":
-            let priceInnerText = currentCell.innerText;
-            if (columnVal == undefined) {
-              currentCell.innerText = `${chineseInnerText} \n\n ${englishInnerText}`
-            } else {
 
-              if (priceInnerText != "Seasonal") {
-                priceInnerText = `$${priceInnerText}`;
-              }
+      /** create cells for dish number */
+      currentCellClone = currentCell.cloneNode(true);
+      currentCellClone.innerText = categoryObj[row].num;
+      cellFragment.appendChild(currentCellClone);
+      /** END cell creation for dish number */
 
-              currentCell.innerText = `${chineseInnerText} \n\n ${englishInnerText} \n\n ${priceInnerText}`
-            }
+      /** create cell for chinese & english & price */
+      currentCellClone = currentCell.cloneNode(true);
+      currentCellClone.className = "description";
+      if (categoryObj[row].price === undefined) {
+        /** create paragraph element for english text */
+        pClone = p.cloneNode(true);
+        pClone.innerText = categoryObj[row].eng;
+        pClone.className = "english";
+        cellCloneFragment.appendChild(pClone);
+        /** END english text */
 
-            currentCell.className = "description";
-          default:
-            cellFragment.appendChild(currentCell);
-            break;
+        /** create paragraph element for chinese text */
+        pClone = p.cloneNode(true);
+        pClone.innerText = categoryObj[row].chin;
+        pClone.className = "chinese";
+        cellCloneFragment.appendChild(pClone);
+        /** END chinese text */
+      } else {
+        /** create paragraph element for english text */
+        pClone = p.cloneNode(true);
+        pClone.innerText = categoryObj[row].eng;
+        pClone.className = "english";
+        cellCloneFragment.appendChild(pClone);
+        /** END english text */
+
+        /** create paragraph element for chinese text */
+        pClone = p.cloneNode(true);
+        pClone.innerText = categoryObj[row].chin;
+        pClone.className = "chinese";
+        cellCloneFragment.appendChild(pClone);
+        /** END chinese text */
+
+        /** create paragraph element for price text */
+        pClone = p.cloneNode(true);
+        priceInnerText = categoryObj[row].price;
+        if (categoryObj[row].price != "Seasonal"){
+          priceInnerText = `$${priceInnerText}`;
         }
+        pClone.innerText = priceInnerText;
+        pClone.className = "price";
+        cellCloneFragment.appendChild(pClone);
+        /** END price text */
       }
-      const tableRow = document.createElement("tr");
-      tableRow.appendChild(cellFragment);
-      rowFragment.appendChild(tableRow);
+      /** END cell creation for chinese & english & price  */
+
+      currentCellClone.appendChild(cellCloneFragment);
+      cellFragment.appendChild(currentCellClone);
+      curentRowClone = currentRow.cloneNode(true);
+      curentRowClone.appendChild(cellFragment);
+      rowFragment.appendChild(curentRowClone);
     }
-    modalTable.appendChild(rowFragment);
-    // apply menu to modal
-    overlayContent.appendChild(modalTable);
-    modalTitle.innerText = title;
+
+    modalTable.appendChild(rowFragment)
+
+    return modalTable;
   };
 
   /**
