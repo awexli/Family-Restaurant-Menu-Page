@@ -24,7 +24,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new MiniCssExtractPlugin({ filename: "[name].[contentHash].css" }),
-    new CleanWebpackPlugin( { cleanOnceBeforeBuildPatterns: ['**/*', '!favi/**'],}),
+    new CleanWebpackPlugin( { cleanOnceBeforeBuildPatterns: ['**/*','!banner/**', '!favi/**'],}),
   ],
   module: {
     rules: [
