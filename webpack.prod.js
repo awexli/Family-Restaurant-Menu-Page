@@ -10,21 +10,23 @@ module.exports = merge(common, {
   mode: "production",
   optimization: {
     minimizer: [
-      new OptimizeCssAssetsPlugin(), 
+      new OptimizeCssAssetsPlugin(),
       new TerserPlugin(),
       new HtmlWebpackPlugin({
         template: "./src/template.html",
         minify: {
           removeAttributeQuotes: true,
           collapseWhitespace: true,
-          removeComments: true
-        }
-      })
+          removeComments: true,
+        },
+      }),
     ],
   },
   plugins: [
     new MiniCssExtractPlugin({ filename: "[name].[contentHash].css" }),
-    new CleanWebpackPlugin( { cleanOnceBeforeBuildPatterns: ['**/*', '!favi/**'],}),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ["**/*", "!favi/**"],
+    }),
   ],
   module: {
     rules: [

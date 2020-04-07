@@ -1,7 +1,6 @@
-import util from "../utilities/category-utility"
+import util from "../utilities/category-utility";
 
 const categoryModal = (() => {
-  
   const getMenu = (menuName) => {
     const categoryObject = {
       "House Special (特色菜)": houseSpecial(),
@@ -23,25 +22,27 @@ const categoryModal = (() => {
       "Lobster (龍蝦)": lobster(),
       "Rice Plates & Soup (午餐碟飯送例湯)": ricePlates(),
     };
-    const menuData = categoryObject[menuName]
+    const menuData = categoryObject[menuName];
 
     if (menuName == "Lobster (龍蝦)") {
-      menuName += " (Market Price)\n\nPlease decide on one of the following cooking methods\n(龍蝦有下列烹調方法可供選擇)";
+      menuName +=
+        " (Market Price)\n\nPlease decide on one of the following cooking methods\n(龍蝦有下列烹調方法可供選擇)";
     }
 
     if (menuName == "Crab (蟹)") {
-      menuName += " (Market Price)\n\nPlease decide on one of the following cooking methods\n(蟹有下列烹調方法可供選擇)"
+      menuName +=
+        " (Market Price)\n\nPlease decide on one of the following cooking methods\n(蟹有下列烹調方法可供選擇)";
     }
 
     if (menuName == "All-Day Takeout (全日外賣)") {
-      menuName += " (29.95)\n\nChoose Any 3 Items (任選以下三款小菜)"
+      menuName += " (29.95)\n\nChoose Any 3 Items (任選以下三款小菜)";
     }
 
     return {
       name: menuName,
       data: menuData,
-    }
-  }
+    };
+  };
 
   const houseSpecial = () => {
     const houseCSV = `客家鹽焗雞,Salt & Baked Chicken,14.95(半 Half) $28.00(Whole) 
@@ -378,7 +379,7 @@ const categoryModal = (() => {
     const ricePlatesData = util.cleanLiteral(ricePlatesCSV);
     const ricePlatesObject = util.populateObject(
       ricePlatesData.length,
-      ricePlatesData,
+      ricePlatesData
     );
 
     return ricePlatesObject;
@@ -396,10 +397,7 @@ const categoryModal = (() => {
     薑蔥,Ginger & Scallion
     沙茶粉絲,Satay & Vermicelli`;
     const crabData = util.cleanLiteral(crabCSV);
-    const crabObject = util.populateObject(
-      crabData.length,
-      crabData,
-    );
+    const crabObject = util.populateObject(crabData.length, crabData);
 
     return crabObject;
   };
@@ -411,10 +409,7 @@ const categoryModal = (() => {
     豉油皇,Soy Sauce
     咸蛋黃,Salted Egg Yolk`;
     const lobsterData = util.cleanLiteral(lobsterCSV);
-    const lobsterObject = util.populateObject(
-      lobsterData.length,
-      lobsterData,
-    );
+    const lobsterObject = util.populateObject(lobsterData.length, lobsterData);
 
     return lobsterObject;
   };
@@ -458,12 +453,12 @@ const categoryModal = (() => {
     const takeawayData = util.cleanLiteral(takeawayCSV);
     const takeawayObject = util.populateObject(
       takeawayData.length,
-      takeawayData,
+      takeawayData
     );
-     return takeawayObject;
+    return takeawayObject;
   };
 
-  return { getMenu }
+  return { getMenu };
 })();
 
 export default categoryModal;
