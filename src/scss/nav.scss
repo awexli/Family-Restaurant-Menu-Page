@@ -1,0 +1,155 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: wheat;
+  padding: 0 1em;
+  height: 74px;
+  position: fixed;
+  width: inherit;
+  max-width: inherit;
+  top: 0;
+  z-index: 10;
+
+  @media screen and (min-width: 768px) {
+    height: 80px;
+    padding: 0 2em;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 0 5em;
+  }
+
+  img {
+    width: 150px;
+  }
+
+  &__btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+    outline: none;
+    position: relative;
+    background: transparent;
+    transition: all 0.1s ease-in-out;
+    @media screen and (min-width: 1024px) {
+      display: none;
+    }
+  }
+
+  &__burger {
+    width: 20px;
+    height: 2px;
+    position: relative;
+    background: black;
+    transition: all 0.1s ease-in-out;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background: black;
+      transition: all 0.1s ease-in-out;
+    }
+
+    &::before {
+      transform: translate(-10px, -5px);
+    }
+
+    &::after {
+      transform: translate(-10px, 5px);
+    }
+
+    &.active {
+      transform: translateX(-1px);
+      background: transparent;
+
+      &::before {
+        transform: rotate(45deg) translate(-6px, 6px);
+      }
+      
+      &::after {
+        transform: rotate(-45deg) translate(-6px, -6px);
+      }
+    }
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 74px;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: ease 0.3s;
+    z-index: -1;
+    background: linear-gradient(hsl(233, 26%, 24%), hsl(220, 16%, 96%));
+    overflow: auto;
+    padding-bottom: 2rem;
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      z-index: 1;
+    }
+
+    @media screen and (min-width: 768px) {
+      top: 80px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      visibility: visible;
+      opacity: 1;
+      background: initial;
+      position: initial;
+      top: initial;
+      left: initial;
+      z-index: initial;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &__menu {
+    position: relative;
+    overflow-y: hidden;
+    background: wheat;
+    padding: 1em 0;
+    margin: 1em;
+    border-radius: 8px;
+    text-align: center;
+
+    @media screen and (min-width: 1024px) {
+      position: inherit;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &__menu-list {
+    @media screen and (min-width: 1024px) {
+      position: inherit;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  &__menu-item {
+    list-style: none;
+    padding: 8px;
+    margin: 1em;
+    border: 1px solid red;
+    border-radius: 8px;
+    a {
+      color: black;
+      text-decoration: none;
+      padding: inherit;
+      transition: color ease 0.3s;
+    }
+  }
+}
