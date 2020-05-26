@@ -2,11 +2,19 @@ const categoryUtilityModule = (() => {
   const rowFragment = new DocumentFragment();
   const cellFragment = new DocumentFragment();
   const cellCloneFragment = new DocumentFragment();
-  const currentCell = document.createElement("td");
-  const currentRow = document.createElement("tr");
-  const modalTable = document.createElement("table");
-  const p = document.createElement("p");
-  modalTable.className = "cat-table";
+  const currentCell = document.createElement('td');
+  const currentRow = document.createElement('tr');
+  const modalTable = document.createElement('table');
+  const p = document.createElement('p');
+  modalTable.className = 'cat-table';
+
+  const dishNumberClone = (clonedNode, text, fragment) => {
+    let cellClone;
+    cellClone = clonedNode;
+    cellClone.innerText = text;
+    fragment.appendChild(cellClone);
+    return fragment;
+  };
 
   /**
    * Populate a table element for the modal
@@ -26,51 +34,56 @@ const categoryUtilityModule = (() => {
     let priceInnerText;
     for (let row in categoryObj) {
       /** create cells for dish number */
-      currentCellClone = currentCell.cloneNode(true);
-      currentCellClone.innerText = categoryObj[row].num;
-      cellFragment.appendChild(currentCellClone);
+      // currentCellClone = currentCell.cloneNode(true);
+      // currentCellClone.innerText = categoryObj[row].num;
+      // cellFragment.appendChild(currentCellClone);
+      dishNumberClone(
+        currentCell.cloneNode(true),
+        categoryObj[row].num,
+        cellFragment
+      );
       /** END cell creation for dish number */
 
       /** create cell for chinese & english & price */
       currentCellClone = currentCell.cloneNode(true);
-      currentCellClone.className = "description";
-      if (categoryObj[row].price === undefined) {
+      currentCellClone.className = 'description';
+      if (categoryObj[row].price === 'undefined') {
         /** create paragraph element for english text */
         pClone = p.cloneNode(true);
         pClone.innerText = categoryObj[row].eng;
-        pClone.className = "english";
+        pClone.className = 'english';
         cellCloneFragment.appendChild(pClone);
         /** END english text */
 
         /** create paragraph element for chinese text */
         pClone = p.cloneNode(true);
         pClone.innerText = categoryObj[row].chin;
-        pClone.className = "chinese";
+        pClone.className = 'chinese';
         cellCloneFragment.appendChild(pClone);
         /** END chinese text */
       } else {
         /** create paragraph element for english text */
         pClone = p.cloneNode(true);
         pClone.innerText = categoryObj[row].eng;
-        pClone.className = "english";
+        pClone.className = 'english';
         cellCloneFragment.appendChild(pClone);
         /** END english text */
 
         /** create paragraph element for chinese text */
         pClone = p.cloneNode(true);
         pClone.innerText = categoryObj[row].chin;
-        pClone.className = "chinese";
+        pClone.className = 'chinese';
         cellCloneFragment.appendChild(pClone);
         /** END chinese text */
 
         /** create paragraph element for price text */
         pClone = p.cloneNode(true);
         priceInnerText = categoryObj[row].price;
-        if (categoryObj[row].price != "Seasonal") {
+        if (categoryObj[row].price != 'Seasonal') {
           priceInnerText = `$${priceInnerText}`;
         }
         pClone.innerText = priceInnerText;
-        pClone.className = "price";
+        pClone.className = 'price';
         cellCloneFragment.appendChild(pClone);
         /** END price text */
       }
@@ -94,11 +107,11 @@ const categoryUtilityModule = (() => {
    * @param {Array.<String>} data - array holding category information
    * @param {String} letter - letter of category
    */
-  const populateObject = (n, data, letter = "") => {
+  const populateObject = (n, data, letter = '') => {
     const newObject = {};
     let currentDish;
     for (let i = 0; i < n; i++) {
-      currentDish = data[i].split(",");
+      currentDish = data[i].split(',');
       newObject[`r${i + 1}`] = {
         num: `${letter}${i + 1}`,
         chin: currentDish[0],
@@ -115,7 +128,7 @@ const categoryUtilityModule = (() => {
    */
   const cleanTemplateLiteral = (literal) => {
     const arr = [];
-    const literalArray = literal.split("\n");
+    const literalArray = literal.split('\n');
 
     for (let elem of literalArray) {
       arr.push(elem.trim());
