@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Nav } from './components/nav/nav-bar';
+import { Category } from './components/menu/category';
 
 class App extends Component {
   constructor(props) {
@@ -7,9 +8,14 @@ class App extends Component {
   }
 
   render() {
-    return(
-      <Nav></Nav>
-    )
+    return (
+      <>
+        <Nav></Nav>
+        <main className="main">
+          <Category></Category>
+        </main>
+      </>
+    );
   }
 }
 

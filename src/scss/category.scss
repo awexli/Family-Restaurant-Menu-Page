@@ -1,0 +1,34 @@
+.category {
+  background-color: wheat;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+  }
+
+  &__jump {
+    display: flex;
+    justify-content: space-between;
+    width: 80px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+  }
+
+  &__item-num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    border: 1px solid black;
+  }
+
+  &__description {
+    flex-grow: 1;
+    padding-left: 1em;
+  }
+}

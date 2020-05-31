@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: wheat;
+  background: white;
   padding: 0 1em;
   height: 74px;
   position: fixed;
@@ -120,7 +120,7 @@
   &__menu {
     position: relative;
     overflow-y: hidden;
-    background: wheat;
+    background: #a02c2e;
     padding: 1em 0;
     margin: 1em;
     border-radius: 8px;
@@ -149,7 +149,7 @@
     border-radius: 8px;
     
     a {
-      color: black;
+      color: white;
       text-decoration: none;
       padding: inherit;
       transition: color ease 0.3s;
