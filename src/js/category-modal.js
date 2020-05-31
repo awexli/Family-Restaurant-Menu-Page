@@ -3,39 +3,39 @@ import util from "./category-utility";
 const categoryModal = (() => {
   const getMenu = (menuName) => {
     const categoryObject = {
-      "House Special (特色菜)": houseSpecial(),
-      "All-Day Takeout (全日外賣)": takeaway(),
-      "Appetizers (餐前小食)": appetizers(),
-      "Soup (湯羹類)": soup(),
-      "Seafood (海鮮類)": seafood(),
-      "Chicken & Duck & Frog (雞鴨田雞類)": chickenDuckFrog(),
-      "Beef & Lamb (牛羊類)": beefLamb(),
-      "Pork (豬肉類)": pork(),
-      "Clay Pot (煲仔類)": clayPot(),
-      "Mu Shu (木須類)": mushu(),
-      "Lettuce Wraps (生菜包)": lettuceWrap(),
-      "Vegetables (健康素菜類)": vegetables(),
-      "Chow Mein & Fun (粉麵類)": chowMeinFun(),
-      "Fried Rice (炒飯類)": friedRice(),
-      "Congee (粥類)": congee(),
-      "Crab (蟹)": crab(),
-      "Lobster (龍蝦)": lobster(),
-      "Rice Plates & Soup (午餐碟飯送例湯)": ricePlates(),
+      'House Special (特色菜)': houseSpecial(),
+      'All-Day Takeout (全日外賣)': takeaway(),
+      'Appetizers (餐前小食)': appetizers(),
+      'Soup (湯羹類)': soup(),
+      'Seafood (海鮮類)': seafood(),
+      'Chicken & Duck & Frog (雞鴨田雞類)': chickenDuckFrog(),
+      'Beef & Lamb (牛羊類)': beefLamb(),
+      'Pork (豬肉類)': pork(),
+      'Clay Pot (煲仔類)': clayPot(),
+      'Mu Shu (木須類)': mushu(),
+      'Lettuce Wraps (生菜包)': lettuceWrap(),
+      'Vegetables (健康素菜類)': vegetables(),
+      'Chow Mein & Fun (粉麵類)': chowMeinFun(),
+      'Fried Rice (炒飯類)': friedRice(),
+      'Congee (粥類)': congee(),
+      'Crab (蟹)': crab(),
+      'Lobster (龍蝦)': lobster(),
+      'Rice Plates & Soup (午餐碟飯送例湯)': ricePlates(),
     };
     const menuData = categoryObject[menuName];
 
-    if (menuName == "Lobster (龍蝦)") {
+    if (menuName == 'Lobster (龍蝦)') {
       menuName +=
-        " (Market Price)\n\nPlease decide on one of the following cooking methods\n(龍蝦有下列烹調方法可供選擇)";
+        ' (Market Price)\n\nPlease decide on one of the following cooking methods\n(龍蝦有下列烹調方法可供選擇)';
     }
 
-    if (menuName == "Crab (蟹)") {
+    if (menuName == 'Crab (蟹)') {
       menuName +=
-        " (Market Price)\n\nPlease decide on one of the following cooking methods\n(蟹有下列烹調方法可供選擇)";
+        ' (Market Price)\n\nPlease decide on one of the following cooking methods\n(蟹有下列烹調方法可供選擇)';
     }
 
-    if (menuName == "All-Day Takeout (全日外賣)") {
-      menuName += " (29.95)\n\nChoose Any 3 Items (任選以下三款小菜)";
+    if (menuName == 'All-Day Takeout (全日外賣)') {
+      menuName += ' (29.95)\n\nChoose Any 3 Items (任選以下三款小菜)';
     }
 
     return {
@@ -77,7 +77,7 @@ const categoryModal = (() => {
     脆皮糯米雞,Stuffed Chicken w/ Sticky Rice (Order in Advance),39.00`;
 
     const houseData = util.cleanLiteral(houseCSV);
-    const houseObject = util.populateObject(houseData.length, houseData, "S");
+    const houseObject = util.populateObject(houseData.length, houseData, 'S');
     return houseObject;
   };
 
@@ -94,7 +94,7 @@ const categoryModal = (() => {
     const appetizersObject = util.populateObject(
       appetizersData.length,
       appetizersData,
-      "A"
+      'A'
     );
     return appetizersObject;
   };
@@ -113,7 +113,7 @@ const categoryModal = (() => {
     雞菜雜湯,Mixed Vegetable w/ Chicken Soup,10.95
     客家布袋雞湯（原隻豬肚包雞）,House Special Steamed Pork Stomach w/ Chicken Soup (Order in Advance),59.00`;
     const soupData = util.cleanLiteral(soupCSV);
-    const soupObject = util.populateObject(soupData.length, soupData, "B");
+    const soupObject = util.populateObject(soupData.length, soupData, 'B');
     return soupObject;
   };
 
@@ -136,7 +136,7 @@ const categoryModal = (() => {
     const seafoodObject = util.populateObject(
       seafoodData.length,
       seafoodData,
-      "C"
+      'C'
     );
     return seafoodObject;
   };
@@ -159,7 +159,7 @@ const categoryModal = (() => {
     const chickenDuckFrogObject = util.populateObject(
       chickenDuckFrogData.length,
       chickenDuckFrogData,
-      "D"
+      'D'
     );
 
     return chickenDuckFrogObject;
@@ -180,7 +180,7 @@ const categoryModal = (() => {
     const beefLambObject = util.populateObject(
       beefLambData.length,
       beefLambData,
-      "E"
+      'E'
     );
     return beefLambObject;
   };
@@ -200,7 +200,7 @@ const categoryModal = (() => {
     虎皮尖椒炒豬肚,Pork Stomach w/ Spicy Pepper,13.95
     鹹酸菜炒豬肚,Pork Stomach w/ Preserved Green,13.95`;
     const porkData = util.cleanLiteral(porkCSV);
-    const porkObject = util.populateObject(porkData.length, porkData, "F");
+    const porkObject = util.populateObject(porkData.length, porkData, 'F');
 
     return porkObject;
   };
@@ -222,7 +222,7 @@ const categoryModal = (() => {
     const clayPotObject = util.populateObject(
       clayPotData.length,
       clayPotData,
-      "G"
+      'G'
     );
 
     return clayPotObject;
@@ -234,7 +234,7 @@ const categoryModal = (() => {
     木須菜, Mu Shu Vegetable,12.95
     木須蝦, Mu Shu Shrimp,12.95`;
     const mushuData = util.cleanLiteral(mushuCSV);
-    const mushupObject = util.populateObject(mushuData.length, mushuData, "H");
+    const mushupObject = util.populateObject(mushuData.length, mushuData, 'H');
     return mushupObject;
   };
 
@@ -247,7 +247,7 @@ const categoryModal = (() => {
     const lettuceWrapObject = util.populateObject(
       lettuceWrapData.length,
       lettuceWrapData,
-      "I"
+      'I'
     );
 
     return lettuceWrapObject;
@@ -273,7 +273,7 @@ const categoryModal = (() => {
     const vegetablesObject = util.populateObject(
       vegetablesData.length,
       vegetablesData,
-      "J"
+      'J'
     );
 
     return vegetablesObject;
@@ -302,7 +302,7 @@ const categoryModal = (() => {
     const chowMeinObject = util.populateObject(
       chowMeinData.length,
       chowMeinData,
-      "K"
+      'K'
     );
 
     return chowMeinObject;
@@ -325,7 +325,7 @@ const categoryModal = (() => {
     const friedRiceObject = util.populateObject(
       friedRiceData.length,
       friedRiceData,
-      "L"
+      'L'
     );
 
     return friedRiceObject;
@@ -347,7 +347,7 @@ const categoryModal = (() => {
     const congeeObject = util.populateObject(
       congeeData.length,
       congeeData,
-      "M"
+      'M'
     );
 
     return congeeObject;

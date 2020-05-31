@@ -46,6 +46,7 @@
     position: relative;
     background: black;
     transition: all 0.1s ease-in-out;
+
     &::before,
     &::after {
       content: '';
@@ -71,7 +72,7 @@
       &::before {
         transform: rotate(45deg) translate(-6px, 6px);
       }
-      
+
       &::after {
         transform: rotate(-45deg) translate(-6px, -6px);
       }
