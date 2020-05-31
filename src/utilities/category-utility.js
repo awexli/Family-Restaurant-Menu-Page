@@ -21,7 +21,7 @@ const categoryUtilityModule = (() => {
     }
 
     let currentCellClone;
-    let curentRowClone;
+    let currentRollClone;
     let pClone;
     let priceInnerText;
     for (let row in categoryObj) {
@@ -78,9 +78,9 @@ const categoryUtilityModule = (() => {
 
       currentCellClone.appendChild(cellCloneFragment);
       cellFragment.appendChild(currentCellClone);
-      curentRowClone = currentRow.cloneNode(true);
-      curentRowClone.appendChild(cellFragment);
-      rowFragment.appendChild(curentRowClone);
+      currentRollClone = currentRow.cloneNode(true);
+      currentRollClone.appendChild(cellFragment);
+      rowFragment.appendChild(currentRollClone);
     }
 
     modalTable.appendChild(rowFragment);
