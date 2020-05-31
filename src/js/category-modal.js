@@ -48,7 +48,7 @@ const categoryModal = (() => {
     const houseCSV = `客家鹽焗雞,Salt & Baked Chicken,14.95(半 Half) $28.00(Whole) 
     招牌華香雞（半）,House Special Steamed Chicken (Half),13.95
     豬肚撈雞（半）,Pork Stomach w/ Chicken (Half),17.95
-    惠州梅菜扣肉,Chinese Bacon w/ Presevered Green,14.95
+    惠州梅菜扣肉,Chinese Bacon w/ Preserved Green,14.95
     客家煎釀滑豆腐,House Special Pan Fried Stuffed Tofu,12.95
     客家黃酒薑炒雞,Stir Fry Chicken w/ Ginger in Wine Sauce,16.95
     胡椒支竹豬肚雞煲,Chicken - Pork Stomach & Bean Curd w/ Pepper in Pot,15.95
@@ -122,7 +122,7 @@ const categoryModal = (() => {
     上湯花雕浸醉蜆,Wine Clams in Supreme Broth,16.95
     X0醬泡魚片,Fish Fillet in X.O. Sauce,13.95
     九層塔炒魚片,Basil Fish Fillet,13.95
-    碧綠合桃蝦,Walnut Prawns w/ Vegtable,14.95
+    碧綠合桃蝦,Walnut Prawns w/ Vegetable,14.95
     黑松露炒花枝蝦球,Black Truffle w/ Squids & Prawns,15.95
     雜菌雲耳炒蝦球,Prawns w/ Mixed Mushroom & Fungus,13.95
     沙茶花枝雞片,Chicken & Squid in Satay Sauce,13.95
@@ -194,7 +194,7 @@ const categoryModal = (() => {
     肉崧麻婆豆腐,Ma Pao Tofu w/ Preserved Green,11.95
     鹹酸菜炒肉絲,Shredded Pork w/ Preserved Green,11.95
     嬌頭生炒骨,Shallot Spareribs,11.95
-    椒鹽豆仔排骨,Salt & Papper Spareribs w/ String Beans,11.95
+    椒鹽豆仔排骨,Salt & Pepper Spareribs w/ String Beans,11.95
     X0醬肉崧四季豆,Minced Pork & String Bean w/ X.O. Sauce,11.95
     什菌肉片,Pork w/ Mixed Mushroom,12.95
     虎皮尖椒炒豬肚,Pork Stomach w/ Spicy Pepper,13.95
@@ -234,8 +234,8 @@ const categoryModal = (() => {
     木須菜, Mu Shu Vegetable,12.95
     木須蝦, Mu Shu Shrimp,12.95`;
     const mushuData = util.cleanLiteral(mushuCSV);
-    const mushupObject = util.populateObject(mushuData.length, mushuData, 'H');
-    return mushupObject;
+    const mushuObject = util.populateObject(mushuData.length, mushuData, "H");
+    return mushuObject;
   };
 
   const lettuceWrap = () => {
@@ -317,7 +317,7 @@ const categoryModal = (() => {
     雞/牛/又燒炒飯,Chicken/Beef/BBQ Pork Fried Rice,10.95
     鹹魚雞粒炒飯,Chicken & Salted Fish Fried Rice,12.95
     鹹酸菜雞粒炒飯,Preserved Green & Egg Fried Rice,10.95
-    菠蘿海鮮粒炒飯,Pinapple Shrimp Fried Rice,11.95
+    菠蘿海鮮粒炒飯,Pineapple Shrimp Fried Rice,11.95
     福建炒飯,Fukien Fried Rice,12.95
     X0醬牛粒豆豉炒飯,Beef Cube w/ Black Bean Fried Rice in X.O. Sauce,11.95`;
 
