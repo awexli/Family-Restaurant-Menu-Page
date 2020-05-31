@@ -1,27 +1,27 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
   entry: {
-    main: "./src/index.jsx",
+    main: './src/index.jsx',
   },
   output: {
-    filename: "[name].[contentHash].bundle.js",
-    path: path.resolve(__dirname, "dist"),
+    filename: '[name].[contentHash].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
       {
         test: /\.html$/,
-        use: ["html-loader"],
+        use: ['html-loader'],
       },
       {
         test: /\.(gif|svg|jpg|png|webp|ico)$/,
         use: [
           {
-            loader: "file-loader",
+            loader: 'file-loader',
             options: {
-              name: "[name].[hash].[ext]",
-              outputPath: "imgs",
+              name: '[name].[hash].[ext]',
+              outputPath: 'imgs',
             },
           },
         ],
@@ -30,11 +30,11 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         resolve: {
-          extensions: ['*', '.js', '.jsx']
+          extensions: ['*', '.js', '.jsx'],
         },
         use: {
-          loader: "babel-loader"
-        }
+          loader: 'babel-loader',
+        },
       },
     ],
   },

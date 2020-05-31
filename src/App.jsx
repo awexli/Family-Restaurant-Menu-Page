@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Nav } from './components/nav/nav-bar';
-import { Category } from './components/menu/category';
+import { Menu } from './components/menu/menu';
 
 class App extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class App extends Component {
       <>
         <Nav></Nav>
         <main className="main">
-          <Category></Category>
+          <Menu></Menu>
         </main>
       </>
     );
