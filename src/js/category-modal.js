@@ -1,4 +1,4 @@
-import util from "../utilities/category-utility";
+import util from "./category-utility";
 
 const categoryModal = (() => {
   const getMenu = (menuName) => {

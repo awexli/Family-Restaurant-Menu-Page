@@ -2,8 +2,7 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    main: "./src/index.js",
-    vendor: "./src/vendor.js",
+    main: "./src/index.jsx",
   },
   output: {
     filename: "[name].[contentHash].bundle.js",
@@ -26,6 +25,16 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        resolve: {
+          extensions: ['*', '.js', '.jsx']
+        },
+        use: {
+          loader: "babel-loader"
+        }
       },
     ],
   },

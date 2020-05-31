@@ -90,7 +90,7 @@
     z-index: -1;
     background: linear-gradient(hsl(233, 26%, 24%), hsl(220, 16%, 96%));
     overflow: auto;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
 
     &.active {
       visibility: visible;
@@ -139,12 +139,14 @@
       justify-content: center;
     }
   }
+
   &__menu-item {
     list-style: none;
     padding: 8px;
     margin: 1em;
     border: 1px solid red;
     border-radius: 8px;
+    
     a {
       color: black;
       text-decoration: none;

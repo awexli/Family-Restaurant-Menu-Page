@@ -1,4 +1,4 @@
-import util from "../utilities/category-utility";
+import util from "./category-utility";
 
 const menuBody = document.querySelector(".modal-body");
 const menuTitle = document.querySelector(".modal-title");
