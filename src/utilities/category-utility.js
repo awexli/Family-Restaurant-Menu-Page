@@ -25,7 +25,6 @@ const categoryUtilityModule = (() => {
     let pClone;
     let priceInnerText;
     for (let row in categoryObj) {
-
       /** create cells for dish number */
       currentCellClone = currentCell.cloneNode(true);
       currentCellClone.innerText = categoryObj[row].num;
@@ -67,7 +66,7 @@ const categoryUtilityModule = (() => {
         /** create paragraph element for price text */
         pClone = p.cloneNode(true);
         priceInnerText = categoryObj[row].price;
-        if (categoryObj[row].price != "Seasonal"){
+        if (categoryObj[row].price != "Seasonal") {
           priceInnerText = `$${priceInnerText}`;
         }
         pClone.innerText = priceInnerText;
@@ -84,7 +83,7 @@ const categoryUtilityModule = (() => {
       rowFragment.appendChild(curentRowClone);
     }
 
-    modalTable.appendChild(rowFragment)
+    modalTable.appendChild(rowFragment);
 
     return modalTable;
   };

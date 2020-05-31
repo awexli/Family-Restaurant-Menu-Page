@@ -67,7 +67,7 @@ $default-gold: #cc9900;
 }
 html,
 body {
-  font-family: 'Amiri', serif;
+  font-family: "Amiri", serif;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -134,7 +134,9 @@ body {
   a {
     color: whitesmoke;
   }
-  
+}
+.msg {
+  margin-bottom: 8px;
 }
 .address {
   display: flex;
@@ -147,9 +149,6 @@ body {
   justify-content: center;
   .yelp {
     margin-top: 8px;
-  }
-  .yelp-img {
-    width: 91px;
   }
 }
 .btn {
