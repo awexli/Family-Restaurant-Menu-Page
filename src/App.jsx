@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Nav } from './components/nav/nav-bar';
-import { Menu } from './components/menu/menu';
+import { Menu } from './components/menu/menu-parent';
 
 class App extends Component {
   constructor(props) {

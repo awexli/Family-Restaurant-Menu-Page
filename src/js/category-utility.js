@@ -108,16 +108,16 @@ const categoryUtilityModule = (() => {
    * @param {String} letter - letter of category
    */
   const populateObject = (n, data, letter = '') => {
-    const newObject = {};
+    const newObject = [];
     let currentDish;
     for (let i = 0; i < n; i++) {
       currentDish = data[i].split(',');
-      newObject[`r${i + 1}`] = {
-        num: `${letter}${i + 1}`,
-        chin: currentDish[0],
-        eng: currentDish[1],
+      newObject.push({
+        number: `${letter}${i + 1}`,
+        chinese: currentDish[0],
+        english: currentDish[1],
         price: currentDish[2],
-      };
+      });
     }
     return newObject;
   };

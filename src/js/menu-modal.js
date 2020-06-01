@@ -1,8 +1,8 @@
 import util from "./category-utility";
 
-const categoryModal = (() => {
+const menuModal = (() => {
   const getMenu = (menuName) => {
-    const categoryObject = {
+    const menu = {
       'House Special (特色菜)': houseSpecial(),
       'All-Day Takeout (全日外賣)': takeaway(),
       'Appetizers (餐前小食)': appetizers(),
@@ -22,7 +22,8 @@ const categoryModal = (() => {
       'Lobster (龍蝦)': lobster(),
       'Rice Plates & Soup (午餐碟飯送例湯)': ricePlates(),
     };
-    const menuData = categoryObject[menuName];
+    
+    const menuData = menu[menuName];
 
     if (menuName == 'Lobster (龍蝦)') {
       menuName +=
@@ -42,6 +43,29 @@ const categoryModal = (() => {
       name: menuName,
       data: menuData,
     };
+  };
+
+  const getMenuNames = () => {
+    return [
+      'House Special (特色菜)',
+      'All-Day Takeout (全日外賣)',
+      'Appetizers (餐前小食)',
+      'Soup (湯羹類)',
+      'Seafood (海鮮類)',
+      'Chicken & Duck & Frog (雞鴨田雞類)',
+      'Beef & Lamb (牛羊類)',
+      'Pork (豬肉類)',
+      'Clay Pot (煲仔類)',
+      'Mu Shu (木須類)',
+      'Lettuce Wraps (生菜包)',
+      'Vegetables (健康素菜類)',
+      'Chow Mein & Fun (粉麵類)',
+      'Fried Rice (炒飯類)',
+      'Congee (粥類)',
+      'Crab (蟹)',
+      'Lobster (龍蝦)',
+      'Rice Plates & Soup (午餐碟飯送例湯)',
+    ];
   };
 
   const houseSpecial = () => {
@@ -458,7 +482,7 @@ const categoryModal = (() => {
     return takeawayObject;
   };
 
-  return { getMenu };
+  return { getMenu, getMenuNames };
 })();
 
-export default categoryModal;
+export default menuModal;
