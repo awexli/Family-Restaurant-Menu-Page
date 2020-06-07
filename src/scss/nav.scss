@@ -9,7 +9,7 @@
   width: inherit;
   max-width: inherit;
   top: 0;
-  z-index: 10;
+  z-index: 1;
 
   @media screen and (min-width: 768px) {
     height: 80px;
@@ -35,9 +35,6 @@
     position: relative;
     background: transparent;
     transition: all 0.1s ease-in-out;
-    @media screen and (min-width: 1024px) {
-      display: none;
-    }
   }
 
   &__burger {
@@ -89,7 +86,7 @@
     opacity: 0;
     transition: ease 0.3s;
     z-index: -1;
-    background: linear-gradient(hsl(233, 26%, 24%), hsl(220, 16%, 96%));
+    background: linear-gradient(hsla(233, 26%, 24%, 1), hsla(220, 16%, 96%, 0.2));
     overflow: auto;
     padding-bottom: 3rem;
 
@@ -102,19 +99,6 @@
     @media screen and (min-width: 768px) {
       top: 80px;
     }
-
-    @media screen and (min-width: 1024px) {
-      visibility: visible;
-      opacity: 1;
-      background: initial;
-      position: initial;
-      top: initial;
-      left: initial;
-      z-index: initial;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
   }
 
   &__menu {
@@ -126,18 +110,18 @@
     border-radius: 8px;
     text-align: center;
 
-    @media screen and (min-width: 1024px) {
-      position: inherit;
+    @media screen and (min-width: 1440px) {
       padding: 0;
-      margin: 0;
+      width: 768px;
+      margin: 1rem auto;
     }
+    
   }
 
   &__menu-list {
-    @media screen and (min-width: 1024px) {
-      position: inherit;
-      display: flex;
-      justify-content: center;
+    @media screen and (min-width: 1440px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
   }
 

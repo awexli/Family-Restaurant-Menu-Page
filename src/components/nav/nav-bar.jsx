@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Logo } from '../../assets';
 import BurgerButton from './burger-button';
-import NavOverlay from './nav-overlay';
+import NavOverlay from './nav-menu';
 
 export class Nav extends Component {
   constructor(props) {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class NavOverlay extends Component {
+class NavMenu extends Component {
   static propTypes = {
     active: PropTypes.bool.isRequired,
   };
@@ -52,4 +52,4 @@ class NavOverlay extends Component {
   }
 }
 
-export default NavOverlay;
+export default NavMenu;
