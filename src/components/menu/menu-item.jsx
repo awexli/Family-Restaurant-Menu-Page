@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Category from '../../js/menu-modal';
+import { Logo } from '../../assets';
 
 class MenuItem extends Component {
   static propTypes = {
@@ -13,13 +13,13 @@ class MenuItem extends Component {
 
   render() {
     const menuItems = this.props.menuItems;
-
     return (
       <>
         {menuItems.map((item, index) => (
           <div key={index} className="menu__item">
-            <div className="menu__item-num">
-              <h3>{item.number}</h3>
+            <div className="menu__image-container">
+              <Logo></Logo>
+              <div className="menu__item-num">{item.number}</div>
             </div>
             <div className="menu__description">
               <p>{item.english}</p>
