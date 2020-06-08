@@ -43,7 +43,6 @@ class MenuItem extends Component {
     // work in progress
     return (
       <div className="menu__image-none">
-        {this.handleDishImages(item.number, dishMap)}
         <div className="menu__item-num-center">{item.number}</div>
       </div>
     );
@@ -53,7 +52,6 @@ class MenuItem extends Component {
     if (dishMap[itemNumber]) {
       return dishMap[itemNumber];
     }
-
     // return <Logo></Logo>;
   };
 }
