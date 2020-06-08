@@ -5,7 +5,7 @@ export const Logo = () => (
   <img src={LogoImage} className="photo" alt="Zhong Shan Logo"></img>
 );
 
-function importAllImages(requireContext) {
+const importAllImages = (requireContext) => {
   let images = {};
   requireContext.keys().forEach((item) => {
     images[item.replace('./', '')] = requireContext(item);
@@ -18,12 +18,15 @@ const images = importAllImages(
   require.context('./dishes', false, /\.(png|jpe?g|svg)$/)
 );
 
-export const dishMap = {
-  A7: (
+export const dishMap = {};
+// populate dishMap
+for (let imageString in images) {
+  const itemNumber = `${imageString[0].toUpperCase()}${imageString[1]}`;
+  dishMap[itemNumber] = (
     <img
-      src={images['a7_pumpkin_strip.jpg'].default}
-      alt="Pumpkin Strip"
+      src={images[imageString].default}
+      alt={imageString}
       className="photo"
-    />
-  ),
-};
+    ></img>
+  );
+}

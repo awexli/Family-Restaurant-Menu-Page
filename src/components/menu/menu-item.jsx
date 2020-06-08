@@ -18,27 +18,43 @@ class MenuItem extends Component {
       <>
         {menuItems.map((item, index) => (
           <div key={index} className="menu__item">
-            <div className="menu__image-container">
-              {this.handleDishImages(item.number, dishMap)}
-              <div className="menu__item-num">{item.number}</div>
-            </div>
-            <div className="menu__description">
-              <p>{item.english}</p>
-              <p>{item.chinese}</p>
-              <p>{item.price}</p>
-            </div>
+            {this.handleImageContainer(item, dishMap)}
+            <ul className="menu__description">
+              <li>{item.english}</li>
+              <li>{item.chinese}</li>
+              <li>{item.price}</li>
+            </ul>
           </div>
         ))}
       </>
     );
   }
 
+  handleImageContainer = (item, dishMap) => {
+    if (dishMap[item.number]) {
+      return (
+        <div className="menu__image-container">
+          {this.handleDishImages(item.number, dishMap)}
+          <div className="menu__item-num">{item.number}</div>
+        </div>
+      );
+    }
+
+    // work in progress
+    return (
+      <div className="menu__image-none">
+        {this.handleDishImages(item.number, dishMap)}
+        <div className="menu__item-num-center">{item.number}</div>
+      </div>
+    );
+  };
+
   handleDishImages = (itemNumber, dishMap) => {
     if (dishMap[itemNumber]) {
       return dishMap[itemNumber];
     }
 
-    return <Logo></Logo>;
+    // return <Logo></Logo>;
   };
 }
 

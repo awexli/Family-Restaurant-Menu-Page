@@ -51,7 +51,7 @@ $default-gold: #cc9900;
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
