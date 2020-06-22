@@ -1,7 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import renderMenu from './view/render-view';
-// import categoryModal from './modal/category-modal';
 import './style.scss';
 import App from "./App";
 

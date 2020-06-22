@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import MenuBody from './menu-body';
-import '../../scss/menu.scss';
+import MenuItem from './menu-item';
+import MenuHeader from './menu-header';
+import './styles/menu.scss';
 import MenuModal from '../../js/menu-modal';
 
 export class Menu extends Component {
@@ -29,7 +30,12 @@ export class Menu extends Component {
 
     return (
       <div className="menu">
-        <MenuBody menu={menu}></MenuBody>
+        {menu.map((category, index) => (
+          <div className="menu__category" key={index} >
+            <MenuHeader menuTitle={category.name}></MenuHeader>
+            <MenuItem menuItems={category.data}></MenuItem>
+          </div>
+        ))}
       </div>
     );
   }
