@@ -2,7 +2,7 @@ import React from 'react';
 import LogoImage from './logo.png';
 
 export const Logo = () => (
-  <img src={LogoImage} className="photo" alt="Zhong Shan Logo"></img>
+  <img src={LogoImage} alt="Zhong Shan Logo"></img>
 );
 
 export const UpArrow = () => (

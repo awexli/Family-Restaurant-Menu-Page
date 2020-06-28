@@ -13,12 +13,13 @@
     ]
   },
   "devDependencies": {
-    "bootstrap": "^4.5.0",
     "@babel/core": "^7.10.2",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-react": "^7.10.1",
-    "@babel/plugin-proposal-class-properties": "^7.10.1",
     "babel-loader": "^8.1.0",
+    "bootstrap": "^4.5.0",
+    "bulma": "^0.9.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.3",
     "file-loader": "^6.0.0",

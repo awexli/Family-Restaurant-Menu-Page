@@ -13,7 +13,6 @@ class MenuItem extends Component {
 
   render() {
     const menuItems = this.props.menuItems;
-
     return (
       <>
         {menuItems.map((item, index) => (

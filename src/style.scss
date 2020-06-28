@@ -1,3 +1,5 @@
+@charset "uft-8";
+@import '../node_modules/bulma/bulma.sass';
 @import './scss/nav.scss';
 
 $break-smaller: 360px;
@@ -63,6 +65,7 @@ body {
   width: 100%;
   height: 100%;
   background-repeat: repeat;
+  scroll-behavior: smooth;
 }
 
 .root {
@@ -71,12 +74,12 @@ body {
   position: relative;
   margin: 0 auto;
   width: 100%;
-  max-width: 1440px;
+  max-width: 960px;
 }
 
-.main {
-  padding-top: 75px;
-}
+// .main {
+//   padding-top: 75px;
+// }
 
 // .wrapper {
 //   min-height: 100%;
