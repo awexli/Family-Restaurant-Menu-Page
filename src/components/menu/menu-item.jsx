@@ -14,7 +14,7 @@ class MenuItem extends Component {
   render() {
     const menuItems = this.props.menuItems;
     return (
-      <>
+      <div className="menu__item-container">
         {menuItems.map((item, index) => (
           <div key={index} className="menu__item">
             {this.handleImageContainer(item, dishMap)}
@@ -25,7 +25,7 @@ class MenuItem extends Component {
             </ul>
           </div>
         ))}
-      </>
+      </div>
     );
   }
 
