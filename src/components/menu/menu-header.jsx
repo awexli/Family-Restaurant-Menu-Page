@@ -26,22 +26,27 @@ class MenuHeader extends Component {
           <p className="menu__title">{menuTitle}</p>
           <div className="menu__jump">
             <button
-              className="menu__button"
+              className="menu__button button is-dark"
               aria-label="Menu"
               onClick={this.handleOverlayMenu}
             >
-              menu
+              Menu
             </button>
-            <button className="menu__button" aria-label="Jump Up">
-              <a href={this.handleJumpUp(menuHeaderNum)}>
-                <UpArrow></UpArrow>
-              </a>
-            </button>
-            <button className="menu__button" aria-label="Jump Down">
-              <a href={this.handleJumpDown(menuHeaderNum)}>
-                <DownArrow></DownArrow>
-              </a>
-            </button>
+
+            <a
+              className="menu__button button is-dark "
+              href={this.handleJumpUp(menuHeaderNum)}
+              aria-label="Jump Up"
+            >
+              <UpArrow></UpArrow>
+            </a>
+            <a
+              className="menu__button button is-dark"
+              href={this.handleJumpDown(menuHeaderNum)}
+              aria-label="Jump Down"
+            >
+              <DownArrow></DownArrow>
+            </a>
           </div>
         </div>
       </>
