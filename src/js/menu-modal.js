@@ -27,12 +27,12 @@ const menuModal = (() => {
 
     if (menuName == 'Lobster (龍蝦)') {
       menuName +=
-        ' (Market Price)\n\nPlease decide on one of the following cooking methods\n(龍蝦有下列烹調方法可供選擇)';
+        ' (Market Price)';
     }
 
     if (menuName == 'Crab (蟹)') {
       menuName +=
-        ' (Market Price)\n\nPlease decide on one of the following cooking methods\n(蟹有下列烹調方法可供選擇)';
+        ' (Market Price)';
     }
 
     if (menuName == 'All-Day Takeout (全日外賣)') {

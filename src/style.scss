@@ -1,5 +1,9 @@
 @charset "uft-8";
-@import '../node_modules/bulma/bulma.sass';
+@import 'bulma/sass/utilities/_all.sass';
+@import 'bulma/sass/elements/button.sass';
+@import 'bulma/sass/components/dropdown.sass';
+@import 'bulma/sass/components/navbar.sass';
+@import 'bulma/sass/components/card.sass';
 @import './scss/nav.scss';
 
 $break-smaller: 360px;

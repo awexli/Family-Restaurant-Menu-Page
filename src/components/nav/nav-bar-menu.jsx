@@ -21,7 +21,7 @@ class NavBarMenu extends Component {
     return (
       <div id="nav-menu" className={active ? activeClass : defaultClass}>
         <div className="navbar-end">
-        <div className="navbar-item has-dropdown is-hoverable">
+          <div className="navbar-item has-dropdown is-hoverable">
             <a href="#" className="navbar-link">
               Menu
             </a>

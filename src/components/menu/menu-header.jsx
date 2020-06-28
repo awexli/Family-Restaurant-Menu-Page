@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { MenuHeaderService } from './services/menu-header-service';
 import { MenuCategoryService } from '../menu-category-service';
+import { Mobile } from '../media-queries';
 
 import { UpArrow, DownArrow } from '../../assets/index';
 
@@ -23,29 +24,32 @@ class MenuHeader extends Component {
     const menuHeaderId = MenuHeaderService.getHeaderId(menuTitle);
     const menuHeaderNum = MenuHeaderService.getHeaderNum(menuTitle);
     const category = MenuCategoryService.CategoryLocation();
+
     return (
-      <>
-        <div className="menu__header" id={menuHeaderId}>
-          <p className="menu__title">{menuTitle}</p>
+      <div className="card">
+        <header className="card-header menu__header" id={menuHeaderId}>
+          <p className="card-header-title">{menuTitle}</p>
           <div className="menu__jump">
             {this.renderMenuDropdown(category)}
-            <a
-              className="menu__button button is-dark "
-              href={this.handleJumpUp(menuHeaderNum)}
-              aria-label="Jump Up"
-            >
-              <UpArrow></UpArrow>
-            </a>
-            <a
-              className="menu__button button is-dark"
-              href={this.handleJumpDown(menuHeaderNum)}
-              aria-label="Jump Down"
-            >
-              <DownArrow></DownArrow>
-            </a>
+            <Mobile>
+              <a
+                className="menu__button button is-dark "
+                href={this.handleJumpUp(menuHeaderNum)}
+                aria-label="Jump Up"
+              >
+                <UpArrow />
+              </a>
+              <a
+                className="menu__button button is-dark"
+                href={this.handleJumpDown(menuHeaderNum)}
+                aria-label="Jump Down"
+              >
+                <DownArrow />
+              </a>
+            </Mobile>
           </div>
-        </div>
-      </>
+        </header>
+      </div>
     );
   }
 
