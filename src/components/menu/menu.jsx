@@ -3,6 +3,7 @@ import MenuItem from './menu-item';
 import MenuHeader from './menu-header';
 import './styles/menu.scss';
 import MenuModal from '../../js/menu-modal';
+import { FixedSizeList } from 'react-window';
 
 export class Menu extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ export class Menu extends Component {
       menu.push(category);
     });
 
-    this.setState({ menu: menu })
+    this.setState({ menu: menu });
   }
 
   render() {
@@ -31,7 +32,7 @@ export class Menu extends Component {
     return (
       <div className="menu">
         {menu.map((category, index) => (
-          <div className="menu__category" key={index} >
+          <div className="menu__category" key={index}>
             <MenuHeader menuTitle={category.name}></MenuHeader>
             <MenuItem menuItems={category.data}></MenuItem>
           </div>
