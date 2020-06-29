@@ -1,231 +1,247 @@
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins";
-@import "~bootstrap/scss/root";
-@import "~bootstrap/scss/reboot";
-@import "~bootstrap/scss/type";
-@import "~bootstrap/scss/buttons";
-@import "~bootstrap/scss/transitions";
-@import "~bootstrap/scss/button-group";
-@import "~bootstrap/scss/close";
-@import "~bootstrap/scss/modal";
-
-$break-smaller: 360px;
-$break-small: 411px;
-$break-medium: 611px;
-$break-table: 768px;
-$break-desk: 1024px;
-$break-larger: 1400px;
-
-$default-red: #a02c2e;
-$default-gold: #cc9900;
-
-@mixin respond-to($media) {
-  @if $media == smaller {
-    @media only screen and (min-width: $break-smaller) {
-      @content;
-    }
-  }
-
-  @if $media == small {
-    @media only screen and (min-width: $break-small) {
-      @content;
-    }
-  }
-
-  @if $media == medium {
-    @media only screen and (min-width: $break-medium) {
-      @content;
-    }
-  }
-
-  @if $media == table {
-    @media only screen and (min-width: $break-table) {
-      @content;
-    }
-  }
-
-  @if $media == desk {
-    @media only screen and (min-width: $break-desk) {
-      @content;
-    }
-  }
-
-  @if $media == larger {
-    @media only screen and (min-width: $break-larger) {
-      @content;
-    }
-  }
-}
+@charset "uft-8";
 
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
+
 html,
 body {
-  font-family: "Amiri", serif;
+  font-family: 'Roboto Condensed', sans-serif;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  background: url(assets/ricepaper.png);
-  background-repeat: repeat;
+  scroll-behavior: smooth;
 }
-.wrapper {
-  min-height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+
+.root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 960px;
 }
-.nav-bar {
-  margin: 1em 0 0 0;
-  text-align: center;
-  img {
-    width: 290px;
-    @include respond-to(table) {
-      width: auto;
-    }
-  }
-}
-.main {
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  padding: 1em;
-  td {
-    margin: 8px auto;
-  }
-  .options {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    @include respond-to(table) {
-      tbody {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-column-gap: 26px;
-        width: 100%;
-      }
-    }
-  }
-}
-.option:hover {
-  background-color: transparent;
-  border: $default-red solid 1px;
-  color: $default-red;
-}
+
+@import 'bulma/sass/utilities/_all.sass';
+@import 'bulma/sass/elements/button.sass';
+@import 'bulma/sass/components/dropdown.sass';
+@import 'bulma/sass/components/navbar.sass';
+@import 'bulma/sass/components/card.sass';
+@import 'bulma/sass/layout/footer.sass';
+
+$default-red: #a02c2e;
+
 .footer {
   background-color: $default-red;
   color: whitesmoke;
-  padding: 1em;
-  .info {
-    display: grid;
-    grid-gap: 0.5em;
-    @include respond-to(table) {
-      display: flex;
-      justify-content: space-evenly;
-      text-align: center;
-    }
-  }
-  a {
-    color: whitesmoke;
-  }
-}
-.msg {
-  margin-bottom: 8px;
-}
-.address {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.contact {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  .yelp {
-    margin-top: 8px;
-  }
-}
-.btn {
-  width: 100%;
-  font-size: 18px;
-  color: black;
-  border: solid black 1px;
-  @include respond-to(desk) {
-    font-size: 21px;
-  }
-}
-.modal-dialog {
-  @include respond-to(table) {
-    width: 100%;
-    max-width: 568px;
-  }
-  @include respond-to(desk) {
-    max-width: 768px;
-  }
-  @include respond-to(larger) {
-    max-width: 850px;
-  }
-}
-.modal-content {
-  background: url(assets/ricepaper.png);
-  background-repeat: repeat;
-  .modal-title {
-    font-size: 28px;
-  }
-  .modal-body {
-    padding: 0;
 
-    .cat-table {
-      min-width: 100%;
-      td {
-        border: $default-gold solid 1px;
-        padding: 1em 1em;
-        @include respond-to(table) {
-          padding: 0.5em;
-        }
-        .english {
-          color: $default-red;
-          font-weight: bold;
-        }
-        .price {
-          font-size: 18px;
-          color: $default-gold;
-          font-weight: bold;
-        }
-        p {
-          margin: 0;
-        }
-      }
-      tr {
-        font-size: 20px;
-        @include respond-to(table) {
-          font-size: 22px;
-        }
-        @include respond-to(desk) {
-          font-size: 26px;
-        }
-        :first-child {
-          border-left: none;
-        }
-        :last-child {
-          border-right: none;
-        }
-      }
-      .description {
-        width: 100%;
-      }
+  &__section-container {
+    display: grid;
+    grid-gap: 1em;
+    @media screen and (min-width: 769px) {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
-  [data-dismiss] {
-    background-color: $default-red;
-    color: whitesmoke;
-    border: none;
-    border-radius: 5px;
-  }
 }
+
+.copyright {
+  margin-top: 1em;
+}
+
+.address a {
+  color: whitesmoke;
+}
+
+.contact a {
+  color: whitesmoke;
+}
+
+.yelp {
+  margin-top: 8px;
+}
+
+// $break-smaller: 360px;
+// $break-small: 411px;
+// $break-medium: 611px;
+// $break-table: 768px;
+// $break-desk: 1024px;
+// $break-larger: 1400px;
+
+// $default-gold: #cc9900;
+
+// @mixin respond-to($media) {
+//   @if $media == smaller {
+//     @media only screen and (min-width: $break-smaller) {
+//       @content;
+//     }
+//   }
+
+//   @if $media == small {
+//     @media only screen and (min-width: $break-small) {
+//       @content;
+//     }
+//   }
+
+//   @if $media == medium {
+//     @media only screen and (min-width: $break-medium) {
+//       @content;
+//     }
+//   }
+
+//   @if $media == table {
+//     @media only screen and (min-width: $break-table) {
+//       @content;
+//     }
+//   }
+
+//   @if $media == desk {
+//     @media only screen and (min-width: $break-desk) {
+//       @content;
+//     }
+//   }
+
+//   @if $media == larger {
+//     @media only screen and (min-width: $break-larger) {
+//       @content;
+//     }
+//   }
+// }
+
+// .main {
+//   padding-top: 75px;
+// }
+
+// .wrapper {
+//   min-height: 100%;
+//   display: grid;
+//   grid-template-rows: auto 1fr auto;
+// }
+
+// .nav-bar {
+//   margin: 1em 0 0 0;
+//   text-align: center;
+//   img {
+//     width: 290px;
+//     @include respond-to(table) {
+//       width: auto;
+//     }
+//   }
+// }
+// .main {
+//   height: auto;
+//   display: flex;
+//   flex-direction: column;
+//   padding: 1em;
+//   td {
+//     margin: 8px auto;
+//   }
+//   .options {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     height: 100%;
+//     @include respond-to(table) {
+//       tbody {
+//         display: grid;
+//         grid-template-columns: 1fr 1fr;
+//         grid-column-gap: 26px;
+//         width: 100%;
+//       }
+//     }
+//   }
+// }
+// .option:hover {
+//   background-color: transparent;
+//   border: $default-red solid 1px;
+//   color: $default-red;
+// }
+//
+//   a {
+//     color: whitesmoke;
+//   }
+// }
+// .msg {
+//   margin-bottom: 8px;
+// }
+
+// .btn {
+//   width: 100%;
+//   font-size: 18px;
+//   color: black;
+//   border: solid black 1px;
+//   @include respond-to(desk) {
+//     font-size: 21px;
+//   }
+// }
+// .modal-dialog {
+//   @include respond-to(table) {
+//     width: 100%;
+//     max-width: 568px;
+//   }
+//   @include respond-to(desk) {
+//     max-width: 768px;
+//   }
+//   @include respond-to(larger) {
+//     max-width: 850px;
+//   }
+// }
+// .modal-content {
+//   .modal-title {
+//     font-size: 28px;
+//   }
+//   .modal-body {
+//     padding: 0;
+
+//     .cat-table {
+//       min-width: 100%;
+//       td {
+//         border: $default-gold solid 1px;
+//         padding: 1em 1em;
+//         @include respond-to(table) {
+//           padding: 0.5em;
+//         }
+//         .english {
+//           color: $default-red;
+//           font-weight: bold;
+//         }
+//         .price {
+//           font-size: 18px;
+//           color: $default-gold;
+//           font-weight: bold;
+//         }
+//         p {
+//           margin: 0;
+//         }
+//       }
+//       tr {
+//         font-size: 20px;
+//         @include respond-to(table) {
+//           font-size: 22px;
+//         }
+//         @include respond-to(desk) {
+//           font-size: 26px;
+//         }
+//         :first-child {
+//           border-left: none;
+//         }
+//         :last-child {
+//           border-right: none;
+//         }
+//       }
+//       .description {
+//         width: 100%;
+//       }
+//     }
+//   }
+//   [data-dismiss] {
+//     background-color: $default-red;
+//     color: whitesmoke;
+//     border: none;
+//     border-radius: 5px;
+//   }
+// }

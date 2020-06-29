@@ -1,0 +1,14 @@
+{
+  "peacock.color": "#fa707a",
+  "workbench.colorCustomizations": {
+    "tab.activeBorder": "#fca1a8",
+    "titleBar.activeBackground": "#fa707a",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.border": "#fa707a",
+    "titleBar.inactiveBackground": "#fa707a99",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.affectTabActiveBorder": true,
+  "peacock.affectActivityBar": false,
+  "peacock.affectStatusBar": false
+}

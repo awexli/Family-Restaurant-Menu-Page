@@ -1,0 +1,27 @@
+.navbar {
+  &-brand {
+    align-items: center;
+  }
+  
+  &-item {
+    img {
+      max-height: 50px;
+    }
+  }
+
+  &-burger {
+    width: 4.25rem;
+    span {
+      height: 2px;
+      width: 18px;
+    }
+  }
+
+  &-menu {
+    &.is-active {
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
+  }
+}
