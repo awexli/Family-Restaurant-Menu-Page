@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import MenuItem from './menu-item';
 import MenuHeader from './menu-header';
-import './styles/menu.scss';
 import MenuModal from '../../js/menu-modal';
-import { FixedSizeList } from 'react-window';
+
+import '../scss/menu.scss';
 
 export class Menu extends Component {
   constructor(props) {

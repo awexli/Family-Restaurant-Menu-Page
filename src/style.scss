@@ -1,58 +1,4 @@
 @charset "uft-8";
-@import 'bulma/sass/utilities/_all.sass';
-@import 'bulma/sass/elements/button.sass';
-@import 'bulma/sass/components/dropdown.sass';
-@import 'bulma/sass/components/navbar.sass';
-@import 'bulma/sass/components/card.sass';
-@import './scss/nav.scss';
-
-$break-smaller: 360px;
-$break-small: 411px;
-$break-medium: 611px;
-$break-table: 768px;
-$break-desk: 1024px;
-$break-larger: 1400px;
-
-$default-red: #a02c2e;
-$default-gold: #cc9900;
-
-@mixin respond-to($media) {
-  @if $media == smaller {
-    @media only screen and (min-width: $break-smaller) {
-      @content;
-    }
-  }
-
-  @if $media == small {
-    @media only screen and (min-width: $break-small) {
-      @content;
-    }
-  }
-
-  @if $media == medium {
-    @media only screen and (min-width: $break-medium) {
-      @content;
-    }
-  }
-
-  @if $media == table {
-    @media only screen and (min-width: $break-table) {
-      @content;
-    }
-  }
-
-  @if $media == desk {
-    @media only screen and (min-width: $break-desk) {
-      @content;
-    }
-  }
-
-  @if $media == larger {
-    @media only screen and (min-width: $break-larger) {
-      @content;
-    }
-  }
-}
 
 *,
 *:before,
@@ -64,7 +10,7 @@ $default-gold: #cc9900;
 
 html,
 body {
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -79,6 +25,60 @@ body {
   width: 100%;
   max-width: 960px;
 }
+
+@import 'bulma/sass/utilities/_all.sass';
+@import 'bulma/sass/elements/button.sass';
+@import 'bulma/sass/components/dropdown.sass';
+@import 'bulma/sass/components/navbar.sass';
+@import 'bulma/sass/components/card.sass';
+
+// $break-smaller: 360px;
+// $break-small: 411px;
+// $break-medium: 611px;
+// $break-table: 768px;
+// $break-desk: 1024px;
+// $break-larger: 1400px;
+
+// $default-red: #a02c2e;
+// $default-gold: #cc9900;
+
+// @mixin respond-to($media) {
+//   @if $media == smaller {
+//     @media only screen and (min-width: $break-smaller) {
+//       @content;
+//     }
+//   }
+
+//   @if $media == small {
+//     @media only screen and (min-width: $break-small) {
+//       @content;
+//     }
+//   }
+
+//   @if $media == medium {
+//     @media only screen and (min-width: $break-medium) {
+//       @content;
+//     }
+//   }
+
+//   @if $media == table {
+//     @media only screen and (min-width: $break-table) {
+//       @content;
+//     }
+//   }
+
+//   @if $media == desk {
+//     @media only screen and (min-width: $break-desk) {
+//       @content;
+//     }
+//   }
+
+//   @if $media == larger {
+//     @media only screen and (min-width: $break-larger) {
+//       @content;
+//     }
+//   }
+// }
 
 // .main {
 //   padding-top: 75px;

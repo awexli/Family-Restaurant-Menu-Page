@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Logo, dishMap } from '../../assets';
+import { dishMap } from '../../assets';
 
 class MenuItem extends Component {
   static propTypes = {
@@ -13,6 +13,7 @@ class MenuItem extends Component {
 
   render() {
     const menuItems = this.props.menuItems;
+
     return (
       <div className="menu__item-container">
         {menuItems.map((item, index) => (

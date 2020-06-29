@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { Logo } from '../../assets';
 import NavBarBurger from './nav-bar-burger';
 import NavBarMenu from './nav-bar-menu';
 import { MenuCategoryService } from '../menu-category-service';
+
+import { Logo } from '../../assets';
+import '../scss/nav.scss';
 
 export class NavBar extends Component {
   constructor(props) {

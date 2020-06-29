@@ -5,22 +5,6 @@
     background-color: #a02c2e;
   }
 
-  &__title {
-    grid-area: title;
-    display: flex;
-    align-items: center;
-    max-width: 300px;
-    @media screen and (max-width: 568px) {
-      justify-self: center;
-      max-width: 190px;
-    }
-
-    @media screen and (min-width: 768px) {
-      font-size: 1.1rem;
-      max-width: 500px;
-    }
-  }
-
   &__jump {
     grid-area: jump;
     display: flex;
@@ -35,13 +19,13 @@
   }
 
   &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: transparent;
     outline: none;
     height: 2em;
     width: 4em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-top: 1em;
 
     svg {
