@@ -2,9 +2,11 @@
   &-brand {
     align-items: center;
   }
-
-  &-item img {
-    max-height: 50px;
+  
+  &-item {
+    img {
+      max-height: 50px;
+    }
   }
 
   &-burger {

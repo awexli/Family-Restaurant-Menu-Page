@@ -21,10 +21,11 @@ class NavBarMenu extends Component {
     return (
       <div id="nav-menu" className={active ? activeClass : defaultClass}>
         <div className="navbar-end">
+          <a href="#footer" className="navbar-item" onClick={handleClick}>
+            Info
+          </a>
           <div className="navbar-item has-dropdown is-hoverable">
-            <a href="#" className="navbar-link">
-              Menu
-            </a>
+            <a className="navbar-link">Menu</a>
             <div className="navbar-dropdown is-boxed is-right">
               {category.map((cat, ndx) => (
                 <a

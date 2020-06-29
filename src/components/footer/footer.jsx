@@ -5,10 +5,10 @@ class Footer extends Component {
     const currentYear = date.getFullYear();
 
     return (
-      <footer className="footer">
+      <footer id="footer" className="footer">
         <div className="content">
           <div className="footer__section-container">
-            <section class="address">
+            <section className="address">
               <a
                 href="https://www.google.com/maps/place/Zhong+Shan+Hakka+Restaurant/@37.7422557,-122.4903221,15z/data=!4m5!3m4!1s0x0:0xde21cc529fccf39d!8m2!3d37.7422557!4d-122.4903221"
                 target="_blank"
@@ -18,10 +18,10 @@ class Footer extends Component {
                 Sunset District (Between 32nd and 33rd)
               </a>
             </section>
-            <section class="contact">
+            <section className="contact">
               <a href="tel:4155928938">CALL: (415) 592-8938</a>
               <div
-                class="yelp"
+                className="yelp"
                 id="yelp-biz-badge-plain-m5c-bIR-Y6h5ylUIbRDP7Q"
               >
                 <a
@@ -33,13 +33,13 @@ class Footer extends Component {
                 </a>
               </div>
             </section>
-            <section class="hours">
+            <section className="hours">
               11:00AM - 3:00PM <br />
               5:00PM - 9:30PM <br />
               Open everyday <strong>except Thursday</strong>
             </section>
           </div>
-          <div class="copyright">
+          <div className="copyright">
             <small>
               Copyright &copy; {currentYear}, Zhong Shan Hakka Restaurant. All Rights Reserved.
             </small>
