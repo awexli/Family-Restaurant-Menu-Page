@@ -32,20 +32,32 @@ class MenuHeader extends Component {
           <div className="menu__jump">
             {this.renderMenuDropdown(category)}
             <Mobile>
-              <a
-                className="menu__button button is-dark "
-                href={this.handleJumpUp(menuHeaderNum)}
-                aria-label="Jump Up"
-              >
-                <UpArrow />
-              </a>
-              <a
-                className="menu__button button is-dark"
-                href={this.handleJumpDown(menuHeaderNum)}
-                aria-label="Jump Down"
-              >
-                <DownArrow />
-              </a>
+              {menuHeaderNum === 0 ? (
+                <a
+                  className="menu__button button is-dark"
+                  href={this.handleJumpDown(menuHeaderNum)}
+                  aria-label="Jump Down"
+                >
+                  <DownArrow />
+                </a>
+              ) : (
+                <>
+                  <a
+                    className="menu__button button is-dark "
+                    href={this.handleJumpUp(menuHeaderNum)}
+                    aria-label="Jump Up"
+                  >
+                    <UpArrow />
+                  </a>
+                  <a
+                    className="menu__button button is-dark"
+                    href={this.handleJumpDown(menuHeaderNum)}
+                    aria-label="Jump Down"
+                  >
+                    <DownArrow />
+                  </a>
+                </>
+              )}
             </Mobile>
           </div>
         </header>
