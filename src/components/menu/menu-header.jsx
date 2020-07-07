@@ -6,6 +6,7 @@ import { MenuCategoryService } from '../menu-category-service';
 import { Mobile } from '../media-queries';
 
 import { UpArrow, DownArrow } from '../../assets/index';
+import { MenuArrow } from './menu-arrow';
 
 class MenuHeader extends Component {
   static propTypes = {
@@ -31,34 +32,7 @@ class MenuHeader extends Component {
           <p className="card-header-title">{menuTitle}</p>
           <div className="menu__jump">
             {this.renderMenuDropdown(category)}
-            <Mobile>
-              {menuHeaderNum === 0 ? (
-                <a
-                  className="menu__button button is-dark"
-                  href={this.handleJumpDown(menuHeaderNum)}
-                  aria-label="Jump Down"
-                >
-                  <DownArrow />
-                </a>
-              ) : (
-                <>
-                  <a
-                    className="menu__button button is-dark "
-                    href={this.handleJumpUp(menuHeaderNum)}
-                    aria-label="Jump Up"
-                  >
-                    <UpArrow />
-                  </a>
-                  <a
-                    className="menu__button button is-dark"
-                    href={this.handleJumpDown(menuHeaderNum)}
-                    aria-label="Jump Down"
-                  >
-                    <DownArrow />
-                  </a>
-                </>
-              )}
-            </Mobile>
+            <Mobile>{this.renderArrowButton(menuHeaderNum)}</Mobile>
           </div>
         </header>
       </div>
@@ -105,6 +79,50 @@ class MenuHeader extends Component {
       </div>
     );
   };
+  
+  renderArrowButton = (menuHeaderNum) => {
+    let arrowButton;
+    if (menuHeaderNum === 0) {
+      arrowButton = (
+        <MenuArrow
+          handleJump={this.handleJumpDown(menuHeaderNum)}
+          label={'Jump Down'}
+          arrow={<DownArrow />}
+        />
+      );
+    } else if (menuHeaderNum === 17) {
+      arrowButton = (
+        <>
+          <MenuArrow
+          handleJump={this.handleJumpUp(menuHeaderNum)}
+          label={'Jump Up'}
+          arrow={<UpArrow />}
+        />
+        <MenuArrow
+            handleJump={"#footer"}
+            label={'Jump Down'}
+            arrow={<DownArrow />}
+          />
+        </>
+      );
+    } else {
+      arrowButton = (
+        <>
+          <MenuArrow
+            handleJump={this.handleJumpUp(menuHeaderNum)}
+            label={'Jump Up'}
+            arrow={<UpArrow />}
+          />
+          <MenuArrow
+            handleJump={this.handleJumpDown(menuHeaderNum)}
+            label={'Jump Down'}
+            arrow={<DownArrow />}
+          />
+        </>
+      );
+    }
+    return arrowButton;
+  }
 
   handleJumpUp = (menuHeaderNum) => {
     return MenuHeaderService.jumpUp(menuHeaderNum);
