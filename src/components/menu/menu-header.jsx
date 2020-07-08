@@ -6,7 +6,7 @@ import { MenuCategoryService } from '../menu-category-service';
 import { Mobile } from '../media-queries';
 
 import { UpArrow, DownArrow } from '../../assets/index';
-import { MenuArrow } from './menu-arrow';
+import { MenuArrow } from './menu-arrow.tsx';
 import { MenuDropdown } from './menu-dropdown.tsx';
 
 class MenuHeader extends Component {
@@ -43,47 +43,6 @@ class MenuHeader extends Component {
       </div>
     );
   }
-
-  renderMenuDropdown = (category) => {
-    return (
-      <div
-        className={
-          this.state.active ? 'dropdown is-active is-right' : 'dropdown'
-        }
-      >
-        {this.renderMenuButton()}
-        <div className="dropdown-menu" id="dropdown-menu" role="menu">
-          <div className="dropdown-content">
-            {category.map((cat, ndx) => (
-              <a
-                key={ndx}
-                href={cat.url}
-                className="dropdown-item"
-                onClick={this.handleMenuClick}
-              >
-                {cat.name}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-    );
-  };
-
-  renderMenuButton = () => {
-    return (
-      <div className="dropdown-trigger">
-        <button
-          className="button is-dark menu__button"
-          aria-haspopup="true"
-          aria-controls="dropdown-menu"
-          onClick={this.handleMenuClick}
-        >
-          Menu
-        </button>
-      </div>
-    );
-  };
 
   renderArrowButton = (menuHeaderNum) => {
     let arrowButton;

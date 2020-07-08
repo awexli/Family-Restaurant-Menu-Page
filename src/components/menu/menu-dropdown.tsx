@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from 'react';
 
-export interface Props {
+interface Props {
   active: boolean;
-  category: Array<{name: string, url: string}>;
+  category: Array<{ name: string; url: string }>;
   handleMenuClick: () => void;
 }
 
@@ -10,25 +10,12 @@ export const MenuDropdown = ({ active, category, handleMenuClick }: Props) => {
   return (
     <div className={active ? 'dropdown is-active is-right' : 'dropdown'}>
       <MenuButton handleMenuClick={handleMenuClick} />
-      <div className="dropdown-menu" id="dropdown-menu" role="menu">
-        <div className="dropdown-content">
-          {category.map((cat, ndx) => (
-            <a
-              href={cat.url}
-              className="dropdown-item"
-              onClick={handleMenuClick}
-              key={ndx}
-            >
-              {cat.name}
-            </a>
-          ))}
-        </div>
-      </div>
+      <DropdownMenu category={category} handleMenuClick={handleMenuClick} />
     </div>
   );
-}
+};
 
-export interface ButtonProps {
+interface ButtonProps {
   handleMenuClick: () => void;
 }
 
@@ -45,4 +32,28 @@ const MenuButton = ({ handleMenuClick }: ButtonProps) => {
       </button>
     </div>
   );
+};
+
+interface DrowdownMenuProps {
+  category: Array<{ name: string; url: string }>;
+  handleMenuClick: () => void;
 }
+
+const DropdownMenu = ({ category, handleMenuClick }: DrowdownMenuProps) => {
+  return (
+    <div className="dropdown-menu" id="dropdown-menu" role="menu">
+      <div className="dropdown-content">
+        {category.map((cat, ndx) => (
+          <a
+            href={cat.url}
+            className="dropdown-item"
+            onClick={handleMenuClick} // to close dropdown menu
+            key={ndx}
+          >
+            {cat.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+};
