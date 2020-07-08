@@ -7,6 +7,7 @@ import { Mobile } from '../media-queries';
 
 import { UpArrow, DownArrow } from '../../assets/index';
 import { MenuArrow } from './menu-arrow';
+import { MenuDropdown } from './menu-dropdown.tsx';
 
 class MenuHeader extends Component {
   static propTypes = {
@@ -31,7 +32,11 @@ class MenuHeader extends Component {
         <header className="card-header menu__header" id={menuHeaderId}>
           <p className="card-header-title">{menuTitle}</p>
           <div className="menu__jump">
-            {this.renderMenuDropdown(category)}
+            <MenuDropdown
+              active={this.state.active}
+              category={category}
+              handleMenuClick={this.handleMenuClick}
+            />
             <Mobile>{this.renderArrowButton(menuHeaderNum)}</Mobile>
           </div>
         </header>
@@ -79,7 +84,7 @@ class MenuHeader extends Component {
       </div>
     );
   };
-  
+
   renderArrowButton = (menuHeaderNum) => {
     let arrowButton;
     if (menuHeaderNum === 0) {
@@ -94,12 +99,12 @@ class MenuHeader extends Component {
       arrowButton = (
         <>
           <MenuArrow
-          handleJump={this.handleJumpUp(menuHeaderNum)}
-          label={'Jump Up'}
-          arrow={<UpArrow />}
-        />
-        <MenuArrow
-            handleJump={"#footer"}
+            handleJump={this.handleJumpUp(menuHeaderNum)}
+            label={'Jump Up'}
+            arrow={<UpArrow />}
+          />
+          <MenuArrow
+            handleJump={'#footer'}
             label={'Jump Down'}
             arrow={<DownArrow />}
           />
@@ -122,7 +127,7 @@ class MenuHeader extends Component {
       );
     }
     return arrowButton;
-  }
+  };
 
   handleJumpUp = (menuHeaderNum) => {
     return MenuHeaderService.jumpUp(menuHeaderNum);
