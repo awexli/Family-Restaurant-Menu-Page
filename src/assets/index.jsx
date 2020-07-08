@@ -33,7 +33,8 @@ const images = importAllImages(
 export const dishMap = {};
 // populate dishMap
 for (let imageString in images) {
-  const itemNumber = `${imageString[0].toUpperCase()}${imageString[1]}`;
+  const underScore = imageString.indexOf('_');
+  const itemNumber = imageString.substring(0, underScore).toUpperCase();
   dishMap[itemNumber] = (
     <img
       src={images[imageString].default}
