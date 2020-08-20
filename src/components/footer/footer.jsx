@@ -20,10 +20,7 @@ class Footer extends Component {
             </section>
             <section className="contact">
               <a href="tel:4155928938">CALL: (415) 592-8938</a>
-              <div
-                className="yelp"
-                id="yelp-biz-badge-plain-m5c-bIR-Y6h5ylUIbRDP7Q"
-              >
+              <div className="yelp">
                 <a
                   href="http://yelp.com/biz/zhong-shan-hakka-cuisine-san-francisco-2?utm_medium=badge_button&amp;utm_source=biz_review_badge"
                   target="_blank"
@@ -41,7 +38,8 @@ class Footer extends Component {
           </div>
           <div className="copyright">
             <small>
-              Copyright &copy; {currentYear}, Zhong Shan Hakka Restaurant. All Rights Reserved.
+              Copyright &copy; {currentYear}, Zhong Shan Hakka Restaurant. All
+              Rights Reserved.
             </small>
           </div>
         </div>

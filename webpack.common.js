@@ -32,9 +32,15 @@ module.exports = {
         resolve: {
           extensions: ['*', '.js', '.jsx'],
         },
-        use: {
-          loader: 'babel-loader',
+        use: ['babel-loader'],
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        resolve: {
+          extensions: ['.ts', '.tsx'],
         },
+        use: ['ts-loader'],
       },
     ],
   },
