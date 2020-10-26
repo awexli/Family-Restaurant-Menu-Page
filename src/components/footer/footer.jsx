@@ -35,7 +35,7 @@ class Footer extends Component {
             </section>
             <section className="hours">
               11:00AM - 3:00PM <br />
-              5:00PM - 9:30PM <br />
+              5:00PM - 8:00PM <br />
               Open everyday <strong>except Thursday</strong>
             </section>
           </div>

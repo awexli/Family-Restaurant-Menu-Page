@@ -90,7 +90,7 @@ const menuModal = (() => {
     川味朵椒蒸魚頭腩,Steamed Fish Head w/ Spicy Pepper,13.95
     豉椒炒雙魷魚,Spicy Squid w/ Black Pepper Sauce,12.95
     薑蔥砂鍋魚頭,Fish Head w/ Ginger and Scallion in Pot,13.95
-    家鄉菜脯粒煎蠔餅,Pan Friend Oyster w/ Preserved Green,13.95
+    家鄉菜脯粒煎蠔餅,Pan Fried Oyster w/ Preserved Green,13.95
     黑松露海鮮玉子豆腐,Black Truffle Seafood & Japanese Tofu,13.95
     豉汁涼瓜雞球,Chicken & Bitter Melon in Black Pepper Sauce,11.95
     玉子豆腐拌金玉菇,Japanese Tofu w/ Baby Mushroom,12.95
